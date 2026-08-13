@@ -1,0 +1,14 @@
+{
+  "actions": [],
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["erp_ledger_line"],
+  "fields": [
+    {"fieldname": "erp_ledger_line", "fieldtype": "Data", "label": "ERP Ledger Line", "reqd": 1, "in_list_view": 1}
+  ],
+  "istable": 1,
+  "module": "Advanced Finance",
+  "name": "Supplier Match ERP Line"
+}

@@ -1,0 +1,22 @@
+{
+  "actions": [],
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["match_id", "match_rule", "confidence", "statement_total", "erp_total", "difference", "status", "statement_lines", "erp_lines"],
+  "fields": [
+    {"fieldname": "match_id", "fieldtype": "Data", "label": "Match ID"},
+    {"fieldname": "match_rule", "fieldtype": "Data", "label": "Match Rule", "in_list_view": 1},
+    {"fieldname": "confidence", "fieldtype": "Percent", "label": "Confidence", "in_list_view": 1},
+    {"fieldname": "statement_total", "fieldtype": "Currency", "label": "Statement Total"},
+    {"fieldname": "erp_total", "fieldtype": "Currency", "label": "ERP Total"},
+    {"fieldname": "difference", "fieldtype": "Currency", "label": "Difference"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Suggested\nAuto Accepted\nAccepted\nRejected\nManual Match\nUnmatched", "in_list_view": 1},
+    {"fieldname": "statement_lines", "fieldtype": "Table", "label": "Statement Lines", "options": "Supplier Match Statement Line"},
+    {"fieldname": "erp_lines", "fieldtype": "Table", "label": "ERP Lines", "options": "Supplier Match ERP Line"}
+  ],
+  "istable": 1,
+  "module": "Advanced Finance",
+  "name": "Supplier Reconciliation Match"
+}

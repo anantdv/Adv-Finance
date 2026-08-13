@@ -1,0 +1,29 @@
+{
+  "actions": [],
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["exception_type", "statement_line", "erp_ledger_line", "reconciliation_match", "reference", "statement_amount", "erp_amount", "difference", "description", "suggested_action", "status", "assigned_to", "resolution_notes", "resolved_by", "resolved_on"],
+  "fields": [
+    {"fieldname": "exception_type", "fieldtype": "Select", "label": "Exception Type", "options": "Missing Purchase Invoice\nMissing Payment\nMissing Credit Note\nAmount Mismatch\nDate Mismatch\nDuplicate Statement Transaction\nDuplicate ERP Transaction\nUnallocated Payment\nReference Mismatch\nCurrency Difference\nExchange Rate Difference\nTiming Difference\nOpening Balance Difference\nStatement Only\nERP Only\nUnknown Transaction", "in_list_view": 1},
+    {"fieldname": "statement_line", "fieldtype": "Data", "label": "Statement Line"},
+    {"fieldname": "erp_ledger_line", "fieldtype": "Data", "label": "ERP Ledger Line"},
+    {"fieldname": "reconciliation_match", "fieldtype": "Data", "label": "Reconciliation Match"},
+    {"fieldname": "reference", "fieldtype": "Data", "label": "Reference", "in_list_view": 1},
+    {"fieldname": "statement_amount", "fieldtype": "Currency", "label": "Statement Amount"},
+    {"fieldname": "erp_amount", "fieldtype": "Currency", "label": "ERP Amount"},
+    {"fieldname": "difference", "fieldtype": "Currency", "label": "Difference"},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+    {"fieldname": "suggested_action", "fieldtype": "Small Text", "label": "Suggested Action"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Open\nInvestigating\nConfirmed Timing Difference\nERP Correction Required\nSupplier Correction Required\nAdjustment Required\nResolved\nIgnored", "default": "Open", "in_list_view": 1},
+    {"fieldname": "assigned_to", "fieldtype": "Link", "label": "Assigned To", "options": "User"},
+    {"fieldname": "resolution_notes", "fieldtype": "Small Text", "label": "Resolution Notes"},
+    {"fieldname": "resolved_by", "fieldtype": "Link", "label": "Resolved By", "options": "User", "read_only": 1},
+    {"fieldname": "resolved_on", "fieldtype": "Datetime", "label": "Resolved On", "read_only": 1}
+  ],
+  "istable": 1,
+  "module": "Advanced Finance",
+  "name": "Supplier Reconciliation Exception",
+  "track_changes": 1
+}

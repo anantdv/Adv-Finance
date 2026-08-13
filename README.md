@@ -1,0 +1,95 @@
+# ADV Finance
+
+ADV Finance is a Frappe/ERPNext v16 application for advanced finance controls.
+The first module is Supplier Statement Reconciliation for Accounts Payable teams.
+
+It lets users upload supplier statement files, parse raw and normalized statement
+transactions, load the matching ERPNext supplier ledger, run deterministic
+matching, classify exceptions, and close reconciliations with an audit trail.
+
+## Compatibility
+
+- Frappe: v16
+- ERPNext: v16
+- Database: MariaDB-compatible Frappe deployment
+- UI: Standard Frappe Desk
+
+This app does not modify ERPNext core and does not post accounting transactions.
+Supplier Reconciliation is read-only from a General Ledger perspective.
+
+## Installation
+
+```bash
+cd ~/frappe-bench
+bench get-app https://github.com/<organisation>/adv_finance.git
+bench --site <site-name> install-app adv_finance
+bench --site <site-name> migrate
+bench build --app adv_finance
+bench restart
+```
+
+## Development Installation
+
+```bash
+cd ~/frappe-bench
+bench get-app /path/to/adv_finance
+bench --site <site-name> install-app adv_finance
+bench --site <site-name> set-config developer_mode 1
+bench --site <site-name> migrate
+```
+
+## Roles
+
+- Supplier Reconciliation User: create, parse, match, review, and resolve assigned
+  reconciliation work.
+- Supplier Reconciliation Manager: close and reopen reconciliations, accept
+  non-zero differences, and override reviewed matches.
+
+## Supplier Statement Template
+
+Create one template for each recurring supplier statement layout. Configure the
+file type, header row, sheet name, date/decimal separators, and source columns
+for reference, description, debit, credit, amount, balance, and transaction type.
+
+Example CSV mapping:
+
+- Date column: `Date`
+- Reference column: `Invoice No`
+- Description column: `Description`
+- Debit column: `Debit`
+- Credit column: `Credit`
+- Balance column: `Balance`
+
+## Workflow
+
+Create Reconciliation -> Upload Statement -> Parse -> Load ERP Ledger -> Run
+Reconciliation -> Review Suggested Matches -> Resolve Exceptions -> Close.
+
+## Accounting Safety
+
+Supplier Reconciliation never inserts, updates, or deletes `GL Entry` or
+`Payment Ledger Entry` records. It reads ERPNext accounting data and records the
+reconciliation result in ADV Finance DocTypes only.
+
+## Testing
+
+Inside a Frappe v16 bench with ERPNext v16 installed:
+
+```bash
+bench --site <test-site> run-tests --app adv_finance
+```
+
+The test suite includes a GL invariance test to ensure reconciliation does not
+create accounting postings.
+
+## Uninstall Considerations
+
+Uninstalling the app removes the custom DocTypes and their data according to
+Frappe uninstall behavior. Back up sites before uninstalling from production.
+
+## Current Limitations
+
+- CSV and XLSX are supported. PDF and OCR are intentionally out of scope.
+- The initial implementation posts no accounting corrections.
+- ERPNext v16 ledger extraction must be validated in a real v16 bench because
+  this workspace does not include Frappe/ERPNext source.

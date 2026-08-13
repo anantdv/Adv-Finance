@@ -1,0 +1,49 @@
+{
+  "actions": [],
+  "autoname": "field:template_name",
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "template_name", "supplier", "company", "file_type", "header_row_number", "sheet_name",
+    "date_format", "decimal_separator", "thousands_separator", "transaction_date_column",
+    "reference_column", "secondary_reference_column", "description_column", "debit_column",
+    "credit_column", "amount_column", "balance_column", "transaction_type_column",
+    "debit_is_positive", "credit_is_positive", "skip_blank_rows", "ignore_rows_before_header",
+    "closing_balance_source"
+  ],
+  "fields": [
+    {"fieldname": "template_name", "fieldtype": "Data", "label": "Template Name", "reqd": 1, "unique": 1},
+    {"fieldname": "supplier", "fieldtype": "Link", "label": "Supplier", "options": "Supplier"},
+    {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company"},
+    {"fieldname": "file_type", "fieldtype": "Select", "label": "File Type", "options": "CSV\nXLSX", "reqd": 1},
+    {"default": "1", "fieldname": "header_row_number", "fieldtype": "Int", "label": "Header Row Number", "reqd": 1},
+    {"fieldname": "sheet_name", "fieldtype": "Data", "label": "Sheet Name"},
+    {"fieldname": "date_format", "fieldtype": "Data", "label": "Date Format"},
+    {"default": ".", "fieldname": "decimal_separator", "fieldtype": "Data", "label": "Decimal Separator"},
+    {"default": ",", "fieldname": "thousands_separator", "fieldtype": "Data", "label": "Thousands Separator"},
+    {"fieldname": "transaction_date_column", "fieldtype": "Data", "label": "Transaction Date Column", "reqd": 1},
+    {"fieldname": "reference_column", "fieldtype": "Data", "label": "Reference Column"},
+    {"fieldname": "secondary_reference_column", "fieldtype": "Data", "label": "Secondary Reference Column"},
+    {"fieldname": "description_column", "fieldtype": "Data", "label": "Description Column"},
+    {"fieldname": "debit_column", "fieldtype": "Data", "label": "Debit Column"},
+    {"fieldname": "credit_column", "fieldtype": "Data", "label": "Credit Column"},
+    {"fieldname": "amount_column", "fieldtype": "Data", "label": "Amount Column"},
+    {"fieldname": "balance_column", "fieldtype": "Data", "label": "Balance Column"},
+    {"fieldname": "transaction_type_column", "fieldtype": "Data", "label": "Transaction Type Column"},
+    {"default": "1", "fieldname": "debit_is_positive", "fieldtype": "Check", "label": "Debit Is Positive"},
+    {"default": "1", "fieldname": "credit_is_positive", "fieldtype": "Check", "label": "Credit Is Positive"},
+    {"default": "1", "fieldname": "skip_blank_rows", "fieldtype": "Check", "label": "Skip Blank Rows"},
+    {"default": "1", "fieldname": "ignore_rows_before_header", "fieldtype": "Check", "label": "Ignore Rows Before Header"},
+    {"fieldname": "closing_balance_source", "fieldtype": "Select", "label": "Closing Balance Source", "options": "Last Balance Column\nStatement Header\nManual"}
+  ],
+  "module": "Advanced Finance",
+  "name": "Supplier Statement Template",
+  "permissions": [
+    {"role": "Supplier Reconciliation User", "read": 1, "write": 1, "create": 1},
+    {"role": "Supplier Reconciliation Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

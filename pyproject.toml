@@ -1,0 +1,18 @@
+[project]
+name = "adv-finance"
+version = "0.1.0"
+description = "Advanced finance controls and reconciliation extensions for ERPNext"
+authors = [{ name = "Anantdv" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.dev-dependencies]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

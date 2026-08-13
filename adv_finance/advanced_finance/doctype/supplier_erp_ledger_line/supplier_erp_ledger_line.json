@@ -1,0 +1,32 @@
+{
+  "actions": [],
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["posting_date", "voucher_type", "voucher_no", "against_voucher_type", "against_voucher", "supplier_invoice_number", "supplier_invoice_date", "reference_no", "remarks", "debit", "credit", "amount", "running_balance", "account", "currency", "normalized_reference", "match_status", "matched", "reconciliation_match"],
+  "fields": [
+    {"fieldname": "posting_date", "fieldtype": "Date", "label": "Posting Date", "in_list_view": 1},
+    {"fieldname": "voucher_type", "fieldtype": "Data", "label": "Voucher Type"},
+    {"fieldname": "voucher_no", "fieldtype": "Data", "label": "Voucher No", "in_list_view": 1},
+    {"fieldname": "against_voucher_type", "fieldtype": "Data", "label": "Against Voucher Type"},
+    {"fieldname": "against_voucher", "fieldtype": "Data", "label": "Against Voucher"},
+    {"fieldname": "supplier_invoice_number", "fieldtype": "Data", "label": "Supplier Invoice Number"},
+    {"fieldname": "supplier_invoice_date", "fieldtype": "Date", "label": "Supplier Invoice Date"},
+    {"fieldname": "reference_no", "fieldtype": "Data", "label": "Reference No"},
+    {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"},
+    {"fieldname": "debit", "fieldtype": "Currency", "label": "Debit"},
+    {"fieldname": "credit", "fieldtype": "Currency", "label": "Credit"},
+    {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "in_list_view": 1},
+    {"fieldname": "running_balance", "fieldtype": "Currency", "label": "Running Balance"},
+    {"fieldname": "account", "fieldtype": "Link", "label": "Account", "options": "Account"},
+    {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency"},
+    {"fieldname": "normalized_reference", "fieldtype": "Data", "label": "Normalized Reference"},
+    {"fieldname": "match_status", "fieldtype": "Select", "label": "Match Status", "options": "Unmatched\nSuggested\nMatched\nRejected"},
+    {"fieldname": "matched", "fieldtype": "Check", "label": "Matched"},
+    {"fieldname": "reconciliation_match", "fieldtype": "Data", "label": "Reconciliation Match"}
+  ],
+  "istable": 1,
+  "module": "Advanced Finance",
+  "name": "Supplier ERP Ledger Line"
+}
