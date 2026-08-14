@@ -1,5 +1,5 @@
 [project]
-name = "adv-finance"
+name = "adv_finance"
 version = "0.1.0"
 description = "Advanced finance controls and reconciliation extensions for ERPNext"
 authors = [{ name = "Anantdv" }]
