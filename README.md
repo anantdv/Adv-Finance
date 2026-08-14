@@ -77,12 +77,15 @@ Implemented:
 - Payment Hold
 - Payment Proposal
 - Payment Run
+- Account Reconciliation Template
+- Account Reconciliation
+- Account Reconciliation Period
 
 In development:
 
 - Payment Order integration
 - Expanded approval workflows
-- Balance Sheet Account Reconciliation
+- ERPNext v16 integration validation for account reconciliation providers
 
 Planned:
 

@@ -1,13 +1,14 @@
 import sys
 import types
 import unittest
+from datetime import date
 from decimal import Decimal
 
 
-frappe = types.ModuleType("frappe")
+frappe = sys.modules.get("frappe") or types.ModuleType("frappe")
 frappe.throw = lambda message: (_ for _ in ()).throw(Exception(message))
-utils = types.ModuleType("frappe.utils")
-utils.getdate = lambda value: __import__("datetime").date.fromisoformat(value)
+utils = sys.modules.get("frappe.utils") or types.ModuleType("frappe.utils")
+utils.getdate = lambda value: value if isinstance(value, date) else date.fromisoformat(value)
 frappe.utils = utils
 sys.modules.setdefault("frappe", frappe)
 sys.modules.setdefault("frappe.utils", utils)

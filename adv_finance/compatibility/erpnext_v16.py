@@ -243,3 +243,84 @@ def create_draft_supplier_payment_entry(payment_run, supplier: str, invoices) ->
         )
     payment_entry.insert()
     return payment_entry
+
+
+def get_gl_account_balance(company: str, account: str, from_date, to_date) -> dict[str, Any]:
+    """Return GL movement using the same sign convention as GL Entry.
+
+    Debit balances are positive and credit balances are negative. The query is
+    read-only, parameterized, and isolated here for validation against ERPNext v16
+    General Ledger and Trial Balance reports in the deployment bench.
+    """
+
+    opening = frappe.db.sql(
+        """
+        select coalesce(sum(debit - credit), 0) as balance
+        from `tabGL Entry`
+        where company = %(company)s
+          and account = %(account)s
+          and posting_date < %(from_date)s
+          and is_cancelled = 0
+        """,
+        {"company": company, "account": account, "from_date": from_date},
+        as_dict=True,
+    )
+    movement = frappe.db.sql(
+        """
+        select coalesce(sum(debit), 0) as debit, coalesce(sum(credit), 0) as credit
+        from `tabGL Entry`
+        where company = %(company)s
+          and account = %(account)s
+          and posting_date between %(from_date)s and %(to_date)s
+          and is_cancelled = 0
+        """,
+        {"company": company, "account": account, "from_date": from_date, "to_date": to_date},
+        as_dict=True,
+    )
+    opening_balance = Decimal(str(opening[0].balance if opening else 0))
+    period_debit = Decimal(str(movement[0].debit if movement else 0))
+    period_credit = Decimal(str(movement[0].credit if movement else 0))
+    return {
+        "opening_balance": opening_balance,
+        "period_debit": period_debit,
+        "period_credit": period_credit,
+        "closing_balance": opening_balance + period_debit - period_credit,
+        "currency": frappe.db.get_value("Account", account, "account_currency"),
+    }
+
+
+def get_party_subledger_balance(company: str, account: str, party_type: str, to_date) -> Decimal:
+    result = frappe.db.sql(
+        """
+        select coalesce(sum(debit - credit), 0) as balance
+        from `tabGL Entry`
+        where company = %(company)s
+          and account = %(account)s
+          and party_type = %(party_type)s
+          and posting_date <= %(to_date)s
+          and is_cancelled = 0
+        """,
+        {"company": company, "account": account, "party_type": party_type, "to_date": to_date},
+        as_dict=True,
+    )
+    return Decimal(str(result[0].balance if result else 0))
+
+
+def get_party_subledger_items(company: str, account: str, party_type: str, to_date) -> list[dict[str, Any]]:
+    return frappe.db.sql(
+        """
+        select party, voucher_type, voucher_no, posting_date,
+               sum(debit) as debit, sum(credit) as credit, sum(debit - credit) as amount
+        from `tabGL Entry`
+        where company = %(company)s
+          and account = %(account)s
+          and party_type = %(party_type)s
+          and posting_date <= %(to_date)s
+          and is_cancelled = 0
+        group by party, voucher_type, voucher_no, posting_date
+        having abs(amount) > 0.000001
+        order by posting_date, party, voucher_no
+        """,
+        {"company": company, "account": account, "party_type": party_type, "to_date": to_date},
+        as_dict=True,
+    )

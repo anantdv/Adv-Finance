@@ -1,0 +1,31 @@
+{
+  "actions": [],
+  "autoname": "field:period_name",
+  "creation": "2026-08-14 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": ["company", "period_name", "period_start", "period_end", "status", "summary_section", "total_accounts", "prepared", "pending_review", "approved", "exceptions"],
+  "fields": [
+    {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "period_name", "fieldtype": "Data", "label": "Period Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "period_start", "fieldtype": "Date", "label": "Period Start", "reqd": 1},
+    {"fieldname": "period_end", "fieldtype": "Date", "label": "Period End", "reqd": 1, "in_list_view": 1},
+    {"default": "Draft", "fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nOpen\nIn Progress\nReview\nCompleted\nClosed", "in_list_view": 1},
+    {"fieldname": "summary_section", "fieldtype": "Section Break", "label": "Summary"},
+    {"fieldname": "total_accounts", "fieldtype": "Int", "label": "Total Accounts", "read_only": 1},
+    {"fieldname": "prepared", "fieldtype": "Int", "label": "Prepared", "read_only": 1},
+    {"fieldname": "pending_review", "fieldtype": "Int", "label": "Pending Review", "read_only": 1},
+    {"fieldname": "approved", "fieldtype": "Int", "label": "Approved", "read_only": 1},
+    {"fieldname": "exceptions", "fieldtype": "Int", "label": "Exceptions", "read_only": 1}
+  ],
+  "module": "Advanced Finance",
+  "name": "Account Reconciliation Period",
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1},
+    {"role": "Supplier Reconciliation Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1},
+    {"role": "Supplier Reconciliation User", "read": 1, "write": 1, "create": 1, "email": 1, "export": 1, "print": 1}
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

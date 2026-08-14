@@ -18,10 +18,13 @@ doctype_js = {
     "Supplier Reconciliation": "advanced_finance/doctype/supplier_reconciliation/supplier_reconciliation.js",
     "Payment Proposal": "advanced_finance/doctype/payment_proposal/payment_proposal.js",
     "Payment Run": "advanced_finance/doctype/payment_run/payment_run.js",
+    "Account Reconciliation": "advanced_finance/doctype/account_reconciliation/account_reconciliation.js",
+    "Account Reconciliation Period": "advanced_finance/doctype/account_reconciliation_period/account_reconciliation_period.js",
 }
 
 doctype_list_js = {
     "Supplier Reconciliation": "advanced_finance/doctype/supplier_reconciliation/supplier_reconciliation_list.js",
     "Payment Proposal": "advanced_finance/doctype/payment_proposal/payment_proposal_list.js",
     "Payment Run": "advanced_finance/doctype/payment_run/payment_run_list.js",
+    "Account Reconciliation": "advanced_finance/doctype/account_reconciliation/account_reconciliation_list.js",
 }

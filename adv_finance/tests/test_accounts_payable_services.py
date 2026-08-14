@@ -5,11 +5,11 @@ from datetime import date
 from decimal import Decimal
 
 
-frappe = types.ModuleType("frappe")
+frappe = sys.modules.get("frappe") or types.ModuleType("frappe")
 frappe.throw = lambda message: (_ for _ in ()).throw(Exception(message))
 sys.modules.setdefault("frappe", frappe)
 
-utils = types.ModuleType("frappe.utils")
+utils = sys.modules.get("frappe.utils") or types.ModuleType("frappe.utils")
 utils.getdate = lambda value: value if isinstance(value, date) else date.fromisoformat(value)
 utils.nowdate = lambda: "2026-08-14"
 utils.date_diff = lambda left, right: (utils.getdate(left) - utils.getdate(right)).days
