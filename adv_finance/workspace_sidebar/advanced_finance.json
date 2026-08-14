@@ -1,0 +1,284 @@
+{
+  "doctype": "Workspace Sidebar",
+  "title": "Advanced Finance",
+  "header_icon": "badge-dollar-sign",
+  "standard": 1,
+  "app": "adv_finance",
+  "module": "Advanced Finance",
+  "items": [
+    {
+      "label": "Home",
+      "type": "Link",
+      "link_type": "Workspace",
+      "link_to": "Advanced Finance",
+      "icon": "home",
+      "idx": 1
+    },
+    {
+      "label": "Accounts Payable",
+      "type": "Section Break",
+      "icon": "arrow-left-right",
+      "collapsible": 1,
+      "indent": 1,
+      "keep_closed": 0,
+      "show_arrow": 1,
+      "idx": 2
+    },
+    {
+      "label": "Supplier Reconciliation",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Supplier Reconciliation",
+      "icon": "list",
+      "child": 1,
+      "idx": 3
+    },
+    {
+      "label": "Supplier Statement Template",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Supplier Statement Template",
+      "icon": "file-text",
+      "child": 1,
+      "idx": 4
+    },
+    {
+      "label": "Supplier Reconciliation History",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Supplier Reconciliation History",
+      "icon": "history",
+      "child": 1,
+      "idx": 5
+    },
+    {
+      "label": "Open Supplier Reconciliation Exceptions",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Open Supplier Reconciliation Exceptions",
+      "icon": "circle-alert",
+      "child": 1,
+      "idx": 6
+    },
+    {
+      "label": "Supplier Reconciliation Manual",
+      "type": "Link",
+      "link_type": "Page",
+      "link_to": "supplier-reconciliation-manual",
+      "icon": "book-open",
+      "child": 1,
+      "idx": 7
+    },
+    {
+      "label": "Payment Proposal",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Payment Proposal",
+      "icon": "file-check",
+      "child": 1,
+      "idx": 8
+    },
+    {
+      "label": "Payment Run",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Payment Run",
+      "icon": "send",
+      "child": 1,
+      "idx": 9
+    },
+    {
+      "label": "Payment Holds",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Payment Hold",
+      "icon": "pause-circle",
+      "child": 1,
+      "idx": 10
+    },
+    {
+      "label": "Accruals",
+      "type": "Section Break",
+      "icon": "calendar-days",
+      "collapsible": 1,
+      "indent": 1,
+      "keep_closed": 0,
+      "show_arrow": 1,
+      "idx": 11
+    },
+    {
+      "label": "Accrual Register",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Accrual Register",
+      "icon": "table",
+      "child": 1,
+      "idx": 12
+    },
+    {
+      "label": "Accruals",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Accrual",
+      "icon": "calendar-plus",
+      "child": 1,
+      "idx": 13
+    },
+    {
+      "label": "Accrual Exceptions",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Accrual Exceptions",
+      "icon": "circle-alert",
+      "child": 1,
+      "idx": 14
+    },
+    {
+      "label": "Accrual Ageing",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Accrual Ageing",
+      "icon": "clock",
+      "child": 1,
+      "idx": 15
+    },
+    {
+      "label": "Accrual Variance Analysis",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Accrual Variance Analysis",
+      "icon": "chart-no-axes-column",
+      "child": 1,
+      "idx": 16
+    },
+    {
+      "label": "Account Reconciliation",
+      "type": "Section Break",
+      "icon": "scale",
+      "collapsible": 1,
+      "indent": 1,
+      "keep_closed": 0,
+      "show_arrow": 1,
+      "idx": 17
+    },
+    {
+      "label": "Reconciliation Period",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Account Reconciliation Period",
+      "icon": "calendar-range",
+      "child": 1,
+      "idx": 18
+    },
+    {
+      "label": "Account Reconciliation",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Account Reconciliation",
+      "icon": "scale",
+      "child": 1,
+      "idx": 19
+    },
+    {
+      "label": "Reconciliation Templates",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Account Reconciliation Template",
+      "icon": "layout-template",
+      "child": 1,
+      "idx": 20
+    },
+    {
+      "label": "Open Reconciling Items",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Open Reconciling Items",
+      "icon": "list-checks",
+      "child": 1,
+      "idx": 21
+    },
+    {
+      "label": "Account Reconciliation Status",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Account Reconciliation Status",
+      "icon": "chart-no-axes-column",
+      "child": 1,
+      "idx": 22
+    },
+    {
+      "label": "Aged Reconciling Items",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Aged Reconciling Items",
+      "icon": "clock",
+      "child": 1,
+      "idx": 23
+    },
+    {
+      "label": "Reconciliation Exceptions",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Reconciliation Exceptions",
+      "icon": "circle-alert",
+      "child": 1,
+      "idx": 24
+    },
+    {
+      "label": "Monitoring",
+      "type": "Section Break",
+      "icon": "monitor",
+      "collapsible": 1,
+      "indent": 1,
+      "keep_closed": 0,
+      "show_arrow": 1,
+      "idx": 25
+    },
+    {
+      "label": "Payment Run Exceptions",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Payment Run Exceptions",
+      "icon": "circle-alert",
+      "child": 1,
+      "idx": 26
+    },
+    {
+      "label": "Reports",
+      "type": "Section Break",
+      "icon": "file-bar-chart",
+      "collapsible": 1,
+      "indent": 1,
+      "keep_closed": 0,
+      "show_arrow": 1,
+      "idx": 27
+    },
+    {
+      "label": "Payment Proposal Register",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Payment Proposal Register",
+      "icon": "table",
+      "child": 1,
+      "idx": 28
+    },
+    {
+      "label": "Payment Run Register",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Payment Run Register",
+      "icon": "table",
+      "child": 1,
+      "idx": 29
+    },
+    {
+      "label": "Payment Hold Register",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Payment Hold Register",
+      "icon": "table",
+      "child": 1,
+      "idx": 30
+    }
+  ]
+}
