@@ -20,6 +20,7 @@ doctype_js = {
     "Payment Run": "advanced_finance/doctype/payment_run/payment_run.js",
     "Account Reconciliation": "advanced_finance/doctype/account_reconciliation/account_reconciliation.js",
     "Account Reconciliation Period": "advanced_finance/doctype/account_reconciliation_period/account_reconciliation_period.js",
+    "Accrual": "advanced_finance/doctype/accrual/accrual.js",
 }
 
 doctype_list_js = {
@@ -27,4 +28,11 @@ doctype_list_js = {
     "Payment Proposal": "advanced_finance/doctype/payment_proposal/payment_proposal_list.js",
     "Payment Run": "advanced_finance/doctype/payment_run/payment_run_list.js",
     "Account Reconciliation": "advanced_finance/doctype/account_reconciliation/account_reconciliation_list.js",
+    "Accrual": "advanced_finance/doctype/accrual/accrual_list.js",
+}
+
+scheduler_events = {
+    "daily": [
+        "adv_finance.services.accrual.accrual_reversal_service.create_due_reversal_drafts",
+    ]
 }

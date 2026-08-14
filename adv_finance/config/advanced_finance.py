@@ -141,6 +141,51 @@ def get_data():
             ],
         },
         {
+            "label": _("Accruals"),
+            "icon": "octicon octicon-calendar",
+            "items": [
+                {
+                    "type": "report",
+                    "name": "Accrual Register",
+                    "doctype": "Accrual",
+                    "label": _("Accrual Register"),
+                    "is_query_report": True,
+                    "onboard": 0,
+                },
+                {
+                    "type": "doctype",
+                    "name": "Accrual",
+                    "label": _("Accruals"),
+                    "description": _("Create, approve, reverse, and match expense accruals."),
+                    "onboard": 1,
+                },
+                {
+                    "type": "report",
+                    "name": "Accrual Exceptions",
+                    "doctype": "Accrual",
+                    "label": _("Accrual Exceptions"),
+                    "is_query_report": True,
+                    "onboard": 0,
+                },
+                {
+                    "type": "report",
+                    "name": "Accrual Ageing",
+                    "doctype": "Accrual",
+                    "label": _("Accrual Ageing"),
+                    "is_query_report": True,
+                    "onboard": 0,
+                },
+                {
+                    "type": "report",
+                    "name": "Accrual Variance Analysis",
+                    "doctype": "Accrual",
+                    "label": _("Accrual Variance Analysis"),
+                    "is_query_report": True,
+                    "onboard": 0,
+                },
+            ],
+        },
+        {
             "label": _("Reports"),
             "icon": "octicon octicon-file",
             "items": [

@@ -14,7 +14,9 @@ matching, classify exceptions, and close reconciliations with an audit trail.
 - Database: MariaDB-compatible Frappe deployment
 - UI: Standard Frappe Desk
 
-This app does not modify ERPNext core and does not post accounting transactions.
+This app does not modify ERPNext core and never writes GL Entry or Payment
+Ledger Entry records directly. Control workflows may create standard draft
+ERPNext accounting documents, but submission and GL posting remain in ERPNext.
 Supplier Reconciliation is read-only from a General Ledger perspective.
 
 ## Installation
@@ -80,16 +82,17 @@ Implemented:
 - Account Reconciliation Template
 - Account Reconciliation
 - Account Reconciliation Period
+- Accrual Management
 
 In development:
 
 - Payment Order integration
 - Expanded approval workflows
 - ERPNext v16 integration validation for account reconciliation providers
+- ERPNext v16 integration validation for accrual Journal Entry reversal
 
 Planned:
 
-- Accrual Management
 - Financial Close Management
 - AR Collections and Credit Control
 - Treasury and Cash Forecasting
@@ -102,9 +105,11 @@ accounting postings are generated through standard ERPNext accounting documents.
 
 ## Accounting Safety
 
-Supplier Reconciliation never inserts, updates, or deletes `GL Entry` or
-`Payment Ledger Entry` records. It reads ERPNext accounting data and records the
-reconciliation result in ADV Finance DocTypes only.
+ADV Finance never inserts, updates, or deletes `GL Entry` or `Payment Ledger
+Entry` records. Supplier Reconciliation reads ERPNext accounting data and records
+the reconciliation result in ADV Finance DocTypes only. Accrual Management
+creates draft ERPNext Journal Entries for accruals and reversals, and ERPNext
+remains responsible for validation, submission, and GL posting.
 
 ## Testing
 

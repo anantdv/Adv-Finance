@@ -1,6 +1,6 @@
 {
   "charts": [],
-  "content": "[{\"id\":\"accounts_payable\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"shortcut_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation\",\"col\":3}},{\"id\":\"shortcut_template\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Statement Template\",\"col\":3}},{\"id\":\"report_history\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation History\",\"col\":3}},{\"id\":\"report_exceptions\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Supplier Reconciliation Exceptions\",\"col\":3}},{\"id\":\"manual_supplier_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation Manual\",\"col\":3}},{\"id\":\"payment_proposal_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Proposal\",\"col\":3}},{\"id\":\"payment_run_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run\",\"col\":3}},{\"id\":\"payment_hold_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Holds\",\"col\":3}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"payment_run_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run Exceptions\",\"col\":3}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"payment_proposal_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Proposal Register\",\"col\":3}},{\"id\":\"payment_run_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run Register\",\"col\":3}},{\"id\":\"payment_hold_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Hold Register\",\"col\":3}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_period_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reconciliation Period\",\"col\":3}},{\"id\":\"account_reconciliation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Account Reconciliation\",\"col\":3}},{\"id\":\"account_reconciliation_template_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reconciliation Templates\",\"col\":3}},{\"id\":\"open_reconciling_items_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Reconciling Items\",\"col\":3}},{\"id\":\"account_reconciliation_status_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Account Reconciliation Status\",\"col\":3}},{\"id\":\"aged_reconciliation_items_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Aged Reconciling Items\",\"col\":3}},{\"id\":\"reconciliation_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reconciliation Exceptions\",\"col\":3}}]",
+  "content": "[{\"id\":\"accounts_payable\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"shortcut_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation\",\"col\":3}},{\"id\":\"shortcut_template\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Statement Template\",\"col\":3}},{\"id\":\"report_history\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation History\",\"col\":3}},{\"id\":\"report_exceptions\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Supplier Reconciliation Exceptions\",\"col\":3}},{\"id\":\"manual_supplier_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation Manual\",\"col\":3}},{\"id\":\"payment_proposal_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Proposal\",\"col\":3}},{\"id\":\"payment_run_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run\",\"col\":3}},{\"id\":\"payment_hold_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Holds\",\"col\":3}},{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accrual_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accrual Register\",\"col\":3}},{\"id\":\"accrual_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accruals\",\"col\":3}},{\"id\":\"accrual_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accrual Exceptions\",\"col\":3}},{\"id\":\"accrual_ageing_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accrual Ageing\",\"col\":3}},{\"id\":\"accrual_variance_analysis_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accrual Variance Analysis\",\"col\":3}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"payment_run_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run Exceptions\",\"col\":3}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"payment_proposal_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Proposal Register\",\"col\":3}},{\"id\":\"payment_run_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run Register\",\"col\":3}},{\"id\":\"payment_hold_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Hold Register\",\"col\":3}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_period_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reconciliation Period\",\"col\":3}},{\"id\":\"account_reconciliation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Account Reconciliation\",\"col\":3}},{\"id\":\"account_reconciliation_template_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reconciliation Templates\",\"col\":3}},{\"id\":\"open_reconciling_items_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Reconciling Items\",\"col\":3}},{\"id\":\"account_reconciliation_status_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Account Reconciliation Status\",\"col\":3}},{\"id\":\"aged_reconciliation_items_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Aged Reconciling Items\",\"col\":3}},{\"id\":\"reconciliation_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reconciliation Exceptions\",\"col\":3}}]",
   "creation": "2026-08-13 00:00:00.000000",
   "docstatus": 0,
   "doctype": "Workspace",
@@ -154,6 +154,55 @@
       "type": "Link"
     },
     {
+      "label": "Accruals",
+      "type": "Card Break"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Accrual Register",
+      "link_to": "Accrual Register",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Accruals",
+      "link_to": "Accrual",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Accrual Exceptions",
+      "link_to": "Accrual Exceptions",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Accrual Ageing",
+      "link_to": "Accrual Ageing",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Accrual Variance Analysis",
+      "link_to": "Accrual Variance Analysis",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
       "label": "Monitoring",
       "type": "Card Break"
     },
@@ -200,6 +249,7 @@
   ],
   "module": "Advanced Finance",
   "name": "Advanced Finance",
+  "parent_page": "",
   "public": 1,
   "roles": [
     {
@@ -334,6 +384,37 @@
       "color": "Orange",
       "label": "Reconciliation Exceptions",
       "link_to": "Reconciliation Exceptions",
+      "type": "Report"
+    },
+    {
+      "color": "Green",
+      "label": "Accrual Register",
+      "link_to": "Accrual Register",
+      "type": "Report"
+    },
+    {
+      "color": "Blue",
+      "label": "Accruals",
+      "link_to": "Accrual",
+      "type": "DocType",
+      "doc_view": "List"
+    },
+    {
+      "color": "Orange",
+      "label": "Accrual Exceptions",
+      "link_to": "Accrual Exceptions",
+      "type": "Report"
+    },
+    {
+      "color": "Orange",
+      "label": "Accrual Ageing",
+      "link_to": "Accrual Ageing",
+      "type": "Report"
+    },
+    {
+      "color": "Green",
+      "label": "Accrual Variance Analysis",
+      "link_to": "Accrual Variance Analysis",
       "type": "Report"
     }
   ],

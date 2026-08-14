@@ -1,0 +1,25 @@
+{
+  "actions": [],
+  "creation": "2026-08-14 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["accrual", "purchase_invoice", "exception_type", "severity", "description", "amount", "status", "assigned_to", "resolution_notes", "resolved_by", "resolved_on"],
+  "fields": [
+    {"fieldname": "accrual", "fieldtype": "Link", "label": "Accrual", "options": "Accrual", "read_only": 1},
+    {"fieldname": "purchase_invoice", "fieldtype": "Link", "label": "Purchase Invoice", "options": "Purchase Invoice"},
+    {"fieldname": "exception_type", "fieldtype": "Select", "label": "Exception Type", "options": "Missing Reversal\nDuplicate Accrual\nDuplicate Match\nPurchase Invoice Cancelled\nPurchase Invoice Changed\nOvermatched Actual\nAmount Variance\nCurrency Mismatch\nAccount Mismatch\nMissing Evidence\nUnapproved Accrual\nJournal Entry Missing\nJournal Entry Cancelled\nReversal Journal Missing\nOverdue Unmatched Accrual\nOther", "in_list_view": 1},
+    {"fieldname": "severity", "fieldtype": "Select", "label": "Severity", "options": "Critical\nHigh\nMedium\nLow", "default": "Medium", "in_list_view": 1},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+    {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Open\nInvestigating\nResolved\nIgnored", "default": "Open", "in_list_view": 1},
+    {"fieldname": "assigned_to", "fieldtype": "Link", "label": "Assigned To", "options": "User"},
+    {"fieldname": "resolution_notes", "fieldtype": "Small Text", "label": "Resolution Notes"},
+    {"fieldname": "resolved_by", "fieldtype": "Link", "label": "Resolved By", "options": "User", "read_only": 1},
+    {"fieldname": "resolved_on", "fieldtype": "Datetime", "label": "Resolved On", "read_only": 1}
+  ],
+  "istable": 1,
+  "module": "Advanced Finance",
+  "name": "Accrual Exception",
+  "track_changes": 1
+}

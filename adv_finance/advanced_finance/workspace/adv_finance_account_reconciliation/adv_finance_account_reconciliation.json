@@ -1,0 +1,37 @@
+{
+  "charts": [],
+  "content": "[{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"reconciliation_period_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reconciliation Period\",\"col\":3}},{\"id\":\"account_reconciliation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Account Reconciliation\",\"col\":3}},{\"id\":\"reconciliation_templates_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reconciliation Templates\",\"col\":3}},{\"id\":\"open_reconciling_items_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Reconciling Items\",\"col\":3}},{\"id\":\"account_reconciliation_status_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Account Reconciliation Status\",\"col\":3}},{\"id\":\"aged_reconciling_items_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Aged Reconciling Items\",\"col\":3}},{\"id\":\"reconciliation_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reconciliation Exceptions\",\"col\":3}}]",
+  "creation": "2026-08-14 00:00:00.000000",
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "hide_custom": 0,
+  "idx": 0,
+  "indicator_color": "blue",
+  "is_hidden": 0,
+  "label": "Account Reconciliation",
+  "links": [
+    {"label": "Reconciliation Period", "link_to": "Account Reconciliation Period", "link_type": "DocType", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0},
+    {"label": "Account Reconciliation", "link_to": "Account Reconciliation", "link_type": "DocType", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0},
+    {"label": "Reconciliation Templates", "link_to": "Account Reconciliation Template", "link_type": "DocType", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0},
+    {"label": "Open Reconciling Items", "link_to": "Open Reconciling Items", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
+    {"label": "Account Reconciliation Status", "link_to": "Account Reconciliation Status", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
+    {"label": "Aged Reconciling Items", "link_to": "Aged Reconciling Items", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
+    {"label": "Reconciliation Exceptions", "link_to": "Reconciliation Exceptions", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0}
+  ],
+  "module": "Advanced Finance",
+  "name": "ADV Finance Account Reconciliation",
+  "parent_page": "Advanced Finance",
+  "public": 1,
+  "roles": [{"role": "System Manager"}, {"role": "Supplier Reconciliation User"}, {"role": "Supplier Reconciliation Manager"}],
+  "sequence_id": 3,
+  "shortcuts": [
+    {"label": "Reconciliation Period", "link_to": "Account Reconciliation Period", "type": "DocType", "doc_view": "List", "color": "Blue"},
+    {"label": "Account Reconciliation", "link_to": "Account Reconciliation", "type": "DocType", "doc_view": "List", "color": "Blue"},
+    {"label": "Reconciliation Templates", "link_to": "Account Reconciliation Template", "type": "DocType", "doc_view": "List", "color": "Blue"},
+    {"label": "Open Reconciling Items", "link_to": "Open Reconciling Items", "type": "Report", "color": "Orange"},
+    {"label": "Account Reconciliation Status", "link_to": "Account Reconciliation Status", "type": "Report", "color": "Green"},
+    {"label": "Aged Reconciling Items", "link_to": "Aged Reconciling Items", "type": "Report", "color": "Orange"},
+    {"label": "Reconciliation Exceptions", "link_to": "Reconciliation Exceptions", "type": "Report", "color": "Orange"}
+  ],
+  "title": "Account Reconciliation"
+}

@@ -324,3 +324,142 @@ def get_party_subledger_items(company: str, account: str, party_type: str, to_da
         {"company": company, "account": account, "party_type": party_type, "to_date": to_date},
         as_dict=True,
     )
+
+
+def create_draft_accrual_journal_entry(accrual) -> Any:
+    _validate_accrual_accounts(accrual)
+    journal_entry = frappe.new_doc("Journal Entry")
+    journal_entry.update(
+        {
+            "voucher_type": "Journal Entry",
+            "company": accrual.company,
+            "posting_date": accrual.posting_date,
+            "finance_book": accrual.finance_book,
+            "user_remark": f"ADV Finance Accrual {accrual.name}: {accrual.description or ''}",
+        }
+    )
+    journal_entry.append(
+        "accounts",
+        {
+            "account": accrual.expense_account,
+            "debit_in_account_currency": accrual.accrual_amount,
+            "credit_in_account_currency": 0,
+            "cost_center": accrual.cost_center,
+            "project": accrual.project,
+        },
+    )
+    journal_entry.append(
+        "accounts",
+        {
+            "account": accrual.accrual_liability_account,
+            "debit_in_account_currency": 0,
+            "credit_in_account_currency": accrual.accrual_amount,
+            "cost_center": accrual.cost_center,
+            "project": accrual.project,
+        },
+    )
+    journal_entry.insert()
+    return journal_entry
+
+
+def create_draft_accrual_reversal_journal_entry(accrual) -> Any:
+    _validate_accrual_accounts(accrual)
+    journal_entry = frappe.new_doc("Journal Entry")
+    journal_entry.update(
+        {
+            "voucher_type": "Journal Entry",
+            "company": accrual.company,
+            "posting_date": accrual.reversal_date,
+            "finance_book": accrual.finance_book,
+            "user_remark": f"ADV Finance Accrual Reversal {accrual.name}: {accrual.description or ''}",
+        }
+    )
+    journal_entry.append(
+        "accounts",
+        {
+            "account": accrual.accrual_liability_account,
+            "debit_in_account_currency": accrual.accrual_amount,
+            "credit_in_account_currency": 0,
+            "cost_center": accrual.cost_center,
+            "project": accrual.project,
+        },
+    )
+    journal_entry.append(
+        "accounts",
+        {
+            "account": accrual.expense_account,
+            "debit_in_account_currency": 0,
+            "credit_in_account_currency": accrual.accrual_amount,
+            "cost_center": accrual.cost_center,
+            "project": accrual.project,
+        },
+    )
+    journal_entry.insert()
+    return journal_entry
+
+
+def get_journal_entry_docstatus(journal_entry: str | None) -> int | None:
+    if not journal_entry:
+        return None
+    return frappe.db.get_value("Journal Entry", journal_entry, "docstatus")
+
+
+def get_purchase_invoice_expense_candidates(
+    company: str,
+    supplier: str | None = None,
+    expense_account: str | None = None,
+    currency: str | None = None,
+    from_date=None,
+    to_date=None,
+) -> list[dict[str, Any]]:
+    conditions = ["pi.company = %(company)s", "pi.docstatus = 1"]
+    values: dict[str, Any] = {"company": company}
+    if supplier:
+        conditions.append("pi.supplier = %(supplier)s")
+        values["supplier"] = supplier
+    if currency:
+        conditions.append("pi.currency = %(currency)s")
+        values["currency"] = currency
+    if expense_account:
+        conditions.append("item.expense_account = %(expense_account)s")
+        values["expense_account"] = expense_account
+    if from_date:
+        conditions.append("pi.posting_date >= %(from_date)s")
+        values["from_date"] = from_date
+    if to_date:
+        conditions.append("pi.posting_date <= %(to_date)s")
+        values["to_date"] = to_date
+
+    return frappe.db.sql(
+        f"""
+        select
+            pi.name as purchase_invoice, item.name as purchase_invoice_item,
+            pi.company, pi.supplier, pi.supplier_name, pi.currency, pi.posting_date,
+            pi.bill_date, item.expense_account, item.cost_center, item.project,
+            item.amount as invoice_amount, item.description
+        from `tabPurchase Invoice` pi
+        inner join `tabPurchase Invoice Item` item on item.parent = pi.name
+        where {" and ".join(conditions)}
+        order by pi.posting_date desc, pi.name desc, item.idx asc
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_purchase_invoice_docstatus(purchase_invoice: str | None) -> int | None:
+    if not purchase_invoice:
+        return None
+    return frappe.db.get_value("Purchase Invoice", purchase_invoice, "docstatus")
+
+
+def _validate_accrual_accounts(accrual) -> None:
+    if not accrual.company:
+        frappe.throw("Company is required.")
+    for field in ("expense_account", "accrual_liability_account"):
+        account = accrual.get(field)
+        if not account:
+            frappe.throw(f"{field.replace('_', ' ').title()} is required.")
+        account_company = frappe.db.get_value("Account", account, "company")
+        if account_company and account_company != accrual.company:
+            frappe.throw(f"Account {account} does not belong to company {accrual.company}.")

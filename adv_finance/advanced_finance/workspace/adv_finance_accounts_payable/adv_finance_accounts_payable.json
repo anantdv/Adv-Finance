@@ -1,0 +1,39 @@
+{
+  "charts": [],
+  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"supplier_reconciliation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation\",\"col\":3}},{\"id\":\"supplier_statement_template_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Statement Template\",\"col\":3}},{\"id\":\"supplier_reconciliation_history_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation History\",\"col\":3}},{\"id\":\"open_supplier_reconciliation_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Supplier Reconciliation Exceptions\",\"col\":3}},{\"id\":\"supplier_reconciliation_manual_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation Manual\",\"col\":3}},{\"id\":\"payment_proposal_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Proposal\",\"col\":3}},{\"id\":\"payment_run_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run\",\"col\":3}},{\"id\":\"payment_holds_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Holds\",\"col\":3}}]",
+  "creation": "2026-08-14 00:00:00.000000",
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "hide_custom": 0,
+  "idx": 0,
+  "indicator_color": "blue",
+  "is_hidden": 0,
+  "label": "Accounts Payable",
+  "links": [
+    {"label": "Supplier Reconciliation", "link_to": "Supplier Reconciliation", "link_type": "DocType", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0},
+    {"label": "Supplier Statement Template", "link_to": "Supplier Statement Template", "link_type": "DocType", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0},
+    {"label": "Supplier Reconciliation History", "link_to": "Supplier Reconciliation History", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
+    {"label": "Open Supplier Reconciliation Exceptions", "link_to": "Open Supplier Reconciliation Exceptions", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
+    {"label": "Supplier Reconciliation Manual", "link_to": "supplier-reconciliation-manual", "link_type": "Page", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0},
+    {"label": "Payment Proposal", "link_to": "Payment Proposal", "link_type": "DocType", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0},
+    {"label": "Payment Run", "link_to": "Payment Run", "link_type": "DocType", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0},
+    {"label": "Payment Holds", "link_to": "Payment Hold", "link_type": "DocType", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0}
+  ],
+  "module": "Advanced Finance",
+  "name": "ADV Finance Accounts Payable",
+  "parent_page": "Advanced Finance",
+  "public": 1,
+  "roles": [{"role": "System Manager"}, {"role": "Supplier Reconciliation User"}, {"role": "Supplier Reconciliation Manager"}],
+  "sequence_id": 1,
+  "shortcuts": [
+    {"label": "Supplier Reconciliation", "link_to": "Supplier Reconciliation", "type": "DocType", "doc_view": "List", "color": "Blue"},
+    {"label": "Supplier Statement Template", "link_to": "Supplier Statement Template", "type": "DocType", "doc_view": "List", "color": "Blue"},
+    {"label": "Supplier Reconciliation History", "link_to": "Supplier Reconciliation History", "type": "Report", "color": "Green"},
+    {"label": "Open Supplier Reconciliation Exceptions", "link_to": "Open Supplier Reconciliation Exceptions", "type": "Report", "color": "Orange"},
+    {"label": "Supplier Reconciliation Manual", "link_to": "supplier-reconciliation-manual", "type": "Page", "color": "Grey"},
+    {"label": "Payment Proposal", "link_to": "Payment Proposal", "type": "DocType", "doc_view": "List", "color": "Blue"},
+    {"label": "Payment Run", "link_to": "Payment Run", "type": "DocType", "doc_view": "List", "color": "Blue"},
+    {"label": "Payment Holds", "link_to": "Payment Hold", "type": "DocType", "doc_view": "List", "color": "Orange"}
+  ],
+  "title": "Accounts Payable"
+}

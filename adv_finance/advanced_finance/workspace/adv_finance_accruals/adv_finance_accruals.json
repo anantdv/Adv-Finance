@@ -1,0 +1,33 @@
+{
+  "charts": [],
+  "content": "[{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accrual_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accrual Register\",\"col\":3}},{\"id\":\"accruals_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accruals\",\"col\":3}},{\"id\":\"accrual_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accrual Exceptions\",\"col\":3}},{\"id\":\"accrual_ageing_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accrual Ageing\",\"col\":3}},{\"id\":\"accrual_variance_analysis_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accrual Variance Analysis\",\"col\":3}}]",
+  "creation": "2026-08-14 00:00:00.000000",
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "hide_custom": 0,
+  "idx": 0,
+  "indicator_color": "blue",
+  "is_hidden": 0,
+  "label": "Accruals",
+  "links": [
+    {"label": "Accrual Register", "link_to": "Accrual Register", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
+    {"label": "Accruals", "link_to": "Accrual", "link_type": "DocType", "type": "Link", "hidden": 0, "is_query_report": 0, "onboard": 0},
+    {"label": "Accrual Exceptions", "link_to": "Accrual Exceptions", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
+    {"label": "Accrual Ageing", "link_to": "Accrual Ageing", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
+    {"label": "Accrual Variance Analysis", "link_to": "Accrual Variance Analysis", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0}
+  ],
+  "module": "Advanced Finance",
+  "name": "ADV Finance Accruals",
+  "parent_page": "Advanced Finance",
+  "public": 1,
+  "roles": [{"role": "System Manager"}, {"role": "Supplier Reconciliation User"}, {"role": "Supplier Reconciliation Manager"}],
+  "sequence_id": 2,
+  "shortcuts": [
+    {"label": "Accrual Register", "link_to": "Accrual Register", "type": "Report", "color": "Green"},
+    {"label": "Accruals", "link_to": "Accrual", "type": "DocType", "doc_view": "List", "color": "Blue"},
+    {"label": "Accrual Exceptions", "link_to": "Accrual Exceptions", "type": "Report", "color": "Orange"},
+    {"label": "Accrual Ageing", "link_to": "Accrual Ageing", "type": "Report", "color": "Orange"},
+    {"label": "Accrual Variance Analysis", "link_to": "Accrual Variance Analysis", "type": "Report", "color": "Green"}
+  ],
+  "title": "Accruals"
+}

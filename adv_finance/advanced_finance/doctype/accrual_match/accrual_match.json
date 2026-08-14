@@ -1,0 +1,27 @@
+{
+  "actions": [],
+  "creation": "2026-08-14 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["accrual", "purchase_invoice", "purchase_invoice_item", "matching_date", "accrual_amount_available", "invoice_amount", "matched_amount", "variance", "match_type", "status", "matched_by", "matched_on", "notes"],
+  "fields": [
+    {"fieldname": "accrual", "fieldtype": "Link", "label": "Accrual", "options": "Accrual", "read_only": 1},
+    {"fieldname": "purchase_invoice", "fieldtype": "Link", "label": "Purchase Invoice", "options": "Purchase Invoice", "in_list_view": 1},
+    {"fieldname": "purchase_invoice_item", "fieldtype": "Data", "label": "Purchase Invoice Item"},
+    {"fieldname": "matching_date", "fieldtype": "Date", "label": "Matching Date"},
+    {"fieldname": "accrual_amount_available", "fieldtype": "Currency", "label": "Accrual Amount Available"},
+    {"fieldname": "invoice_amount", "fieldtype": "Currency", "label": "Invoice Amount"},
+    {"fieldname": "matched_amount", "fieldtype": "Currency", "label": "Matched Amount", "in_list_view": 1},
+    {"fieldname": "variance", "fieldtype": "Currency", "label": "Variance", "read_only": 1},
+    {"fieldname": "match_type", "fieldtype": "Select", "label": "Match Type", "options": "Exact\nPartial\nManual\nSuggested\nSplit\nConsolidated", "in_list_view": 1},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Suggested\nAccepted\nRejected\nPosted\nReversed\nClosed", "default": "Suggested", "in_list_view": 1},
+    {"fieldname": "matched_by", "fieldtype": "Link", "label": "Matched By", "options": "User", "read_only": 1},
+    {"fieldname": "matched_on", "fieldtype": "Datetime", "label": "Matched On", "read_only": 1},
+    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+  ],
+  "istable": 1,
+  "module": "Advanced Finance",
+  "name": "Accrual Match",
+  "track_changes": 1
+}
