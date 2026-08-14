@@ -1,0 +1,195 @@
+{
+  "actions": [],
+  "autoname": "format:BUD-TRF-.YYYY.-.#####",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "fiscal_year",
+    "transfer_date",
+    "reason",
+    "from_section",
+    "from_account",
+    "from_cost_center",
+    "from_project",
+    "from_dimension",
+    "from_dimension_value",
+    "amount",
+    "to_section",
+    "to_account",
+    "to_cost_center",
+    "to_project",
+    "to_dimension",
+    "to_dimension_value",
+    "status",
+    "requested_by",
+    "approved_by",
+    "approved_on"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_year",
+      "fieldtype": "Link",
+      "label": "Fiscal Year",
+      "options": "Fiscal Year",
+      "reqd": 1
+    },
+    {
+      "fieldname": "transfer_date",
+      "fieldtype": "Date",
+      "label": "Transfer Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "reason",
+      "fieldtype": "Small Text",
+      "label": "Reason"
+    },
+    {
+      "fieldname": "from_section",
+      "fieldtype": "Section Break",
+      "label": "From"
+    },
+    {
+      "fieldname": "from_account",
+      "fieldtype": "Link",
+      "label": "From Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "from_cost_center",
+      "fieldtype": "Link",
+      "label": "From Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "from_project",
+      "fieldtype": "Link",
+      "label": "From Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "from_dimension",
+      "fieldtype": "Data",
+      "label": "From Dimension"
+    },
+    {
+      "fieldname": "from_dimension_value",
+      "fieldtype": "Data",
+      "label": "From Dimension Value"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1
+    },
+    {
+      "fieldname": "to_section",
+      "fieldtype": "Section Break",
+      "label": "To"
+    },
+    {
+      "fieldname": "to_account",
+      "fieldtype": "Link",
+      "label": "To Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "to_cost_center",
+      "fieldtype": "Link",
+      "label": "To Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "to_project",
+      "fieldtype": "Link",
+      "label": "To Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "to_dimension",
+      "fieldtype": "Data",
+      "label": "To Dimension"
+    },
+    {
+      "fieldname": "to_dimension_value",
+      "fieldtype": "Data",
+      "label": "To Dimension Value"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nSubmitted for Approval\nApproved\nRejected\nApplied\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "requested_by",
+      "fieldtype": "Link",
+      "label": "Requested By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_on",
+      "fieldtype": "Datetime",
+      "label": "Approved On",
+      "read_only": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Budget Transfer",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Preparer",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

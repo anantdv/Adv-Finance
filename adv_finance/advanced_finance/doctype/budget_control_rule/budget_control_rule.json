@@ -1,0 +1,141 @@
+{
+  "actions": [],
+  "autoname": "format:BUD-CTRL-.YYYY.-.#####",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "applies_to",
+    "account",
+    "cost_center",
+    "project",
+    "dimension_filters",
+    "control_basis",
+    "warning_threshold_percent",
+    "block_threshold_percent",
+    "control_level",
+    "allow_override",
+    "override_role",
+    "active"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "applies_to",
+      "fieldtype": "Select",
+      "label": "Applies To",
+      "options": "Material Request\nPurchase Order\nPurchase Invoice\nJournal Entry\nExpense Claim\nOther",
+      "reqd": 1
+    },
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "dimension_filters",
+      "fieldtype": "Small Text",
+      "label": "Dimension Filters"
+    },
+    {
+      "fieldname": "control_basis",
+      "fieldtype": "Select",
+      "label": "Control Basis",
+      "options": "Budget Only\nBudget + Actual\nBudget + Commitments\nBudget + Pre-Commitments + Commitments",
+      "default": "Budget + Commitments"
+    },
+    {
+      "fieldname": "warning_threshold_percent",
+      "fieldtype": "Percent",
+      "label": "Warning Threshold Percent",
+      "default": 80
+    },
+    {
+      "fieldname": "block_threshold_percent",
+      "fieldtype": "Percent",
+      "label": "Block Threshold Percent",
+      "default": 100
+    },
+    {
+      "fieldname": "control_level",
+      "fieldtype": "Select",
+      "label": "Control Level",
+      "options": "Informational\nWarning\nBlocking",
+      "default": "Warning"
+    },
+    {
+      "fieldname": "allow_override",
+      "fieldtype": "Check",
+      "label": "Allow Override",
+      "default": 1
+    },
+    {
+      "fieldname": "override_role",
+      "fieldtype": "Link",
+      "label": "Override Role",
+      "options": "Role"
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Budget Control Rule",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Preparer",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

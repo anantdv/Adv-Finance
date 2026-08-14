@@ -1,0 +1,172 @@
+{
+  "actions": [],
+  "autoname": "format:BUD-COM-.YYYY.-.#####",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "budget_plan",
+    "budget_line",
+    "commitment_type",
+    "source_doctype",
+    "source_document",
+    "source_line",
+    "account",
+    "cost_center",
+    "project",
+    "accounting_dimension",
+    "accounting_dimension_value",
+    "original_amount",
+    "consumed_amount",
+    "remaining_amount",
+    "currency",
+    "expected_date",
+    "status"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "budget_plan",
+      "fieldtype": "Link",
+      "label": "Budget Plan",
+      "options": "Budget Plan"
+    },
+    {
+      "fieldname": "budget_line",
+      "fieldtype": "Data",
+      "label": "Budget Line"
+    },
+    {
+      "fieldname": "commitment_type",
+      "fieldtype": "Select",
+      "label": "Commitment Type",
+      "options": "Pre-Commitment\nCommitment\nManual\nReservation",
+      "reqd": 1
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Link",
+      "label": "Source Doctype",
+      "options": "DocType"
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype"
+    },
+    {
+      "fieldname": "source_line",
+      "fieldtype": "Data",
+      "label": "Source Line"
+    },
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "accounting_dimension",
+      "fieldtype": "Data",
+      "label": "Accounting Dimension"
+    },
+    {
+      "fieldname": "accounting_dimension_value",
+      "fieldtype": "Data",
+      "label": "Accounting Dimension Value"
+    },
+    {
+      "fieldname": "original_amount",
+      "fieldtype": "Currency",
+      "label": "Original Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "consumed_amount",
+      "fieldtype": "Currency",
+      "label": "Consumed Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "remaining_amount",
+      "fieldtype": "Currency",
+      "label": "Remaining Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "expected_date",
+      "fieldtype": "Date",
+      "label": "Expected Date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nPartially Consumed\nConsumed\nReleased\nCancelled",
+      "default": "Open"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Budget Commitment",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Preparer",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

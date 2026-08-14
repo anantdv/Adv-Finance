@@ -241,6 +241,21 @@ def get_data():
             ],
         },
         {
+            "label": _("Planning & Budget"),
+            "icon": "octicon octicon-project-roadmap",
+            "items": [
+                {"type": "doctype", "name": "Budget Plan", "label": _("Budget Plans"), "description": _("Prepare, approve, version, forecast, and reforecast budgets."), "onboard": 1},
+                {"type": "report", "name": "Budget Forecast", "doctype": "Budget Plan", "label": _("Budget Forecasts"), "is_query_report": True, "onboard": 0},
+                {"type": "doctype", "name": "Budget Reservation", "label": _("Budget Reservations"), "description": _("Reserve available budget before formal procurement."), "onboard": 1},
+                {"type": "doctype", "name": "Manual Budget Commitment", "label": _("Manual Commitments"), "description": _("Track approved commitments outside ERP procurement."), "onboard": 1},
+                {"type": "doctype", "name": "Budget Transfer", "label": _("Budget Transfers"), "description": _("Move authorized budget between accounts, cost centers, and projects."), "onboard": 1},
+                {"type": "doctype", "name": "Budget Supplement", "label": _("Budget Supplements"), "description": _("Increase authorized budget without overwriting original budget."), "onboard": 1},
+                {"type": "doctype", "name": "Budget Override Request", "label": _("Budget Overrides"), "description": _("Approve one-time transaction budget overrides."), "onboard": 1},
+                {"type": "doctype", "name": "Budget Control Rule", "label": _("Budget Control Rules"), "description": _("Configure warning and blocking thresholds for commitment-aware controls."), "onboard": 1},
+                {"type": "doctype", "name": "Budget Settings", "label": _("Budget Settings"), "description": _("Configure company-specific budgeting and commitment behavior."), "onboard": 1},
+            ],
+        },
+        {
             "label": _("Monitoring"),
             "icon": "octicon octicon-device-desktop",
             "items": [

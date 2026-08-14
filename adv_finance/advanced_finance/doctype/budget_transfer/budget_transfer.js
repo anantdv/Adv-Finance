@@ -1,0 +1,1 @@
+frappe.ui.form.on("Budget Transfer", {refresh(frm) { if (!frm.is_new() && frm.doc.status === "Submitted for Approval") frm.add_custom_button("Approve", () => frappe.call({method: "adv_finance.api.budgeting.approve_budget_transfer", args: {name: frm.doc.name}, callback: () => frm.reload_doc()})); }});

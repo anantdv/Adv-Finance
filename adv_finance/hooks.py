@@ -25,6 +25,11 @@ fixtures = [
                     "Credit Manager",
                     "Treasury User",
                     "Treasury Manager",
+                    "Budget Preparer",
+                    "Budget Owner",
+                    "Budget Reviewer",
+                    "Budget Manager",
+                    "Budget Override Approver",
                 ],
             ]
         ],
@@ -57,6 +62,14 @@ doctype_js = {
     "Treasury Liquidity Threshold": "advanced_finance/doctype/treasury_liquidity_threshold/treasury_liquidity_threshold.js",
     "Treasury Forecast Exception": "advanced_finance/doctype/treasury_forecast_exception/treasury_forecast_exception.js",
     "Treasury Settings": "advanced_finance/doctype/treasury_settings/treasury_settings.js",
+    "Budget Plan": "advanced_finance/doctype/budget_plan/budget_plan.js",
+    "Manual Budget Commitment": "advanced_finance/doctype/manual_budget_commitment/manual_budget_commitment.js",
+    "Budget Reservation": "advanced_finance/doctype/budget_reservation/budget_reservation.js",
+    "Budget Transfer": "advanced_finance/doctype/budget_transfer/budget_transfer.js",
+    "Budget Supplement": "advanced_finance/doctype/budget_supplement/budget_supplement.js",
+    "Budget Control Rule": "advanced_finance/doctype/budget_control_rule/budget_control_rule.js",
+    "Budget Override Request": "advanced_finance/doctype/budget_override_request/budget_override_request.js",
+    "Budget Settings": "advanced_finance/doctype/budget_settings/budget_settings.js",
 }
 
 doctype_list_js = {
@@ -80,6 +93,14 @@ doctype_list_js = {
     "Treasury Liquidity Threshold": "advanced_finance/doctype/treasury_liquidity_threshold/treasury_liquidity_threshold_list.js",
     "Treasury Forecast Exception": "advanced_finance/doctype/treasury_forecast_exception/treasury_forecast_exception_list.js",
     "Treasury Settings": "advanced_finance/doctype/treasury_settings/treasury_settings_list.js",
+    "Budget Plan": "advanced_finance/doctype/budget_plan/budget_plan_list.js",
+    "Manual Budget Commitment": "advanced_finance/doctype/manual_budget_commitment/manual_budget_commitment_list.js",
+    "Budget Reservation": "advanced_finance/doctype/budget_reservation/budget_reservation_list.js",
+    "Budget Transfer": "advanced_finance/doctype/budget_transfer/budget_transfer_list.js",
+    "Budget Supplement": "advanced_finance/doctype/budget_supplement/budget_supplement_list.js",
+    "Budget Control Rule": "advanced_finance/doctype/budget_control_rule/budget_control_rule_list.js",
+    "Budget Override Request": "advanced_finance/doctype/budget_override_request/budget_override_request_list.js",
+    "Budget Settings": "advanced_finance/doctype/budget_settings/budget_settings_list.js",
 }
 
 scheduler_events = {

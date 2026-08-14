@@ -1,0 +1,182 @@
+{
+  "actions": [],
+  "autoname": "field:company",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "commitment_accounting_enabled",
+    "include_material_request_precommitments",
+    "include_purchase_orders",
+    "include_manual_commitments",
+    "include_budget_reservations",
+    "enforce_available_budget",
+    "allow_budget_override",
+    "default_warning_percent",
+    "default_block_percent",
+    "require_budget_approval",
+    "require_reforecast_approval",
+    "rolling_forecast_months",
+    "default_forecast_method",
+    "materiality_amount",
+    "variance_threshold_percent",
+    "forecast_variance_threshold_percent"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "commitment_accounting_enabled",
+      "fieldtype": "Check",
+      "label": "Commitment Accounting Enabled",
+      "default": 1
+    },
+    {
+      "fieldname": "include_material_request_precommitments",
+      "fieldtype": "Check",
+      "label": "Include Material Request Precommitments",
+      "default": 0
+    },
+    {
+      "fieldname": "include_purchase_orders",
+      "fieldtype": "Check",
+      "label": "Include Purchase Orders",
+      "default": 1
+    },
+    {
+      "fieldname": "include_manual_commitments",
+      "fieldtype": "Check",
+      "label": "Include Manual Commitments",
+      "default": 1
+    },
+    {
+      "fieldname": "include_budget_reservations",
+      "fieldtype": "Check",
+      "label": "Include Budget Reservations",
+      "default": 1
+    },
+    {
+      "fieldname": "enforce_available_budget",
+      "fieldtype": "Check",
+      "label": "Enforce Available Budget",
+      "default": 0
+    },
+    {
+      "fieldname": "allow_budget_override",
+      "fieldtype": "Check",
+      "label": "Allow Budget Override",
+      "default": 1
+    },
+    {
+      "fieldname": "default_warning_percent",
+      "fieldtype": "Percent",
+      "label": "Default Warning Percent",
+      "default": 80
+    },
+    {
+      "fieldname": "default_block_percent",
+      "fieldtype": "Percent",
+      "label": "Default Block Percent",
+      "default": 100
+    },
+    {
+      "fieldname": "require_budget_approval",
+      "fieldtype": "Check",
+      "label": "Require Budget Approval",
+      "default": 1
+    },
+    {
+      "fieldname": "require_reforecast_approval",
+      "fieldtype": "Check",
+      "label": "Require Reforecast Approval",
+      "default": 1
+    },
+    {
+      "fieldname": "rolling_forecast_months",
+      "fieldtype": "Int",
+      "label": "Rolling Forecast Months",
+      "default": 12
+    },
+    {
+      "fieldname": "default_forecast_method",
+      "fieldtype": "Select",
+      "label": "Default Forecast Method",
+      "options": "Manual\nPrior Year Actual\nRun Rate\nActual + Remaining Budget\nActual + Open Commitments\nActual + Department Forecast\nCustom",
+      "default": "Manual"
+    },
+    {
+      "fieldname": "materiality_amount",
+      "fieldtype": "Currency",
+      "label": "Materiality Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "variance_threshold_percent",
+      "fieldtype": "Percent",
+      "label": "Variance Threshold Percent",
+      "default": 10
+    },
+    {
+      "fieldname": "forecast_variance_threshold_percent",
+      "fieldtype": "Percent",
+      "label": "Forecast Variance Threshold Percent",
+      "default": 10
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Budget Settings",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Preparer",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Owner",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Reviewer",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

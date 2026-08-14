@@ -86,6 +86,7 @@ Implemented:
 - Month-End Financial Close Management
 - Accounts Receivable Collections and Credit Control
 - Treasury Management Phase 1
+- Advanced Budgeting and Commitment Accounting
 
 In development:
 
@@ -96,10 +97,10 @@ In development:
 - ERPNext v16 integration validation for Financial Close Period Closing Voucher and sidebar
 - ERPNext v16 integration validation for AR ageing, receipts, and credit-note creation
 - ERPNext v16 integration validation for treasury cash balances, FX rates, and forecast source queries
+- ERPNext v16 integration validation for standard Budget publication and procurement commitment fields
 
 Planned:
 
-- Budget Forecast and Commitment Accounting
 - Intercompany Reconciliation
 - Consolidation
 

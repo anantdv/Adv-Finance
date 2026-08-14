@@ -1,0 +1,144 @@
+{
+  "actions": [],
+  "autoname": "format:BUD-RES-.YYYY.-.#####",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "reservation_date",
+    "account",
+    "cost_center",
+    "project",
+    "accounting_dimension",
+    "accounting_dimension_value",
+    "amount",
+    "consumed_amount",
+    "remaining_amount",
+    "expected_commitment_date",
+    "description",
+    "source",
+    "status"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "reservation_date",
+      "fieldtype": "Date",
+      "label": "Reservation Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "accounting_dimension",
+      "fieldtype": "Data",
+      "label": "Accounting Dimension"
+    },
+    {
+      "fieldname": "accounting_dimension_value",
+      "fieldtype": "Data",
+      "label": "Accounting Dimension Value"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1
+    },
+    {
+      "fieldname": "consumed_amount",
+      "fieldtype": "Currency",
+      "label": "Consumed Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "remaining_amount",
+      "fieldtype": "Currency",
+      "label": "Remaining Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "expected_commitment_date",
+      "fieldtype": "Date",
+      "label": "Expected Commitment Date"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "source",
+      "fieldtype": "Data",
+      "label": "Source"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nPending Approval\nApproved\nPartially Consumed\nConsumed\nReleased\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Budget Reservation",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Preparer",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

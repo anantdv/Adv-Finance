@@ -1,0 +1,132 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "account",
+    "account_name",
+    "account_type",
+    "cost_center",
+    "project",
+    "department",
+    "accounting_dimension",
+    "accounting_dimension_value",
+    "annual_budget",
+    "input_currency",
+    "exchange_rate",
+    "company_currency_amount",
+    "monthly_distribution",
+    "forecast_method",
+    "remarks",
+    "periods"
+  ],
+  "fields": [
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "options": "Account",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "account_name",
+      "fieldtype": "Data",
+      "label": "Account Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "account_type",
+      "fieldtype": "Select",
+      "label": "Account Type",
+      "options": "Income\nExpense\nAsset\nLiability\nEquity\nCapex\nOther",
+      "default": "Expense"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "department",
+      "fieldtype": "Link",
+      "label": "Department",
+      "options": "Department"
+    },
+    {
+      "fieldname": "accounting_dimension",
+      "fieldtype": "Data",
+      "label": "Accounting Dimension"
+    },
+    {
+      "fieldname": "accounting_dimension_value",
+      "fieldtype": "Data",
+      "label": "Accounting Dimension Value"
+    },
+    {
+      "fieldname": "annual_budget",
+      "fieldtype": "Currency",
+      "label": "Annual Budget",
+      "default": 0,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "input_currency",
+      "fieldtype": "Link",
+      "label": "Input Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "exchange_rate",
+      "fieldtype": "Float",
+      "label": "Exchange Rate",
+      "default": 1
+    },
+    {
+      "fieldname": "company_currency_amount",
+      "fieldtype": "Currency",
+      "label": "Company Currency Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "monthly_distribution",
+      "fieldtype": "Link",
+      "label": "Monthly Distribution",
+      "options": "Monthly Distribution"
+    },
+    {
+      "fieldname": "forecast_method",
+      "fieldtype": "Select",
+      "label": "Forecast Method",
+      "options": "Manual\nPrior Year Actual\nRun Rate\nActual + Remaining Budget\nActual + Open Commitments\nActual + Department Forecast\nCustom",
+      "default": "Manual"
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    },
+    {
+      "fieldname": "periods",
+      "fieldtype": "Table",
+      "label": "Periods",
+      "options": "Budget Plan Period Line"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Budget Plan Line",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "istable": 1
+}

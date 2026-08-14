@@ -1,0 +1,179 @@
+{
+  "actions": [],
+  "autoname": "format:BUD-OVR-.YYYY.-.#####",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "source_doctype",
+    "source_document",
+    "account",
+    "cost_center",
+    "project",
+    "requested_amount",
+    "available_budget",
+    "shortfall",
+    "reason",
+    "requested_by",
+    "status",
+    "approved_by",
+    "approved_on",
+    "valid_until",
+    "used_on",
+    "approval_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Link",
+      "label": "Source Doctype",
+      "options": "DocType",
+      "reqd": 1
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype",
+      "reqd": 1
+    },
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "requested_amount",
+      "fieldtype": "Currency",
+      "label": "Requested Amount",
+      "reqd": 1
+    },
+    {
+      "fieldname": "available_budget",
+      "fieldtype": "Currency",
+      "label": "Available Budget",
+      "read_only": 1
+    },
+    {
+      "fieldname": "shortfall",
+      "fieldtype": "Currency",
+      "label": "Shortfall",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reason",
+      "fieldtype": "Small Text",
+      "label": "Reason",
+      "reqd": 1
+    },
+    {
+      "fieldname": "requested_by",
+      "fieldtype": "Link",
+      "label": "Requested By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Pending\nApproved\nRejected\nExpired\nUsed\nCancelled",
+      "default": "Pending",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_on",
+      "fieldtype": "Datetime",
+      "label": "Approved On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "valid_until",
+      "fieldtype": "Date",
+      "label": "Valid Until"
+    },
+    {
+      "fieldname": "used_on",
+      "fieldtype": "Datetime",
+      "label": "Used On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approval_notes",
+      "fieldtype": "Small Text",
+      "label": "Approval Notes"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Budget Override Request",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Preparer",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Override Approver",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Manager",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

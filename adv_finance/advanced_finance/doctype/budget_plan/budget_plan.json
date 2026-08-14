@@ -1,0 +1,319 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "company",
+    "fiscal_year",
+    "plan_name",
+    "budget_type",
+    "scope_section",
+    "cost_center",
+    "project",
+    "accounting_dimension",
+    "accounting_dimension_value",
+    "department",
+    "version_section",
+    "version_number",
+    "version_type",
+    "effective_date",
+    "created_from",
+    "change_reason",
+    "supersedes",
+    "superseded_by",
+    "period_section",
+    "from_date",
+    "to_date",
+    "status_section",
+    "status",
+    "total_section",
+    "total_income_budget",
+    "total_expense_budget",
+    "total_capex_budget",
+    "net_budget",
+    "ownership_section",
+    "prepared_by",
+    "reviewer",
+    "approver",
+    "approved_on",
+    "published_erpnext_budget",
+    "lines"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "BUD-PLAN-.YYYY.-.#####",
+      "default": "BUD-PLAN-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "fiscal_year",
+      "fieldtype": "Link",
+      "label": "Fiscal Year",
+      "options": "Fiscal Year",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "plan_name",
+      "fieldtype": "Data",
+      "label": "Plan Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "budget_type",
+      "fieldtype": "Select",
+      "label": "Budget Type",
+      "options": "Annual Budget\nOperating Budget\nCapital Budget\nProject Budget\nDepartment Budget\nRolling Forecast\nReforecast\nScenario Budget",
+      "default": "Annual Budget"
+    },
+    {
+      "fieldname": "scope_section",
+      "fieldtype": "Section Break",
+      "label": "Scope"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "accounting_dimension",
+      "fieldtype": "Data",
+      "label": "Accounting Dimension"
+    },
+    {
+      "fieldname": "accounting_dimension_value",
+      "fieldtype": "Data",
+      "label": "Accounting Dimension Value"
+    },
+    {
+      "fieldname": "department",
+      "fieldtype": "Link",
+      "label": "Department",
+      "options": "Department"
+    },
+    {
+      "fieldname": "version_section",
+      "fieldtype": "Section Break",
+      "label": "Version"
+    },
+    {
+      "fieldname": "version_number",
+      "fieldtype": "Int",
+      "label": "Version Number",
+      "default": 1
+    },
+    {
+      "fieldname": "version_type",
+      "fieldtype": "Select",
+      "label": "Version Type",
+      "options": "Working\nSubmitted\nApproved\nReforecast\nScenario\nArchive",
+      "default": "Working",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "effective_date",
+      "fieldtype": "Date",
+      "label": "Effective Date"
+    },
+    {
+      "fieldname": "created_from",
+      "fieldtype": "Link",
+      "label": "Created From",
+      "options": "Budget Plan"
+    },
+    {
+      "fieldname": "change_reason",
+      "fieldtype": "Small Text",
+      "label": "Change Reason"
+    },
+    {
+      "fieldname": "supersedes",
+      "fieldtype": "Link",
+      "label": "Supersedes",
+      "options": "Budget Plan"
+    },
+    {
+      "fieldname": "superseded_by",
+      "fieldtype": "Link",
+      "label": "Superseded By",
+      "options": "Budget Plan",
+      "read_only": 1
+    },
+    {
+      "fieldname": "period_section",
+      "fieldtype": "Section Break",
+      "label": "Period"
+    },
+    {
+      "fieldname": "from_date",
+      "fieldtype": "Date",
+      "label": "From Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "to_date",
+      "fieldtype": "Date",
+      "label": "To Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status_section",
+      "fieldtype": "Section Break",
+      "label": "Status"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nPreparing\nSubmitted\nUnder Review\nApproved\nRejected\nSuperseded\nArchived",
+      "default": "Draft",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "total_section",
+      "fieldtype": "Section Break",
+      "label": "Totals"
+    },
+    {
+      "fieldname": "total_income_budget",
+      "fieldtype": "Currency",
+      "label": "Total Income Budget",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_expense_budget",
+      "fieldtype": "Currency",
+      "label": "Total Expense Budget",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_capex_budget",
+      "fieldtype": "Currency",
+      "label": "Total Capex Budget",
+      "read_only": 1
+    },
+    {
+      "fieldname": "net_budget",
+      "fieldtype": "Currency",
+      "label": "Net Budget",
+      "read_only": 1
+    },
+    {
+      "fieldname": "ownership_section",
+      "fieldtype": "Section Break",
+      "label": "Ownership"
+    },
+    {
+      "fieldname": "prepared_by",
+      "fieldtype": "Link",
+      "label": "Prepared By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reviewer",
+      "fieldtype": "Link",
+      "label": "Reviewer",
+      "options": "User"
+    },
+    {
+      "fieldname": "approver",
+      "fieldtype": "Link",
+      "label": "Approver",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_on",
+      "fieldtype": "Datetime",
+      "label": "Approved On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "published_erpnext_budget",
+      "fieldtype": "Link",
+      "label": "Published Erpnext Budget",
+      "options": "Budget",
+      "read_only": 1
+    },
+    {
+      "fieldname": "lines",
+      "fieldtype": "Table",
+      "label": "Lines",
+      "options": "Budget Plan Line"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Budget Plan",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Preparer",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Owner",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Budget Reviewer",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

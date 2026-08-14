@@ -1,0 +1,65 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "period_start",
+    "period_end",
+    "amount",
+    "forecast_amount",
+    "actual_amount",
+    "locked",
+    "remarks"
+  ],
+  "fields": [
+    {
+      "fieldname": "period_start",
+      "fieldtype": "Date",
+      "label": "Period Start",
+      "reqd": 1
+    },
+    {
+      "fieldname": "period_end",
+      "fieldtype": "Date",
+      "label": "Period End",
+      "reqd": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "forecast_amount",
+      "fieldtype": "Currency",
+      "label": "Forecast Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "actual_amount",
+      "fieldtype": "Currency",
+      "label": "Actual Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "locked",
+      "fieldtype": "Check",
+      "label": "Locked",
+      "default": 0
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Budget Plan Period Line",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "istable": 1
+}

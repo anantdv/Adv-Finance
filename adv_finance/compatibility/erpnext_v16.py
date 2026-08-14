@@ -476,6 +476,179 @@ def get_actual_cash_movements(company: str, from_date=None, to_date=None) -> lis
     )
 
 
+def get_budget_actual_gl_amount(
+    company: str,
+    account: str,
+    from_date=None,
+    to_date=None,
+    cost_center: str | None = None,
+    project: str | None = None,
+    dimensions: dict[str, Any] | None = None,
+) -> Decimal:
+    """Return budget actual from GL using account sign conventions.
+
+    Expense and Asset/Capex budgets consume debit minus credit. Income budgets
+    consume credit minus debit. This function is read-only and intentionally
+    isolated because ERPNext Budget reports are the benchmark for deployment
+    validation.
+    """
+
+    conditions = ["gle.company = %(company)s", "gle.account = %(account)s", "gle.is_cancelled = 0"]
+    values: dict[str, Any] = {"company": company, "account": account}
+    if from_date:
+        conditions.append("gle.posting_date >= %(from_date)s")
+        values["from_date"] = from_date
+    if to_date:
+        conditions.append("gle.posting_date <= %(to_date)s")
+        values["to_date"] = to_date
+    if cost_center:
+        conditions.append("gle.cost_center = %(cost_center)s")
+        values["cost_center"] = cost_center
+    if project:
+        conditions.append("gle.project = %(project)s")
+        values["project"] = project
+    for fieldname, value in (dimensions or {}).items():
+        conditions.append(f"gle.`{fieldname}` = %({fieldname})s")
+        values[fieldname] = value
+    row = frappe.db.sql(
+        f"""
+        select coalesce(sum(gle.debit), 0) as debit, coalesce(sum(gle.credit), 0) as credit
+        from `tabGL Entry` gle
+        where {" and ".join(conditions)}
+        """,
+        values,
+        as_dict=True,
+    )
+    debit = Decimal(str(row[0].debit if row else 0))
+    credit = Decimal(str(row[0].credit if row else 0))
+    root_type = frappe.db.get_value("Account", account, "root_type")
+    return credit - debit if root_type == "Income" else debit - credit
+
+
+def get_purchase_order_commitments(
+    company: str,
+    account: str | None = None,
+    cost_center: str | None = None,
+    project: str | None = None,
+    as_of_date=None,
+) -> list[dict[str, Any]]:
+    conditions = [
+        "po.company = %(company)s",
+        "po.docstatus = 1",
+        "po.status not in ('Closed', 'Completed', 'Cancelled')",
+    ]
+    values: dict[str, Any] = {"company": company}
+    if account:
+        conditions.append("item.expense_account = %(account)s")
+        values["account"] = account
+    if cost_center:
+        conditions.append("item.cost_center = %(cost_center)s")
+        values["cost_center"] = cost_center
+    if project:
+        conditions.append("coalesce(item.project, po.project) = %(project)s")
+        values["project"] = project
+    if as_of_date:
+        conditions.append("po.transaction_date <= %(as_of_date)s")
+        values["as_of_date"] = as_of_date
+    return frappe.db.sql(
+        f"""
+        select
+            po.name as purchase_order, po.supplier, item.name as source_line,
+            item.expense_account as account, item.cost_center,
+            coalesce(item.project, po.project) as project,
+            item.schedule_date as expected_date,
+            item.base_amount as original_amount,
+            coalesce(item.billed_amt, 0) as consumed_amount,
+            greatest(item.base_amount - coalesce(item.billed_amt, 0), 0) as remaining_amount,
+            po.currency, po.status
+        from `tabPurchase Order` po
+        inner join `tabPurchase Order Item` item on item.parent = po.name
+        where {" and ".join(conditions)}
+        order by item.schedule_date, po.name, item.idx
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_material_request_precommitments(
+    company: str,
+    account: str | None = None,
+    cost_center: str | None = None,
+    project: str | None = None,
+    as_of_date=None,
+) -> list[dict[str, Any]]:
+    conditions = [
+        "mr.company = %(company)s",
+        "mr.docstatus = 1",
+        "mr.status not in ('Stopped', 'Cancelled', 'Ordered')",
+    ]
+    values: dict[str, Any] = {"company": company}
+    if account:
+        conditions.append("item.expense_account = %(account)s")
+        values["account"] = account
+    if cost_center:
+        conditions.append("item.cost_center = %(cost_center)s")
+        values["cost_center"] = cost_center
+    if project:
+        conditions.append("coalesce(item.project, mr.project) = %(project)s")
+        values["project"] = project
+    if as_of_date:
+        conditions.append("mr.transaction_date <= %(as_of_date)s")
+        values["as_of_date"] = as_of_date
+    return frappe.db.sql(
+        f"""
+        select
+            mr.name as material_request, item.name as source_line,
+            item.expense_account as account, item.cost_center,
+            coalesce(item.project, mr.project) as project,
+            item.schedule_date as expected_date,
+            item.base_amount as original_amount,
+            coalesce(item.ordered_qty, 0) * coalesce(item.rate, 0) as consumed_amount,
+            greatest(item.base_amount - coalesce(item.ordered_qty, 0) * coalesce(item.rate, 0), 0) as remaining_amount,
+            mr.status
+        from `tabMaterial Request` mr
+        inner join `tabMaterial Request Item` item on item.parent = mr.name
+        where {" and ".join(conditions)}
+        order by item.schedule_date, mr.name, item.idx
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def create_draft_erpnext_budget_from_plan(plan) -> Any:
+    """Create a standard draft ERPNext Budget from an approved ADV Budget Plan.
+
+    This does not submit the Budget. ERPNext remains responsible for standard
+    budget validation and any accounting/procurement integration.
+    """
+
+    budget = frappe.new_doc("Budget")
+    budget.update(
+        {
+            "company": plan.company,
+            "fiscal_year": plan.fiscal_year,
+            "budget_against": "Project" if plan.project else "Cost Center",
+            "cost_center": plan.cost_center,
+            "project": plan.project,
+            "action_if_annual_budget_exceeded": "Warn",
+            "action_if_accumulated_monthly_budget_exceeded": "Warn",
+        }
+    )
+    for line in plan.lines:
+        budget.append(
+            "accounts",
+            {
+                "account": line.account,
+                "budget_amount": line.company_currency_amount or line.annual_budget,
+                "monthly_distribution": line.monthly_distribution,
+            },
+        )
+    budget.insert()
+    return budget
+
+
 def get_party_subledger_balance(company: str, account: str, party_type: str, to_date) -> Decimal:
     result = frappe.db.sql(
         """

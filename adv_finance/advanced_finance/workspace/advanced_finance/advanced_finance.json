@@ -1,6 +1,6 @@
 {
   "charts": [],
-  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_payable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_receivable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accounts_receivable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accruals_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accruals\",\"col\":12}},{\"id\":\"treasury_header\",\"type\":\"header\",\"data\":{\"text\":\"Treasury\",\"col\":12}},{\"id\":\"treasury_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Treasury\",\"col\":12}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"financial_close_header\",\"type\":\"header\",\"data\":{\"text\":\"Financial Close\",\"col\":12}},{\"id\":\"financial_close_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Close\",\"col\":12}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"monitoring_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Monitoring\",\"col\":12}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
+  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_payable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_receivable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accounts_receivable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accruals_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accruals\",\"col\":12}},{\"id\":\"treasury_header\",\"type\":\"header\",\"data\":{\"text\":\"Treasury\",\"col\":12}},{\"id\":\"treasury_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Treasury\",\"col\":12}},{\"id\":\"planning_budget_header\",\"type\":\"header\",\"data\":{\"text\":\"Planning & Budget\",\"col\":12}},{\"id\":\"planning_budget_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Planning & Budget\",\"col\":12}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"financial_close_header\",\"type\":\"header\",\"data\":{\"text\":\"Financial Close\",\"col\":12}},{\"id\":\"financial_close_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Close\",\"col\":12}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"monitoring_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Monitoring\",\"col\":12}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
   "creation": "2026-08-13 00:00:00.000000",
   "docstatus": 0,
   "doctype": "Workspace",
@@ -275,6 +275,84 @@
       "onboard": 0
     },
     {
+      "label": "Planning & Budget",
+      "type": "Card Break",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Plans",
+      "link_to": "Budget Plan",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Forecasts",
+      "link_to": "Budget Forecast",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Reservations",
+      "link_to": "Budget Reservation",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Manual Commitments",
+      "link_to": "Manual Budget Commitment",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Transfers",
+      "link_to": "Budget Transfer",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Supplements",
+      "link_to": "Budget Supplement",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Overrides",
+      "link_to": "Budget Override Request",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
       "label": "Account Reconciliation",
       "type": "Card Break",
       "hidden": 0,
@@ -507,6 +585,46 @@
       "onboard": 0
     },
     {
+      "label": "Over Budget",
+      "link_to": "Over Budget",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Low Available Budget",
+      "link_to": "Low Available Budget",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Stale Commitments",
+      "link_to": "Stale Commitments",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Pending Budget Overrides",
+      "link_to": "Pending Budget Overrides",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
       "label": "Liquidity Exceptions",
       "link_to": "Liquidity Exceptions",
       "link_type": "Report",
@@ -581,6 +699,76 @@
       "type": "Card Break",
       "hidden": 0,
       "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Advanced Budget Variance",
+      "link_to": "Advanced Budget Variance",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Consumption",
+      "link_to": "Budget Consumption",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Commitment Register",
+      "link_to": "Commitment Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Open Commitment Ageing",
+      "link_to": "Open Commitment Ageing",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Transfer Register",
+      "link_to": "Budget Transfer Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Supplement Register",
+      "link_to": "Budget Supplement Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Budget Override Register",
+      "link_to": "Budget Override Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
       "link_count": 0,
       "onboard": 0
     },
