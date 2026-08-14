@@ -289,6 +289,193 @@ def get_gl_account_balance(company: str, account: str, from_date, to_date) -> di
     }
 
 
+def get_cash_account_balance(company: str, account: str, as_of_date) -> dict[str, Any]:
+    """Return the accounting balance for a treasury cash/bank account.
+
+    GL Entry remains authoritative. Treasury uses this value for visibility and
+    planning only; it never writes balances back to Account, Bank Account, or GL.
+    """
+
+    result = frappe.db.sql(
+        """
+        select coalesce(sum(debit - credit), 0) as balance
+        from `tabGL Entry`
+        where company = %(company)s
+          and account = %(account)s
+          and posting_date <= %(as_of_date)s
+          and is_cancelled = 0
+        """,
+        {"company": company, "account": account, "as_of_date": as_of_date},
+        as_dict=True,
+    )
+    return {
+        "balance": Decimal(str(result[0].balance if result else 0)),
+        "currency": frappe.db.get_value("Account", account, "account_currency"),
+    }
+
+
+def get_open_sales_invoices_for_forecast(company: str, from_date=None, to_date=None) -> list[dict[str, Any]]:
+    conditions = ["company = %(company)s", "docstatus = 1", "outstanding_amount > 0"]
+    values: dict[str, Any] = {"company": company}
+    if to_date:
+        conditions.append("coalesce(due_date, posting_date) <= %(to_date)s")
+        values["to_date"] = to_date
+    return frappe.db.sql(
+        f"""
+        select name, company, customer, customer_name, posting_date, due_date,
+               currency, grand_total, outstanding_amount
+        from `tabSales Invoice`
+        where {" and ".join(conditions)}
+        order by coalesce(due_date, posting_date), name
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_active_promises_for_forecast(company: str, from_date=None, to_date=None) -> list[dict[str, Any]]:
+    conditions = [
+        "ptp.company = %(company)s",
+        "ptp.status in ('Active', 'Partially Kept', 'Broken')",
+        "ptp.remaining_promised_amount > 0",
+    ]
+    values: dict[str, Any] = {"company": company}
+    if from_date:
+        conditions.append("ptp.promised_payment_date >= %(from_date)s")
+        values["from_date"] = from_date
+    if to_date:
+        conditions.append("ptp.promised_payment_date <= %(to_date)s")
+        values["to_date"] = to_date
+    return frappe.db.sql(
+        f"""
+        select ptp.name, ptp.company, ptp.customer, ptp.customer_name,
+               ptp.promised_payment_date, ptp.currency, ptp.promised_amount,
+               ptp.remaining_promised_amount, ptp.status,
+               inv.sales_invoice, inv.promised_amount as invoice_promised_amount
+        from `tabPromise to Pay` ptp
+        left join `tabPromise to Pay Invoice` inv on inv.parent = ptp.name
+        where {" and ".join(conditions)}
+        order by ptp.promised_payment_date, ptp.name
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_open_purchase_invoices_for_forecast(company: str, to_date=None) -> list[dict[str, Any]]:
+    conditions = ["company = %(company)s", "docstatus = 1", "outstanding_amount > 0"]
+    values: dict[str, Any] = {"company": company}
+    if to_date:
+        conditions.append("coalesce(due_date, posting_date) <= %(to_date)s")
+        values["to_date"] = to_date
+    return frappe.db.sql(
+        f"""
+        select name, company, supplier, supplier_name, posting_date, due_date,
+               currency, grand_total, outstanding_amount
+        from `tabPurchase Invoice`
+        where {" and ".join(conditions)}
+        order by coalesce(due_date, posting_date), name
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_payment_runs_for_forecast(company: str, from_date=None, to_date=None) -> list[dict[str, Any]]:
+    conditions = ["run.company = %(company)s", "run.status in ('Approved', 'Processing', 'Payment Entries Created')"]
+    values: dict[str, Any] = {"company": company}
+    if from_date:
+        conditions.append("run.payment_date >= %(from_date)s")
+        values["from_date"] = from_date
+    if to_date:
+        conditions.append("run.payment_date <= %(to_date)s")
+        values["to_date"] = to_date
+    return frappe.db.sql(
+        f"""
+        select run.name, run.company, run.payment_date, run.currency, run.status,
+               inv.supplier, inv.purchase_invoice, inv.selected_amount
+        from `tabPayment Run` run
+        inner join `tabPayment Run Invoice` inv on inv.parent = run.name
+        where {" and ".join(conditions)}
+        order by run.payment_date, run.name
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_payment_proposals_for_forecast(company: str, from_date=None, to_date=None) -> list[dict[str, Any]]:
+    conditions = ["prop.company = %(company)s", "prop.status in ('Approved', 'Under Approval')"]
+    values: dict[str, Any] = {"company": company}
+    if from_date:
+        conditions.append("prop.posting_date >= %(from_date)s")
+        values["from_date"] = from_date
+    if to_date:
+        conditions.append("prop.posting_date <= %(to_date)s")
+        values["to_date"] = to_date
+    return frappe.db.sql(
+        f"""
+        select prop.name, prop.company, prop.posting_date, prop.currency, prop.status,
+               item.supplier, item.purchase_invoice, item.selected_amount
+        from `tabPayment Proposal` prop
+        inner join `tabPayment Proposal Item` item on item.parent = prop.name
+        where {" and ".join(conditions)}
+          and item.selected = 1
+        order by prop.posting_date, prop.name
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_manual_treasury_items_for_forecast(company: str, from_date=None, to_date=None, scenario=None) -> list[dict[str, Any]]:
+    conditions = ["company = %(company)s", "active = 1"]
+    values: dict[str, Any] = {"company": company}
+    if from_date:
+        conditions.append("expected_date >= %(from_date)s")
+        values["from_date"] = from_date
+    if to_date:
+        conditions.append("expected_date <= %(to_date)s")
+        values["to_date"] = to_date
+    if scenario:
+        conditions.append("(scenario is null or scenario = '' or scenario = %(scenario)s)")
+        values["scenario"] = scenario
+    return frappe.db.sql(
+        f"""
+        select name, company, direction, category, description, party_type, party,
+               expected_date, currency, amount, probability_percent, recurrence,
+               source_reference, scenario
+        from `tabTreasury Forecast Item`
+        where {" and ".join(conditions)}
+        order by expected_date, name
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_actual_cash_movements(company: str, from_date=None, to_date=None) -> list[dict[str, Any]]:
+    conditions = ["company = %(company)s", "docstatus = 1"]
+    values: dict[str, Any] = {"company": company}
+    if from_date:
+        conditions.append("posting_date >= %(from_date)s")
+        values["from_date"] = from_date
+    if to_date:
+        conditions.append("posting_date <= %(to_date)s")
+        values["to_date"] = to_date
+    return frappe.db.sql(
+        f"""
+        select name, posting_date, payment_type, party_type, party, paid_amount,
+               received_amount, reference_no, reference_date, paid_from, paid_to
+        from `tabPayment Entry`
+        where {" and ".join(conditions)}
+        order by posting_date, name
+        """,
+        values,
+        as_dict=True,
+    )
+
+
 def get_party_subledger_balance(company: str, account: str, party_type: str, to_date) -> Decimal:
     result = frappe.db.sql(
         """

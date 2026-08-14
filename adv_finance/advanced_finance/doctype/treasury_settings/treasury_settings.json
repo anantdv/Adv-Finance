@@ -1,0 +1,200 @@
+{
+  "actions": [],
+  "autoname": "field:company",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "treasury_enabled",
+    "default_forecast_weeks",
+    "default_base_scenario",
+    "sources_section",
+    "include_sales_invoices",
+    "include_purchase_invoices",
+    "include_payment_promises",
+    "include_payment_runs",
+    "include_payroll",
+    "include_accruals",
+    "threshold_section",
+    "minimum_operating_cash",
+    "warning_liquidity_threshold",
+    "critical_liquidity_threshold",
+    "large_payment_threshold",
+    "large_receipt_threshold",
+    "forecast_section",
+    "forecast_date_basis",
+    "default_receipt_probability",
+    "default_payment_probability",
+    "forecast_refresh_frequency"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "treasury_enabled",
+      "fieldtype": "Check",
+      "label": "Treasury Enabled",
+      "default": 1
+    },
+    {
+      "fieldname": "default_forecast_weeks",
+      "fieldtype": "Int",
+      "label": "Default Forecast Weeks",
+      "default": 13
+    },
+    {
+      "fieldname": "default_base_scenario",
+      "fieldtype": "Link",
+      "label": "Default Base Scenario",
+      "options": "Cash Forecast Scenario"
+    },
+    {
+      "fieldname": "sources_section",
+      "fieldtype": "Section Break",
+      "label": "Forecast Sources"
+    },
+    {
+      "fieldname": "include_sales_invoices",
+      "fieldtype": "Check",
+      "label": "Include Sales Invoices",
+      "default": 1
+    },
+    {
+      "fieldname": "include_purchase_invoices",
+      "fieldtype": "Check",
+      "label": "Include Purchase Invoices",
+      "default": 1
+    },
+    {
+      "fieldname": "include_payment_promises",
+      "fieldtype": "Check",
+      "label": "Include Payment Promises",
+      "default": 1
+    },
+    {
+      "fieldname": "include_payment_runs",
+      "fieldtype": "Check",
+      "label": "Include Payment Runs",
+      "default": 1
+    },
+    {
+      "fieldname": "include_payroll",
+      "fieldtype": "Check",
+      "label": "Include Payroll",
+      "default": 1
+    },
+    {
+      "fieldname": "include_accruals",
+      "fieldtype": "Check",
+      "label": "Include Accruals",
+      "default": 1
+    },
+    {
+      "fieldname": "threshold_section",
+      "fieldtype": "Section Break",
+      "label": "Thresholds"
+    },
+    {
+      "fieldname": "minimum_operating_cash",
+      "fieldtype": "Currency",
+      "label": "Minimum Operating Cash",
+      "default": 0
+    },
+    {
+      "fieldname": "warning_liquidity_threshold",
+      "fieldtype": "Currency",
+      "label": "Warning Liquidity Threshold",
+      "default": 0
+    },
+    {
+      "fieldname": "critical_liquidity_threshold",
+      "fieldtype": "Currency",
+      "label": "Critical Liquidity Threshold",
+      "default": 0
+    },
+    {
+      "fieldname": "large_payment_threshold",
+      "fieldtype": "Currency",
+      "label": "Large Payment Threshold",
+      "default": 0
+    },
+    {
+      "fieldname": "large_receipt_threshold",
+      "fieldtype": "Currency",
+      "label": "Large Receipt Threshold",
+      "default": 0
+    },
+    {
+      "fieldname": "forecast_section",
+      "fieldtype": "Section Break",
+      "label": "Forecast Defaults"
+    },
+    {
+      "fieldname": "forecast_date_basis",
+      "fieldtype": "Select",
+      "label": "Forecast Date Basis",
+      "options": "Due Date\nPayment Behaviour\nExpected Date",
+      "default": "Due Date"
+    },
+    {
+      "fieldname": "default_receipt_probability",
+      "fieldtype": "Percent",
+      "label": "Default Receipt Probability",
+      "default": 85
+    },
+    {
+      "fieldname": "default_payment_probability",
+      "fieldtype": "Percent",
+      "label": "Default Payment Probability",
+      "default": 75
+    },
+    {
+      "fieldname": "forecast_refresh_frequency",
+      "fieldtype": "Select",
+      "label": "Forecast Refresh Frequency",
+      "options": "Manual\nDaily\nWeekly",
+      "default": "Manual"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Treasury Settings",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Treasury Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Treasury User",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

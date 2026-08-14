@@ -13,6 +13,7 @@ DEFAULT_TASKS = [
     (70, "Account Reconciliation", "Critical Balance Sheet Accounts Reconciled", "BS_CRITICAL_RECON", "account_reconciliation", 4, "Critical", 1, "ADV Finance Module Check", "Account Reconciliation Status"),
     (80, "Account Reconciliation", "AP Control Reconciled", "AP_CONTROL_RECON", "account_reconciliation", 4, "High", 1, "ADV Finance Module Check", "Account Reconciliation Status"),
     (90, "Cash & Bank", "Bank Reconciliation Completed", "BANK_RECON", "bank_reconciliation", 3, "Critical", 1, "ERPNext Document Check", ""),
+    (95, "Cash & Bank", "Treasury Cash Position Reviewed", "TREASURY_CASH_POSITION", "treasury", 4, "Medium", 0, "ADV Finance Module Check", "Treasury Dashboard"),
     (100, "Accruals", "Accrual Register Reviewed", "ACCRUAL_REGISTER", "accrual", 2, "High", 1, "ADV Finance Module Check", "Accrual Register"),
     (110, "Accruals", "Accrual Journals Posted", "ACCRUAL_JOURNALS", "accrual", 3, "Critical", 1, "ADV Finance Module Check", "Accrual Register"),
     (120, "Accruals", "Accrual Variances Reviewed", "ACCRUAL_VARIANCES", "accrual", 4, "High", 1, "ADV Finance Module Check", "Accrual Variance Analysis"),
@@ -31,7 +32,7 @@ DEPENDENCIES = {
     "AP_CONTROL_RECON": "AP_SUPPLIER_RECON",
     "ACCRUAL_JOURNALS": "ACCRUAL_REGISTER",
     "ACCRUAL_VARIANCES": "ACCRUAL_JOURNALS",
-    "FIN_MANAGER_APPROVAL": "AP_CONTROL_RECON,AR_CONTROL_RECON,BS_CRITICAL_RECON,BANK_RECON,ACCRUAL_VARIANCES,AR_DISPUTES_REVIEWED",
+    "FIN_MANAGER_APPROVAL": "AP_CONTROL_RECON,AR_CONTROL_RECON,BS_CRITICAL_RECON,BANK_RECON,TREASURY_CASH_POSITION,ACCRUAL_VARIANCES,AR_DISPUTES_REVIEWED",
     "PERIOD_CLOSING_VOUCHER": "FIN_MANAGER_APPROVAL",
     "CLOSE_CERTIFICATION": "PERIOD_CLOSING_VOUCHER",
 }
@@ -83,6 +84,6 @@ def execute():
 
 
 def create_roles():
-    for role_name in ("Financial Close User", "Financial Close Manager", "AR Collection User", "AR Collection Manager", "Credit Controller", "Credit Manager"):
+    for role_name in ("Financial Close User", "Financial Close Manager", "AR Collection User", "AR Collection Manager", "Credit Controller", "Credit Manager", "Treasury User", "Treasury Manager"):
         if not frappe.db.exists("Role", role_name):
             frappe.get_doc({"doctype": "Role", "role_name": role_name, "desk_access": 1}).insert(ignore_permissions=True)

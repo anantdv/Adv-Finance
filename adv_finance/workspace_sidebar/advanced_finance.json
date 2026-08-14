@@ -235,6 +235,88 @@
       "idx": 25
     },
     {
+      "label": "Treasury",
+      "type": "Section Break",
+      "icon": "landmark",
+      "collapsible": 1,
+      "indent": 1,
+      "keep_closed": 0,
+      "show_arrow": 1,
+      "idx": 26
+    },
+    {
+      "label": "Treasury Dashboard",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Treasury Dashboard",
+      "icon": "layout-dashboard",
+      "child": 1,
+      "idx": 27
+    },
+    {
+      "label": "Daily Cash Position",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Daily Cash Position",
+      "icon": "wallet",
+      "child": 1,
+      "idx": 28
+    },
+    {
+      "label": "Cash Forecasts",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Cash Forecast",
+      "icon": "chart-line",
+      "child": 1,
+      "idx": 29
+    },
+    {
+      "label": "13-Week Cash Forecast",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "13-Week Cash Forecast",
+      "icon": "calendar-range",
+      "child": 1,
+      "idx": 30
+    },
+    {
+      "label": "Forecast Scenarios",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Cash Forecast Scenario",
+      "icon": "git-branch",
+      "child": 1,
+      "idx": 31
+    },
+    {
+      "label": "Treasury Forecast Items",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Treasury Forecast Item",
+      "icon": "list-plus",
+      "child": 1,
+      "idx": 32
+    },
+    {
+      "label": "Treasury Accounts",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Treasury Account",
+      "icon": "landmark",
+      "child": 1,
+      "idx": 33
+    },
+    {
+      "label": "Treasury Settings",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Treasury Settings",
+      "icon": "settings",
+      "child": 1,
+      "idx": 34
+    },
+    {
       "label": "Account Reconciliation",
       "type": "Section Break",
       "icon": "scale",
@@ -242,7 +324,7 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 26
+      "idx": 35
     },
     {
       "label": "Reconciliation Period",
@@ -251,7 +333,7 @@
       "link_to": "Account Reconciliation Period",
       "icon": "calendar-range",
       "child": 1,
-      "idx": 27
+      "idx": 36
     },
     {
       "label": "Account Reconciliation",
@@ -260,7 +342,7 @@
       "link_to": "Account Reconciliation",
       "icon": "scale",
       "child": 1,
-      "idx": 28
+      "idx": 37
     },
     {
       "label": "Reconciliation Templates",
@@ -269,7 +351,7 @@
       "link_to": "Account Reconciliation Template",
       "icon": "layout-template",
       "child": 1,
-      "idx": 29
+      "idx": 38
     },
     {
       "label": "Open Reconciling Items",
@@ -278,7 +360,7 @@
       "link_to": "Open Reconciling Items",
       "icon": "list-checks",
       "child": 1,
-      "idx": 30
+      "idx": 39
     },
     {
       "label": "Account Reconciliation Status",
@@ -287,7 +369,7 @@
       "link_to": "Account Reconciliation Status",
       "icon": "chart-no-axes-column",
       "child": 1,
-      "idx": 31
+      "idx": 40
     },
     {
       "label": "Aged Reconciling Items",
@@ -296,7 +378,7 @@
       "link_to": "Aged Reconciling Items",
       "icon": "clock",
       "child": 1,
-      "idx": 32
+      "idx": 41
     },
     {
       "label": "Reconciliation Exceptions",
@@ -305,7 +387,7 @@
       "link_to": "Reconciliation Exceptions",
       "icon": "circle-alert",
       "child": 1,
-      "idx": 33
+      "idx": 42
     },
     {
       "label": "Financial Close",
@@ -315,7 +397,7 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 34
+      "idx": 43
     },
     {
       "label": "Close Periods",
@@ -324,7 +406,7 @@
       "link_to": "Financial Close Period",
       "icon": "calendar-check",
       "child": 1,
-      "idx": 35
+      "idx": 44
     },
     {
       "label": "Close Templates",
@@ -333,7 +415,7 @@
       "link_to": "Financial Close Template",
       "icon": "layout-template",
       "child": 1,
-      "idx": 36
+      "idx": 45
     },
     {
       "label": "Close Tasks",
@@ -342,7 +424,7 @@
       "link_to": "Financial Close Task",
       "icon": "list-checks",
       "child": 1,
-      "idx": 37
+      "idx": 46
     },
     {
       "label": "My Close Tasks",
@@ -351,7 +433,7 @@
       "link_to": "My Financial Close Tasks",
       "icon": "user-check",
       "child": 1,
-      "idx": 38
+      "idx": 47
     },
     {
       "label": "Financial Close Status",
@@ -360,7 +442,7 @@
       "link_to": "Financial Close Status",
       "icon": "chart-no-axes-column",
       "child": 1,
-      "idx": 39
+      "idx": 48
     },
     {
       "label": "Monitoring",
@@ -370,7 +452,34 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 40
+      "idx": 49
+    },
+    {
+      "label": "Liquidity Exceptions",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Liquidity Exceptions",
+      "icon": "triangle-alert",
+      "child": 1,
+      "idx": 50
+    },
+    {
+      "label": "Forecast Exceptions",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Forecast Exceptions",
+      "icon": "circle-alert",
+      "child": 1,
+      "idx": 51
+    },
+    {
+      "label": "Unforecast Cash Movements",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Unforecast Cash Movements",
+      "icon": "activity",
+      "child": 1,
+      "idx": 52
     },
     {
       "label": "Payment Run Exceptions",
@@ -379,7 +488,7 @@
       "link_to": "Payment Run Exceptions",
       "icon": "circle-alert",
       "child": 1,
-      "idx": 41
+      "idx": 53
     },
     {
       "label": "Broken Promises",
@@ -388,7 +497,7 @@
       "link_to": "Broken Promise Report",
       "icon": "circle-alert",
       "child": 1,
-      "idx": 42
+      "idx": 54
     },
     {
       "label": "Credit Hold Register",
@@ -397,7 +506,7 @@
       "link_to": "Credit Hold Register",
       "icon": "pause-circle",
       "child": 1,
-      "idx": 43
+      "idx": 55
     },
     {
       "label": "Customer Dispute Register",
@@ -406,7 +515,7 @@
       "link_to": "Customer Dispute Register",
       "icon": "message-square-warning",
       "child": 1,
-      "idx": 44
+      "idx": 56
     },
     {
       "label": "Reports",
@@ -416,7 +525,43 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 45
+      "idx": 57
+    },
+    {
+      "label": "Bank Position",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Bank Position",
+      "icon": "landmark",
+      "child": 1,
+      "idx": 58
+    },
+    {
+      "label": "Cash Forecast Detail",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Cash Forecast Detail",
+      "icon": "table",
+      "child": 1,
+      "idx": 59
+    },
+    {
+      "label": "Forecast Accuracy",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Cash Forecast Accuracy",
+      "icon": "target",
+      "child": 1,
+      "idx": 60
+    },
+    {
+      "label": "Scenario Comparison",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Cash Forecast Scenario Comparison",
+      "icon": "columns-3",
+      "child": 1,
+      "idx": 61
     },
     {
       "label": "Payment Proposal Register",
@@ -425,7 +570,7 @@
       "link_to": "Payment Proposal Register",
       "icon": "table",
       "child": 1,
-      "idx": 46
+      "idx": 62
     },
     {
       "label": "Payment Run Register",
@@ -434,7 +579,7 @@
       "link_to": "Payment Run Register",
       "icon": "table",
       "child": 1,
-      "idx": 47
+      "idx": 63
     },
     {
       "label": "Payment Hold Register",
@@ -443,7 +588,7 @@
       "link_to": "Payment Hold Register",
       "icon": "table",
       "child": 1,
-      "idx": 48
+      "idx": 64
     },
     {
       "label": "Promise to Pay Register",
@@ -452,7 +597,7 @@
       "link_to": "Promise to Pay Register",
       "icon": "table",
       "child": 1,
-      "idx": 49
+      "idx": 65
     },
     {
       "label": "Credit Exposure Report",
@@ -461,7 +606,7 @@
       "link_to": "Credit Exposure Report",
       "icon": "table",
       "child": 1,
-      "idx": 50
+      "idx": 66
     },
     {
       "label": "Collection Performance",
@@ -470,7 +615,7 @@
       "link_to": "Collection Performance",
       "icon": "chart-no-axes-column",
       "child": 1,
-      "idx": 51
+      "idx": 67
     },
     {
       "label": "Credit Review Register",
@@ -479,7 +624,7 @@
       "link_to": "Credit Review Register",
       "icon": "table",
       "child": 1,
-      "idx": 52
+      "idx": 68
     },
     {
       "label": "Credit Override Register",
@@ -488,7 +633,7 @@
       "link_to": "Credit Override Register",
       "icon": "table",
       "child": 1,
-      "idx": 53
+      "idx": 69
     }
   ]
 }

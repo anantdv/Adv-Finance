@@ -1,0 +1,100 @@
+{
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "module": "Advanced Finance",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "name": "Treasury Liquidity Threshold",
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "effective_from",
+      "fieldtype": "Date",
+      "label": "Effective From",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "minimum_operating_cash",
+      "fieldtype": "Currency",
+      "label": "Minimum Operating Cash",
+      "default": 0
+    },
+    {
+      "fieldname": "warning_threshold",
+      "fieldtype": "Currency",
+      "label": "Warning Threshold",
+      "default": 0
+    },
+    {
+      "fieldname": "critical_threshold",
+      "fieldtype": "Currency",
+      "label": "Critical Threshold",
+      "default": 0
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": 1,
+      "in_list_view": 1
+    }
+  ],
+  "field_order": [
+    "company",
+    "effective_from",
+    "minimum_operating_cash",
+    "warning_threshold",
+    "critical_threshold",
+    "currency",
+    "active"
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Treasury User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Treasury Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "istable": 0,
+  "autoname": "format:TREAS-LIQ-{company}-{effective_from}"
+}

@@ -23,6 +23,8 @@ fixtures = [
                     "AR Collection Manager",
                     "Credit Controller",
                     "Credit Manager",
+                    "Treasury User",
+                    "Treasury Manager",
                 ],
             ]
         ],
@@ -48,6 +50,13 @@ doctype_js = {
     "Credit Review": "advanced_finance/doctype/credit_review/credit_review.js",
     "Credit Hold": "advanced_finance/doctype/credit_hold/credit_hold.js",
     "Credit Override Request": "advanced_finance/doctype/credit_override_request/credit_override_request.js",
+    "Treasury Account": "advanced_finance/doctype/treasury_account/treasury_account.js",
+    "Cash Forecast": "advanced_finance/doctype/cash_forecast/cash_forecast.js",
+    "Treasury Forecast Item": "advanced_finance/doctype/treasury_forecast_item/treasury_forecast_item.js",
+    "Cash Forecast Scenario": "advanced_finance/doctype/cash_forecast_scenario/cash_forecast_scenario.js",
+    "Treasury Liquidity Threshold": "advanced_finance/doctype/treasury_liquidity_threshold/treasury_liquidity_threshold.js",
+    "Treasury Forecast Exception": "advanced_finance/doctype/treasury_forecast_exception/treasury_forecast_exception.js",
+    "Treasury Settings": "advanced_finance/doctype/treasury_settings/treasury_settings.js",
 }
 
 doctype_list_js = {
@@ -64,6 +73,13 @@ doctype_list_js = {
     "Credit Review": "advanced_finance/doctype/credit_review/credit_review_list.js",
     "Credit Hold": "advanced_finance/doctype/credit_hold/credit_hold_list.js",
     "Credit Override Request": "advanced_finance/doctype/credit_override_request/credit_override_request_list.js",
+    "Treasury Account": "advanced_finance/doctype/treasury_account/treasury_account_list.js",
+    "Cash Forecast": "advanced_finance/doctype/cash_forecast/cash_forecast_list.js",
+    "Treasury Forecast Item": "advanced_finance/doctype/treasury_forecast_item/treasury_forecast_item_list.js",
+    "Cash Forecast Scenario": "advanced_finance/doctype/cash_forecast_scenario/cash_forecast_scenario_list.js",
+    "Treasury Liquidity Threshold": "advanced_finance/doctype/treasury_liquidity_threshold/treasury_liquidity_threshold_list.js",
+    "Treasury Forecast Exception": "advanced_finance/doctype/treasury_forecast_exception/treasury_forecast_exception_list.js",
+    "Treasury Settings": "advanced_finance/doctype/treasury_settings/treasury_settings_list.js",
 }
 
 scheduler_events = {

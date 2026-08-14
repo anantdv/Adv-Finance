@@ -1,0 +1,177 @@
+{
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "module": "Advanced Finance",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "name": "Treasury Account",
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "options": "Account",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "bank_account",
+      "fieldtype": "Link",
+      "label": "Bank Account",
+      "options": "Bank Account"
+    },
+    {
+      "fieldname": "account_name",
+      "fieldtype": "Data",
+      "label": "Account Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "account_currency",
+      "fieldtype": "Link",
+      "label": "Account Currency",
+      "options": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "classification_section",
+      "fieldtype": "Section Break",
+      "label": "Classification"
+    },
+    {
+      "fieldname": "treasury_account_type",
+      "fieldtype": "Select",
+      "label": "Treasury Account Type",
+      "options": "Operating Bank\nCollection Bank\nPayment Bank\nPayroll Bank\nPetty Cash\nRestricted Cash\nDeposit Account\nLoan Account\nOther",
+      "default": "Operating Bank",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "liquidity_section",
+      "fieldtype": "Section Break",
+      "label": "Liquidity"
+    },
+    {
+      "fieldname": "include_in_cash_position",
+      "fieldtype": "Check",
+      "label": "Include In Cash Position",
+      "default": 1
+    },
+    {
+      "fieldname": "include_in_available_liquidity",
+      "fieldtype": "Check",
+      "label": "Include In Available Liquidity",
+      "default": 1
+    },
+    {
+      "fieldname": "restricted_amount",
+      "fieldtype": "Currency",
+      "label": "Restricted Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "minimum_balance",
+      "fieldtype": "Currency",
+      "label": "Minimum Balance",
+      "default": 0
+    },
+    {
+      "fieldname": "liquidity_priority",
+      "fieldtype": "Int",
+      "label": "Liquidity Priority",
+      "default": 100
+    },
+    {
+      "fieldname": "reporting_section",
+      "fieldtype": "Section Break",
+      "label": "Reporting"
+    },
+    {
+      "fieldname": "display_order",
+      "fieldtype": "Int",
+      "label": "Display Order",
+      "default": 100
+    },
+    {
+      "fieldname": "treasury_group",
+      "fieldtype": "Data",
+      "label": "Treasury Group",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "field_order": [
+    "company",
+    "account",
+    "bank_account",
+    "account_name",
+    "account_currency",
+    "active",
+    "classification_section",
+    "treasury_account_type",
+    "liquidity_section",
+    "include_in_cash_position",
+    "include_in_available_liquidity",
+    "restricted_amount",
+    "minimum_balance",
+    "liquidity_priority",
+    "reporting_section",
+    "display_order",
+    "treasury_group",
+    "notes"
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Treasury User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Treasury Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "istable": 0,
+  "autoname": "field:account"
+}

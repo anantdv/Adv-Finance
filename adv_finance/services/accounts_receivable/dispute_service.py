@@ -31,3 +31,45 @@ def create_credit_note(name: str) -> dict:
     dispute.status = "Credit Note Proposed"
     dispute.save()
     return {"credit_note": note.name, "created": True}
+
+
+def get_active_disputed_amount(company: str, customer: str, sales_invoice: str | None = None) -> Decimal:
+    conditions = [
+        "disp.company = %(company)s",
+        "disp.customer = %(customer)s",
+        "disp.status not in ('Resolved', 'Rejected', 'Closed')",
+    ]
+    values = {"company": company, "customer": customer}
+    if sales_invoice:
+        conditions.append("item.sales_invoice = %(sales_invoice)s")
+        values["sales_invoice"] = sales_invoice
+    rows = frappe.db.sql(
+        f"""
+        select coalesce(sum(item.disputed_amount), 0) as amount
+        from `tabCustomer Dispute` disp
+        inner join `tabCustomer Dispute Invoice` item on item.parent = disp.name
+        where {" and ".join(conditions)}
+        """,
+        values,
+        as_dict=True,
+    )
+    return Decimal(str(rows[0].amount if rows else 0))
+
+
+def get_active_disputed_amounts(company: str, sales_invoices: list[str] | tuple[str, ...]) -> dict[str, Decimal]:
+    if not sales_invoices:
+        return {}
+    rows = frappe.db.sql(
+        """
+        select item.sales_invoice, coalesce(sum(item.disputed_amount), 0) as amount
+        from `tabCustomer Dispute` disp
+        inner join `tabCustomer Dispute Invoice` item on item.parent = disp.name
+        where disp.company = %(company)s
+          and disp.status not in ('Resolved', 'Rejected', 'Closed')
+          and item.sales_invoice in %(sales_invoices)s
+        group by item.sales_invoice
+        """,
+        {"company": company, "sales_invoices": tuple(sales_invoices)},
+        as_dict=True,
+    )
+    return {row.sales_invoice: Decimal(str(row.amount or 0)) for row in rows}

@@ -12,6 +12,7 @@ from adv_finance.services.financial_close.providers.inventory import InventoryPr
 from adv_finance.services.financial_close.providers.payroll import PayrollProvider
 from adv_finance.services.financial_close.providers.period_close import PeriodCloseProvider
 from adv_finance.services.financial_close.providers.supplier_reconciliation import SupplierReconciliationProvider
+from adv_finance.services.financial_close.providers.treasury import TreasuryProvider
 
 PROVIDERS = {
     "manual": CloseReadinessProvider,
@@ -26,6 +27,7 @@ PROVIDERS = {
     "fx_revaluation": FXRevaluationProvider,
     "period_close": PeriodCloseProvider,
     "erpnext_document": ERPNextDocumentProvider,
+    "treasury": TreasuryProvider,
 }
 
 

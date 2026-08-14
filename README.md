@@ -85,6 +85,7 @@ Implemented:
 - Accrual Management
 - Month-End Financial Close Management
 - Accounts Receivable Collections and Credit Control
+- Treasury Management Phase 1
 
 In development:
 
@@ -94,11 +95,10 @@ In development:
 - ERPNext v16 integration validation for accrual Journal Entry reversal
 - ERPNext v16 integration validation for Financial Close Period Closing Voucher and sidebar
 - ERPNext v16 integration validation for AR ageing, receipts, and credit-note creation
+- ERPNext v16 integration validation for treasury cash balances, FX rates, and forecast source queries
 
 Planned:
 
-- AR Collections and Credit Control
-- Treasury and Cash Forecasting
 - Budget Forecast and Commitment Accounting
 - Intercompany Reconciliation
 - Consolidation

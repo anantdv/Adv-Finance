@@ -1,0 +1,183 @@
+{
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "module": "Advanced Finance",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "name": "Cash Forecast Line",
+  "fields": [
+    {
+      "fieldname": "forecast",
+      "fieldtype": "Link",
+      "label": "Forecast",
+      "options": "Cash Forecast"
+    },
+    {
+      "fieldname": "forecast_date",
+      "fieldtype": "Date",
+      "label": "Forecast Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "week_number",
+      "fieldtype": "Int",
+      "label": "Week Number",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "direction",
+      "fieldtype": "Select",
+      "label": "Direction",
+      "options": "Inflow\nOutflow",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "source_type",
+      "fieldtype": "Select",
+      "label": "Source Type",
+      "options": "Sales Invoice\nPromise to Pay\nPurchase Invoice\nPayment Proposal\nPayment Run\nPayroll\nAccrual\nLoan Payment\nTax Payment\nRecurring Expense\nManual Forecast Item\nOther",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Link",
+      "label": "Source Doctype",
+      "options": "DocType"
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype"
+    },
+    {
+      "fieldname": "party_type",
+      "fieldtype": "Select",
+      "label": "Party Type",
+      "options": "Customer\nSupplier\nEmployee\nShareholder\nOther"
+    },
+    {
+      "fieldname": "party",
+      "fieldtype": "Dynamic Link",
+      "label": "Party",
+      "options": "party_type"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "native_amount",
+      "fieldtype": "Currency",
+      "label": "Native Amount"
+    },
+    {
+      "fieldname": "exchange_rate",
+      "fieldtype": "Float",
+      "label": "Exchange Rate"
+    },
+    {
+      "fieldname": "company_currency_amount",
+      "fieldtype": "Currency",
+      "label": "Company Currency Amount"
+    },
+    {
+      "fieldname": "probability_percent",
+      "fieldtype": "Percent",
+      "label": "Probability Percent"
+    },
+    {
+      "fieldname": "probability_weighted_amount",
+      "fieldtype": "Currency",
+      "label": "Probability Weighted Amount"
+    },
+    {
+      "fieldname": "confidence_level",
+      "fieldtype": "Select",
+      "label": "Confidence Level",
+      "options": "High\nMedium\nLow",
+      "default": "Medium"
+    },
+    {
+      "fieldname": "due_date",
+      "fieldtype": "Date",
+      "label": "Due Date"
+    },
+    {
+      "fieldname": "expected_date",
+      "fieldtype": "Date",
+      "label": "Expected Date"
+    },
+    {
+      "fieldname": "original_expected_date",
+      "fieldtype": "Date",
+      "label": "Original Expected Date"
+    },
+    {
+      "fieldname": "forecast_basis",
+      "fieldtype": "Select",
+      "label": "Forecast Basis",
+      "options": "Promise to Pay\nDue Date\nPayment Behaviour\nManual Override\nContract\nPayment Run\nPayment Proposal\nRecurring\nOther"
+    },
+    {
+      "fieldname": "scenario_adjustment",
+      "fieldtype": "Small Text",
+      "label": "Scenario Adjustment"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nIncluded\nHeld\nBroken\nStale\nRealized\nNot Realized",
+      "default": "Open"
+    },
+    {
+      "fieldname": "manually_adjusted",
+      "fieldtype": "Check",
+      "label": "Manually Adjusted"
+    },
+    {
+      "fieldname": "adjustment_reason",
+      "fieldtype": "Small Text",
+      "label": "Adjustment Reason"
+    }
+  ],
+  "field_order": [
+    "forecast",
+    "forecast_date",
+    "week_number",
+    "direction",
+    "source_type",
+    "source_doctype",
+    "source_document",
+    "party_type",
+    "party",
+    "description",
+    "currency",
+    "native_amount",
+    "exchange_rate",
+    "company_currency_amount",
+    "probability_percent",
+    "probability_weighted_amount",
+    "confidence_level",
+    "due_date",
+    "expected_date",
+    "original_expected_date",
+    "forecast_basis",
+    "scenario_adjustment",
+    "status",
+    "manually_adjusted",
+    "adjustment_reason"
+  ],
+  "permissions": [],
+  "istable": 1
+}

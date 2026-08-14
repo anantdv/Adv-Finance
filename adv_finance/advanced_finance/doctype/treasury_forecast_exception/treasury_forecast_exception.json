@@ -1,0 +1,149 @@
+{
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "module": "Advanced Finance",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "name": "Treasury Forecast Exception",
+  "fields": [
+    {
+      "fieldname": "cash_forecast",
+      "fieldtype": "Link",
+      "label": "Cash Forecast",
+      "options": "Cash Forecast",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "forecast_line",
+      "fieldtype": "Data",
+      "label": "Forecast Line"
+    },
+    {
+      "fieldname": "exception_type",
+      "fieldtype": "Select",
+      "label": "Exception Type",
+      "options": "Liquidity Shortfall\nLow Liquidity\nMissing Forecast Date\nMissing Exchange Rate\nDuplicate Forecast Source\nUncertain Receipt\nBroken Promise\nPayment Run Changed\nPayment Proposal Changed\nLarge Unplanned Payment\nLarge Receipt Delay\nMissing Payroll Forecast\nStale Forecast\nUnforecast Cash Movement\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "severity",
+      "fieldtype": "Select",
+      "label": "Severity",
+      "options": "Critical\nHigh\nMedium\nLow",
+      "default": "Medium",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Link",
+      "label": "Source Doctype",
+      "options": "DocType"
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nIn Progress\nResolved\nClosed",
+      "default": "Open",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "assigned_to",
+      "fieldtype": "Link",
+      "label": "Assigned To",
+      "options": "User"
+    },
+    {
+      "fieldname": "resolution_notes",
+      "fieldtype": "Small Text",
+      "label": "Resolution Notes"
+    },
+    {
+      "fieldname": "resolved_by",
+      "fieldtype": "Link",
+      "label": "Resolved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "resolved_on",
+      "fieldtype": "Datetime",
+      "label": "Resolved On",
+      "read_only": 1
+    }
+  ],
+  "field_order": [
+    "cash_forecast",
+    "forecast_line",
+    "exception_type",
+    "severity",
+    "date",
+    "amount",
+    "description",
+    "source_doctype",
+    "source_document",
+    "status",
+    "assigned_to",
+    "resolution_notes",
+    "resolved_by",
+    "resolved_on"
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Treasury User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Treasury Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "istable": 0,
+  "autoname": "format:TREAS-EXC-.YYYY.-.#####"
+}
