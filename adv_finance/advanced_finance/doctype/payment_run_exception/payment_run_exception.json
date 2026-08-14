@@ -1,0 +1,23 @@
+{
+  "actions": [],
+  "creation": "2026-08-14 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["supplier", "purchase_invoice", "exception_type", "description", "amount", "status", "resolved_by", "resolved_on", "resolution_notes"],
+  "fields": [
+    {"fieldname": "supplier", "fieldtype": "Link", "label": "Supplier", "options": "Supplier", "in_list_view": 1},
+    {"fieldname": "purchase_invoice", "fieldtype": "Link", "label": "Purchase Invoice", "options": "Purchase Invoice", "in_list_view": 1},
+    {"fieldname": "exception_type", "fieldtype": "Select", "label": "Exception Type", "options": "Missing Supplier Bank Account\nInvalid Bank Account\nInvoice Already Paid\nInvoice Already Selected\nOutstanding Amount Changed\nSupplier On Hold\nInvoice On Hold\nCurrency Mismatch\nPayable Account Mismatch\nPayment Amount Exceeds Outstanding\nDocument Cancelled\nDocument Modified\nValidation Failure\nPayment Entry Creation Failure\nOther", "in_list_view": 1},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+    {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Open\nInvestigating\nResolved\nIgnored", "default": "Open", "in_list_view": 1},
+    {"fieldname": "resolved_by", "fieldtype": "Link", "label": "Resolved By", "options": "User", "read_only": 1},
+    {"fieldname": "resolved_on", "fieldtype": "Datetime", "label": "Resolved On", "read_only": 1},
+    {"fieldname": "resolution_notes", "fieldtype": "Small Text", "label": "Resolution Notes"}
+  ],
+  "istable": 1,
+  "module": "Advanced Finance",
+  "name": "Payment Run Exception",
+  "track_changes": 1
+}

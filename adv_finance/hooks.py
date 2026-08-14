@@ -13,3 +13,15 @@ fixtures = [
 
 before_install = "adv_finance.install.before_install"
 after_install = "adv_finance.install.after_install"
+
+doctype_js = {
+    "Supplier Reconciliation": "advanced_finance/doctype/supplier_reconciliation/supplier_reconciliation.js",
+    "Payment Proposal": "advanced_finance/doctype/payment_proposal/payment_proposal.js",
+    "Payment Run": "advanced_finance/doctype/payment_run/payment_run.js",
+}
+
+doctype_list_js = {
+    "Supplier Reconciliation": "advanced_finance/doctype/supplier_reconciliation/supplier_reconciliation_list.js",
+    "Payment Proposal": "advanced_finance/doctype/payment_proposal/payment_proposal_list.js",
+    "Payment Run": "advanced_finance/doctype/payment_run/payment_run_list.js",
+}

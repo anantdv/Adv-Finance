@@ -69,6 +69,34 @@ The Advanced Finance workspace includes a Supplier Reconciliation Manual page
 with setup steps, monthly workflow guidance, status meanings, exception handling,
 and closing rules.
 
+## Advanced Finance Module Map
+
+Implemented:
+
+- Supplier Reconciliation
+- Payment Hold
+- Payment Proposal
+- Payment Run
+
+In development:
+
+- Payment Order integration
+- Expanded approval workflows
+- Balance Sheet Account Reconciliation
+
+Planned:
+
+- Accrual Management
+- Financial Close Management
+- AR Collections and Credit Control
+- Treasury and Cash Forecasting
+- Budget Forecast and Commitment Accounting
+- Intercompany Reconciliation
+- Consolidation
+
+Accounting guarantee: ADV Finance never directly posts GL Entries. All
+accounting postings are generated through standard ERPNext accounting documents.
+
 ## Accounting Safety
 
 Supplier Reconciliation never inserts, updates, or deletes `GL Entry` or

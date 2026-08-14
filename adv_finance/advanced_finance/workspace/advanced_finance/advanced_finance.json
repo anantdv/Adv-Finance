@@ -1,6 +1,6 @@
 {
   "charts": [],
-  "content": "[{\"id\":\"accounts_payable\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"shortcut_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation\",\"col\":3}},{\"id\":\"shortcut_template\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Statement Template\",\"col\":3}},{\"id\":\"report_history\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation History\",\"col\":3}},{\"id\":\"report_exceptions\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Supplier Reconciliation Exceptions\",\"col\":3}},{\"id\":\"manual_supplier_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation Manual\",\"col\":3}}]",
+  "content": "[{\"id\":\"accounts_payable\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"shortcut_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation\",\"col\":3}},{\"id\":\"shortcut_template\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Statement Template\",\"col\":3}},{\"id\":\"report_history\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation History\",\"col\":3}},{\"id\":\"report_exceptions\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Supplier Reconciliation Exceptions\",\"col\":3}},{\"id\":\"manual_supplier_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation Manual\",\"col\":3}},{\"id\":\"payment_proposal_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Proposal\",\"col\":3}},{\"id\":\"payment_run_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run\",\"col\":3}},{\"id\":\"payment_hold_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Holds\",\"col\":3}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"payment_run_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run Exceptions\",\"col\":3}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"payment_proposal_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Proposal Register\",\"col\":3}},{\"id\":\"payment_run_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run Register\",\"col\":3}},{\"id\":\"payment_hold_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Hold Register\",\"col\":3}}]",
   "creation": "2026-08-13 00:00:00.000000",
   "docstatus": 0,
   "doctype": "Workspace",
@@ -54,6 +54,69 @@
       "link_type": "Page",
       "onboard": 0,
       "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Payment Proposal",
+      "link_to": "Payment Proposal",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Payment Run",
+      "link_to": "Payment Run",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Payment Holds",
+      "link_to": "Payment Hold",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Payment Run Exceptions",
+      "link_to": "Payment Run Exceptions",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Payment Proposal Register",
+      "link_to": "Payment Proposal Register",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Payment Run Register",
+      "link_to": "Payment Run Register",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Payment Hold Register",
+      "link_to": "Payment Hold Register",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
     }
   ],
   "module": "Advanced Finance",
@@ -103,6 +166,51 @@
       "label": "Supplier Reconciliation Manual",
       "link_to": "supplier-reconciliation-manual",
       "type": "Page"
+    },
+    {
+      "color": "Blue",
+      "label": "Payment Proposal",
+      "link_to": "Payment Proposal",
+      "type": "DocType",
+      "doc_view": "List"
+    },
+    {
+      "color": "Blue",
+      "label": "Payment Run",
+      "link_to": "Payment Run",
+      "type": "DocType",
+      "doc_view": "List"
+    },
+    {
+      "color": "Orange",
+      "label": "Payment Holds",
+      "link_to": "Payment Hold",
+      "type": "DocType",
+      "doc_view": "List"
+    },
+    {
+      "color": "Orange",
+      "label": "Payment Run Exceptions",
+      "link_to": "Payment Run Exceptions",
+      "type": "Report"
+    },
+    {
+      "color": "Green",
+      "label": "Payment Proposal Register",
+      "link_to": "Payment Proposal Register",
+      "type": "Report"
+    },
+    {
+      "color": "Green",
+      "label": "Payment Run Register",
+      "link_to": "Payment Run Register",
+      "type": "Report"
+    },
+    {
+      "color": "Green",
+      "label": "Payment Hold Register",
+      "link_to": "Payment Hold Register",
+      "type": "Report"
     }
   ],
   "title": "Advanced Finance"

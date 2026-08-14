@@ -1,0 +1,21 @@
+{
+  "actions": [],
+  "creation": "2026-08-14 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["supplier", "purchase_invoice", "currency", "proposal_outstanding_amount", "execution_outstanding_amount", "selected_amount", "payment_entry", "payment_status"],
+  "fields": [
+    {"fieldname": "supplier", "fieldtype": "Link", "label": "Supplier", "options": "Supplier", "in_list_view": 1},
+    {"fieldname": "purchase_invoice", "fieldtype": "Link", "label": "Purchase Invoice", "options": "Purchase Invoice", "in_list_view": 1},
+    {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency"},
+    {"fieldname": "proposal_outstanding_amount", "fieldtype": "Currency", "label": "Outstanding at Proposal"},
+    {"fieldname": "execution_outstanding_amount", "fieldtype": "Currency", "label": "Outstanding at Execution"},
+    {"fieldname": "selected_amount", "fieldtype": "Currency", "label": "Selected Amount", "in_list_view": 1},
+    {"fieldname": "payment_entry", "fieldtype": "Link", "label": "Payment Entry", "options": "Payment Entry"},
+    {"fieldname": "payment_status", "fieldtype": "Select", "label": "Payment Status", "options": "Pending\nPayment Entry Created\nSubmitted\nFailed", "in_list_view": 1}
+  ],
+  "istable": 1,
+  "module": "Advanced Finance",
+  "name": "Payment Run Invoice"
+}

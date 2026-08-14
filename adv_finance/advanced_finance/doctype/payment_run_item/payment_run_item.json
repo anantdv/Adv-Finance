@@ -1,0 +1,23 @@
+{
+  "actions": [],
+  "creation": "2026-08-14 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["supplier", "supplier_bank_account", "currency", "gross_amount", "credit_amount", "net_amount", "payment_entry", "payment_order", "payment_status", "exception"],
+  "fields": [
+    {"fieldname": "supplier", "fieldtype": "Link", "label": "Supplier", "options": "Supplier", "in_list_view": 1},
+    {"fieldname": "supplier_bank_account", "fieldtype": "Link", "label": "Supplier Bank Account", "options": "Bank Account"},
+    {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency"},
+    {"fieldname": "gross_amount", "fieldtype": "Currency", "label": "Gross Amount", "in_list_view": 1},
+    {"fieldname": "credit_amount", "fieldtype": "Currency", "label": "Credit Amount"},
+    {"fieldname": "net_amount", "fieldtype": "Currency", "label": "Net Amount", "in_list_view": 1},
+    {"fieldname": "payment_entry", "fieldtype": "Link", "label": "Payment Entry", "options": "Payment Entry"},
+    {"fieldname": "payment_order", "fieldtype": "Link", "label": "Payment Order", "options": "Payment Order"},
+    {"fieldname": "payment_status", "fieldtype": "Select", "label": "Payment Status", "options": "Pending\nPayment Entry Created\nSubmitted\nFailed"},
+    {"fieldname": "exception", "fieldtype": "Small Text", "label": "Exception"}
+  ],
+  "istable": 1,
+  "module": "Advanced Finance",
+  "name": "Payment Run Item"
+}
