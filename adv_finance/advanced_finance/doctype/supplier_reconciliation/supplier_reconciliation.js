@@ -4,6 +4,10 @@ frappe.ui.form.on("Supplier Reconciliation", {
 
     if (frm.is_new()) return;
 
+    frm.add_custom_button(__("User Manual"), () => {
+      frappe.set_route("supplier-reconciliation-manual");
+    });
+
     if (frm.doc.reconciliation_status === "Draft" || frm.doc.reconciliation_status === "Uploaded") {
       frm.add_custom_button(__("Parse Statement"), () => call_reconciliation(frm, "parse_statement"));
     }

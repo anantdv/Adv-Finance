@@ -1,6 +1,6 @@
 {
   "charts": [],
-  "content": "[{\"id\":\"accounts_payable\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"shortcut_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation\",\"col\":3}},{\"id\":\"shortcut_template\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Statement Template\",\"col\":3}},{\"id\":\"report_history\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation History\",\"col\":3}},{\"id\":\"report_exceptions\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Supplier Reconciliation Exceptions\",\"col\":3}}]",
+  "content": "[{\"id\":\"accounts_payable\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"shortcut_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation\",\"col\":3}},{\"id\":\"shortcut_template\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Statement Template\",\"col\":3}},{\"id\":\"report_history\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation History\",\"col\":3}},{\"id\":\"report_exceptions\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Supplier Reconciliation Exceptions\",\"col\":3}},{\"id\":\"manual_supplier_reconciliation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation Manual\",\"col\":3}}]",
   "creation": "2026-08-13 00:00:00.000000",
   "docstatus": 0,
   "doctype": "Workspace",
@@ -10,25 +10,100 @@
   "is_hidden": 0,
   "label": "Advanced Finance",
   "links": [
-    {"hidden": 0, "is_query_report": 0, "label": "Supplier Reconciliation", "link_to": "Supplier Reconciliation", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"hidden": 0, "is_query_report": 0, "label": "Supplier Statement Template", "link_to": "Supplier Statement Template", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"hidden": 0, "is_query_report": 1, "label": "Supplier Reconciliation History", "link_to": "Supplier Reconciliation History", "link_type": "Report", "onboard": 0, "type": "Link"},
-    {"hidden": 0, "is_query_report": 1, "label": "Open Supplier Reconciliation Exceptions", "link_to": "Open Supplier Reconciliation Exceptions", "link_type": "Report", "onboard": 0, "type": "Link"}
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Supplier Reconciliation",
+      "link_to": "Supplier Reconciliation",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Supplier Statement Template",
+      "link_to": "Supplier Statement Template",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Supplier Reconciliation History",
+      "link_to": "Supplier Reconciliation History",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Open Supplier Reconciliation Exceptions",
+      "link_to": "Open Supplier Reconciliation Exceptions",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Supplier Reconciliation Manual",
+      "link_to": "supplier-reconciliation-manual",
+      "link_type": "Page",
+      "onboard": 0,
+      "type": "Link"
+    }
   ],
   "module": "Advanced Finance",
   "name": "Advanced Finance",
   "public": 1,
   "roles": [
-    {"role": "System Manager"},
-    {"role": "Supplier Reconciliation User"},
-    {"role": "Supplier Reconciliation Manager"}
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Supplier Reconciliation User"
+    },
+    {
+      "role": "Supplier Reconciliation Manager"
+    }
   ],
   "sequence_id": 1,
   "shortcuts": [
-    {"color": "Blue", "doc_view": "List", "label": "Supplier Reconciliation", "link_to": "Supplier Reconciliation", "type": "DocType"},
-    {"color": "Blue", "doc_view": "List", "label": "Supplier Statement Template", "link_to": "Supplier Statement Template", "type": "DocType"},
-    {"color": "Green", "label": "Supplier Reconciliation History", "link_to": "Supplier Reconciliation History", "type": "Report"},
-    {"color": "Orange", "label": "Open Supplier Reconciliation Exceptions", "link_to": "Open Supplier Reconciliation Exceptions", "type": "Report"}
+    {
+      "color": "Blue",
+      "doc_view": "List",
+      "label": "Supplier Reconciliation",
+      "link_to": "Supplier Reconciliation",
+      "type": "DocType"
+    },
+    {
+      "color": "Blue",
+      "doc_view": "List",
+      "label": "Supplier Statement Template",
+      "link_to": "Supplier Statement Template",
+      "type": "DocType"
+    },
+    {
+      "color": "Green",
+      "label": "Supplier Reconciliation History",
+      "link_to": "Supplier Reconciliation History",
+      "type": "Report"
+    },
+    {
+      "color": "Orange",
+      "label": "Open Supplier Reconciliation Exceptions",
+      "link_to": "Open Supplier Reconciliation Exceptions",
+      "type": "Report"
+    },
+    {
+      "color": "Grey",
+      "label": "Supplier Reconciliation Manual",
+      "link_to": "supplier-reconciliation-manual",
+      "type": "Page"
+    }
   ],
   "title": "Advanced Finance"
 }

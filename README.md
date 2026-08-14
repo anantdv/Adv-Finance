@@ -65,6 +65,10 @@ Example CSV mapping:
 Create Reconciliation -> Upload Statement -> Parse -> Load ERP Ledger -> Run
 Reconciliation -> Review Suggested Matches -> Resolve Exceptions -> Close.
 
+The Advanced Finance workspace includes a Supplier Reconciliation Manual page
+with setup steps, monthly workflow guidance, status meanings, exception handling,
+and closing rules.
+
 ## Accounting Safety
 
 Supplier Reconciliation never inserts, updates, or deletes `GL Entry` or
