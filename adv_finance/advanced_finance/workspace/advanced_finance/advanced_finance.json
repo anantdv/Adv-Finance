@@ -11,6 +11,10 @@
   "label": "Advanced Finance",
   "links": [
     {
+      "label": "Accounts Payable",
+      "type": "Card Break"
+    },
+    {
       "hidden": 0,
       "is_query_report": 0,
       "label": "Supplier Reconciliation",
@@ -83,40 +87,8 @@
       "type": "Link"
     },
     {
-      "hidden": 0,
-      "is_query_report": 1,
-      "label": "Payment Run Exceptions",
-      "link_to": "Payment Run Exceptions",
-      "link_type": "Report",
-      "onboard": 0,
-      "type": "Link"
-    },
-    {
-      "hidden": 0,
-      "is_query_report": 1,
-      "label": "Payment Proposal Register",
-      "link_to": "Payment Proposal Register",
-      "link_type": "Report",
-      "onboard": 0,
-      "type": "Link"
-    },
-    {
-      "hidden": 0,
-      "is_query_report": 1,
-      "label": "Payment Run Register",
-      "link_to": "Payment Run Register",
-      "link_type": "Report",
-      "onboard": 0,
-      "type": "Link"
-    },
-    {
-      "hidden": 0,
-      "is_query_report": 1,
-      "label": "Payment Hold Register",
-      "link_to": "Payment Hold Register",
-      "link_type": "Report",
-      "onboard": 0,
-      "type": "Link"
+      "label": "Account Reconciliation",
+      "type": "Card Break"
     },
     {
       "hidden": 0,
@@ -177,6 +149,50 @@
       "is_query_report": 1,
       "label": "Reconciliation Exceptions",
       "link_to": "Reconciliation Exceptions",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "label": "Monitoring",
+      "type": "Card Break"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Payment Run Exceptions",
+      "link_to": "Payment Run Exceptions",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "label": "Reports",
+      "type": "Card Break"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Payment Proposal Register",
+      "link_to": "Payment Proposal Register",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Payment Run Register",
+      "link_to": "Payment Run Register",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Payment Hold Register",
+      "link_to": "Payment Hold Register",
       "link_type": "Report",
       "onboard": 0,
       "type": "Link"
