@@ -1,0 +1,309 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "company",
+    "customer",
+    "customer_name",
+    "review_date",
+    "existing_credit_section",
+    "current_credit_limit",
+    "credit_days",
+    "payment_terms",
+    "exposure_section",
+    "receivable_outstanding",
+    "overdue_amount",
+    "open_sales_orders",
+    "unbilled_delivery_amount",
+    "other_exposure",
+    "available_credit",
+    "total_credit_exposure",
+    "behaviour_section",
+    "average_days_to_pay",
+    "maximum_days_overdue",
+    "broken_promises",
+    "disputes_count",
+    "write_off_history",
+    "payment_behaviour_score",
+    "recommendation_section",
+    "recommended_credit_limit",
+    "recommended_credit_days",
+    "risk_rating",
+    "recommendation",
+    "approval_section",
+    "prepared_by",
+    "reviewed_by",
+    "approved_by",
+    "status"
+  ],
+  "fields": [
+    {
+      "default": "CR-REV-.YYYY.-.#####",
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "CR-REV-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fetch_from": "customer.customer_name",
+      "fieldname": "customer_name",
+      "fieldtype": "Data",
+      "label": "Customer Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "review_date",
+      "fieldtype": "Date",
+      "label": "Review Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "existing_credit_section",
+      "fieldtype": "Section Break",
+      "label": "Existing Credit"
+    },
+    {
+      "fieldname": "current_credit_limit",
+      "fieldtype": "Currency",
+      "label": "Current Credit Limit",
+      "read_only": 1
+    },
+    {
+      "fieldname": "credit_days",
+      "fieldtype": "Int",
+      "label": "Credit Days"
+    },
+    {
+      "fieldname": "payment_terms",
+      "fieldtype": "Link",
+      "label": "Payment Terms",
+      "options": "Payment Terms Template"
+    },
+    {
+      "fieldname": "exposure_section",
+      "fieldtype": "Section Break",
+      "label": "Exposure"
+    },
+    {
+      "fieldname": "receivable_outstanding",
+      "fieldtype": "Currency",
+      "label": "Receivable Outstanding",
+      "read_only": 1
+    },
+    {
+      "fieldname": "overdue_amount",
+      "fieldtype": "Currency",
+      "label": "Overdue Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "open_sales_orders",
+      "fieldtype": "Currency",
+      "label": "Open Sales Orders",
+      "read_only": 1
+    },
+    {
+      "fieldname": "unbilled_delivery_amount",
+      "fieldtype": "Currency",
+      "label": "Unbilled Delivery Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "other_exposure",
+      "fieldtype": "Currency",
+      "label": "Other Exposure"
+    },
+    {
+      "fieldname": "available_credit",
+      "fieldtype": "Currency",
+      "label": "Available Credit",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_credit_exposure",
+      "fieldtype": "Currency",
+      "label": "Total Credit Exposure",
+      "read_only": 1
+    },
+    {
+      "fieldname": "behaviour_section",
+      "fieldtype": "Section Break",
+      "label": "Behaviour"
+    },
+    {
+      "fieldname": "average_days_to_pay",
+      "fieldtype": "Float",
+      "label": "Average Days To Pay",
+      "read_only": 1
+    },
+    {
+      "fieldname": "maximum_days_overdue",
+      "fieldtype": "Int",
+      "label": "Maximum Days Overdue",
+      "read_only": 1
+    },
+    {
+      "fieldname": "broken_promises",
+      "fieldtype": "Int",
+      "label": "Broken Promises",
+      "read_only": 1
+    },
+    {
+      "fieldname": "disputes_count",
+      "fieldtype": "Int",
+      "label": "Disputes Count",
+      "read_only": 1
+    },
+    {
+      "fieldname": "write_off_history",
+      "fieldtype": "Currency",
+      "label": "Write Off History"
+    },
+    {
+      "fieldname": "payment_behaviour_score",
+      "fieldtype": "Int",
+      "label": "Payment Behaviour Score",
+      "read_only": 1
+    },
+    {
+      "fieldname": "recommendation_section",
+      "fieldtype": "Section Break",
+      "label": "Recommendation"
+    },
+    {
+      "fieldname": "recommended_credit_limit",
+      "fieldtype": "Currency",
+      "label": "Recommended Credit Limit"
+    },
+    {
+      "fieldname": "recommended_credit_days",
+      "fieldtype": "Int",
+      "label": "Recommended Credit Days"
+    },
+    {
+      "default": "Moderate",
+      "fieldname": "risk_rating",
+      "fieldtype": "Select",
+      "label": "Risk Rating",
+      "options": "Low\nModerate\nHigh\nCritical",
+      "in_list_view": 1
+    },
+    {
+      "default": "Review Required",
+      "fieldname": "recommendation",
+      "fieldtype": "Select",
+      "label": "Recommendation",
+      "options": "Maintain\nIncrease\nReduce\nCredit Hold\nCash Only\nReview Required"
+    },
+    {
+      "fieldname": "approval_section",
+      "fieldtype": "Section Break",
+      "label": "Approval"
+    },
+    {
+      "fieldname": "prepared_by",
+      "fieldtype": "Link",
+      "label": "Prepared By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reviewed_by",
+      "fieldtype": "Link",
+      "label": "Reviewed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "default": "Draft",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nUnder Review\nApproved\nRejected\nClosed",
+      "in_list_view": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Credit Review",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Controller",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "review_date",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

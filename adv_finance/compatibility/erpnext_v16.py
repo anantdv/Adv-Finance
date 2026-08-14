@@ -507,6 +507,106 @@ def find_late_gl_postings(company: str, period_start, period_end, cutoff_timesta
     )
 
 
+def get_customer_open_sales_invoices(company: str, customer: str, as_of_date=None) -> list[dict[str, Any]]:
+    conditions = ["company = %(company)s", "customer = %(customer)s", "docstatus = 1", "outstanding_amount > 0"]
+    values: dict[str, Any] = {"company": company, "customer": customer}
+    if as_of_date:
+        conditions.append("posting_date <= %(as_of_date)s")
+        values["as_of_date"] = as_of_date
+    return frappe.db.sql(
+        f"""
+        select name, posting_date, due_date, grand_total, outstanding_amount,
+               currency, customer, customer_name, company
+        from `tabSales Invoice`
+        where {" and ".join(conditions)}
+        order by due_date asc, posting_date asc, name asc
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_customer_receipts(company: str, customer: str, from_date=None, to_date=None) -> list[dict[str, Any]]:
+    conditions = ["pe.company = %(company)s", "pe.party_type = 'Customer'", "pe.party = %(customer)s", "pe.docstatus = 1"]
+    values: dict[str, Any] = {"company": company, "customer": customer}
+    if from_date:
+        conditions.append("pe.posting_date >= %(from_date)s")
+        values["from_date"] = from_date
+    if to_date:
+        conditions.append("pe.posting_date <= %(to_date)s")
+        values["to_date"] = to_date
+    return frappe.db.sql(
+        f"""
+        select pe.name, pe.posting_date, pe.paid_amount, pe.received_amount,
+               per.reference_doctype, per.reference_name, per.allocated_amount
+        from `tabPayment Entry` pe
+        left join `tabPayment Entry Reference` per on per.parent = pe.name
+        where {" and ".join(conditions)}
+        order by pe.posting_date asc, pe.name asc
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_customer_credit_limit(company: str, customer: str):
+    credit_limit = frappe.db.get_value(
+        "Customer Credit Limit",
+        {"parent": customer, "parenttype": "Customer", "company": company},
+        "credit_limit",
+    )
+    if credit_limit is None:
+        credit_limit = frappe.db.get_value("Customer", customer, "credit_limit")
+    return credit_limit or 0
+
+
+def get_customer_open_sales_orders(company: str, customer: str) -> Decimal:
+    result = frappe.db.sql(
+        """
+        select coalesce(sum(base_grand_total - coalesce(per_billed, 0) * base_grand_total / 100), 0) as amount
+        from `tabSales Order`
+        where company = %(company)s
+          and customer = %(customer)s
+          and docstatus = 1
+          and status not in ('Closed', 'Completed', 'Cancelled')
+        """,
+        {"company": company, "customer": customer},
+        as_dict=True,
+    )
+    return Decimal(str(result[0].amount if result else 0))
+
+
+def get_customer_unbilled_delivery_amount(company: str, customer: str) -> Decimal:
+    result = frappe.db.sql(
+        """
+        select coalesce(sum(base_grand_total - coalesce(per_billed, 0) * base_grand_total / 100), 0) as amount
+        from `tabDelivery Note`
+        where company = %(company)s
+          and customer = %(customer)s
+          and docstatus = 1
+          and status not in ('Closed', 'Completed', 'Cancelled')
+        """,
+        {"company": company, "customer": customer},
+        as_dict=True,
+    )
+    return Decimal(str(result[0].amount if result else 0))
+
+
+def create_draft_customer_credit_note(dispute) -> Any:
+    if not dispute.sales_invoice:
+        frappe.throw("Sales Invoice is required before creating a draft credit note.")
+    source = frappe.get_doc("Sales Invoice", dispute.sales_invoice)
+    credit_note = frappe.copy_doc(source)
+    credit_note.is_return = 1
+    credit_note.return_against = source.name
+    credit_note.posting_date = dispute.dispute_date
+    credit_note.remarks = f"ADV Finance Customer Dispute {dispute.name}: {dispute.description or ''}"
+    for item in getattr(credit_note, "items", []):
+        item.qty = -abs(item.qty or 0)
+    credit_note.insert()
+    return credit_note
+
+
 def _validate_accrual_accounts(accrual) -> None:
     if not accrual.company:
         frappe.throw("Company is required.")

@@ -1,0 +1,5 @@
+from __future__ import annotations
+import frappe
+def execute(filters=None):
+    cols=[{"label":"Override","fieldname":"name","fieldtype":"Link","options":"Credit Override Request","width":170},{"label":"Customer","fieldname":"customer","fieldtype":"Link","options":"Customer","width":150},{"label":"Amount","fieldname":"requested_amount","fieldtype":"Currency","width":120},{"label":"Exposure After","fieldname":"exposure_after_transaction","fieldtype":"Currency","width":130},{"label":"Status","fieldname":"status","fieldtype":"Data","width":100},{"label":"Requested By","fieldname":"requested_by","fieldtype":"Link","options":"User","width":150},{"label":"Approved By","fieldname":"approved_by","fieldtype":"Link","options":"User","width":150},{"label":"Valid Until","fieldname":"valid_until","fieldtype":"Date","width":110}]
+    return cols, frappe.db.sql("""select name,customer,requested_amount,exposure_after_transaction,status,requested_by,approved_by,valid_until from `tabCredit Override Request` order by modified desc""", as_dict=True)

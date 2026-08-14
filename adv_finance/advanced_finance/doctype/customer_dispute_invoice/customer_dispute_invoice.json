@@ -1,0 +1,47 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "istable": 1,
+  "field_order": [
+    "sales_invoice",
+    "invoice_amount",
+    "outstanding_amount",
+    "disputed_amount",
+    "reason"
+  ],
+  "fields": [
+    {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Sales Invoice",
+      "options": "Sales Invoice",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "invoice_amount",
+      "fieldtype": "Currency",
+      "label": "Invoice Amount"
+    },
+    {
+      "fieldname": "outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Outstanding Amount"
+    },
+    {
+      "fieldname": "disputed_amount",
+      "fieldtype": "Currency",
+      "label": "Disputed Amount",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reason",
+      "fieldtype": "Small Text",
+      "label": "Reason"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Customer Dispute Invoice"
+}

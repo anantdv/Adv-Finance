@@ -1,0 +1,251 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "company",
+    "customer",
+    "collection_case",
+    "promise_section",
+    "promise_date",
+    "promised_payment_date",
+    "promised_amount",
+    "currency",
+    "payment_method",
+    "customer_contact",
+    "reference",
+    "status",
+    "actual_section",
+    "actual_received_amount",
+    "remaining_promised_amount",
+    "fulfilled_date",
+    "reschedule_section",
+    "previous_promise",
+    "rescheduled_from",
+    "reschedule_reason",
+    "audit_section",
+    "recorded_by",
+    "recorded_on",
+    "notes",
+    "invoices"
+  ],
+  "fields": [
+    {
+      "default": "PTP-.YYYY.-.#####",
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "PTP-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "collection_case",
+      "fieldtype": "Link",
+      "label": "Collection Case",
+      "options": "Collection Case"
+    },
+    {
+      "fieldname": "promise_section",
+      "fieldtype": "Section Break",
+      "label": "Promise"
+    },
+    {
+      "fieldname": "promise_date",
+      "fieldtype": "Date",
+      "label": "Promise Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "promised_payment_date",
+      "fieldtype": "Date",
+      "label": "Promised Payment Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "promised_amount",
+      "fieldtype": "Currency",
+      "label": "Promised Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "payment_method",
+      "fieldtype": "Data",
+      "label": "Payment Method"
+    },
+    {
+      "fieldname": "customer_contact",
+      "fieldtype": "Link",
+      "label": "Customer Contact",
+      "options": "Contact"
+    },
+    {
+      "fieldname": "reference",
+      "fieldtype": "Data",
+      "label": "Reference"
+    },
+    {
+      "default": "Draft",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nActive\nPartially Kept\nKept\nBroken\nRescheduled\nCancelled",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "actual_section",
+      "fieldtype": "Section Break",
+      "label": "Actual"
+    },
+    {
+      "fieldname": "actual_received_amount",
+      "fieldtype": "Currency",
+      "label": "Actual Received Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "remaining_promised_amount",
+      "fieldtype": "Currency",
+      "label": "Remaining Promised Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "fulfilled_date",
+      "fieldtype": "Date",
+      "label": "Fulfilled Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reschedule_section",
+      "fieldtype": "Section Break",
+      "label": "Reschedule"
+    },
+    {
+      "fieldname": "previous_promise",
+      "fieldtype": "Link",
+      "label": "Previous Promise",
+      "options": "Promise to Pay"
+    },
+    {
+      "fieldname": "rescheduled_from",
+      "fieldtype": "Link",
+      "label": "Rescheduled From",
+      "options": "Promise to Pay"
+    },
+    {
+      "fieldname": "reschedule_reason",
+      "fieldtype": "Small Text",
+      "label": "Reschedule Reason"
+    },
+    {
+      "fieldname": "audit_section",
+      "fieldtype": "Section Break",
+      "label": "Audit"
+    },
+    {
+      "fieldname": "recorded_by",
+      "fieldtype": "Link",
+      "label": "Recorded By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "recorded_on",
+      "fieldtype": "Datetime",
+      "label": "Recorded On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text Editor",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "invoices",
+      "fieldtype": "Table",
+      "label": "Invoice Allocation",
+      "options": "Promise to Pay Invoice"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Promise to Pay",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Controller",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "promised_payment_date",
+  "sort_order": "ASC",
+  "track_changes": 1
+}

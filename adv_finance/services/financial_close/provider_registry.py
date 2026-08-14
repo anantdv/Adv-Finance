@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from adv_finance.services.financial_close.providers.account_reconciliation import AccountReconciliationProvider
+from adv_finance.services.financial_close.providers.accounts_receivable import AccountsReceivableProvider
 from adv_finance.services.financial_close.providers.accrual import AccrualProvider
 from adv_finance.services.financial_close.providers.bank_reconciliation import BankReconciliationProvider
 from adv_finance.services.financial_close.providers.base import CloseReadinessProvider
@@ -16,6 +17,7 @@ PROVIDERS = {
     "manual": CloseReadinessProvider,
     "supplier_reconciliation": SupplierReconciliationProvider,
     "account_reconciliation": AccountReconciliationProvider,
+    "accounts_receivable": AccountsReceivableProvider,
     "accrual": AccrualProvider,
     "bank_reconciliation": BankReconciliationProvider,
     "fixed_assets": FixedAssetsProvider,

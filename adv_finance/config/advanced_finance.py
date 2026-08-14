@@ -127,6 +127,55 @@ def get_data():
             ],
         },
         {
+            "label": _("Accounts Receivable"),
+            "icon": "octicon octicon-credit-card",
+            "items": [
+                {
+                    "type": "report",
+                    "name": "Collection Workbench",
+                    "doctype": "Collection Case",
+                    "label": _("Collection Workbench"),
+                    "is_query_report": True,
+                    "onboard": 0,
+                },
+                {
+                    "type": "doctype",
+                    "name": "Collection Case",
+                    "label": _("Collection Cases"),
+                    "description": _("Prioritize and manage customer collection work."),
+                    "onboard": 1,
+                },
+                {
+                    "type": "doctype",
+                    "name": "Promise to Pay",
+                    "label": _("Promise to Pay"),
+                    "description": _("Record customer payment commitments and monitor fulfilment."),
+                    "onboard": 1,
+                },
+                {
+                    "type": "doctype",
+                    "name": "Customer Dispute",
+                    "label": _("Customer Disputes"),
+                    "description": _("Track customer invoice disputes without reducing accounting receivables."),
+                    "onboard": 1,
+                },
+                {
+                    "type": "doctype",
+                    "name": "Credit Review",
+                    "label": _("Credit Reviews"),
+                    "description": _("Review exposure, behaviour, limits, and credit recommendations."),
+                    "onboard": 1,
+                },
+                {
+                    "type": "doctype",
+                    "name": "Credit Hold",
+                    "label": _("Credit Holds"),
+                    "description": _("Control operational credit holds and releases."),
+                    "onboard": 1,
+                },
+            ],
+        },
+        {
             "label": _("Monitoring"),
             "icon": "octicon octicon-device-desktop",
             "items": [

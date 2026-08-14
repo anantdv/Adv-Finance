@@ -84,6 +84,7 @@ Implemented:
 - Account Reconciliation Period
 - Accrual Management
 - Month-End Financial Close Management
+- Accounts Receivable Collections and Credit Control
 
 In development:
 
@@ -92,6 +93,7 @@ In development:
 - ERPNext v16 integration validation for account reconciliation providers
 - ERPNext v16 integration validation for accrual Journal Entry reversal
 - ERPNext v16 integration validation for Financial Close Period Closing Voucher and sidebar
+- ERPNext v16 integration validation for AR ageing, receipts, and credit-note creation
 
 Planned:
 

@@ -1,0 +1,7 @@
+from __future__ import annotations
+import frappe
+def execute(filters=None):
+    cols=[{"label":"Customer","fieldname":"customer","fieldtype":"Link","options":"Customer","width":150},{"label":"Receivables","fieldname":"receivable_outstanding","fieldtype":"Currency","width":120},{"label":"Overdue","fieldname":"overdue_amount","fieldtype":"Currency","width":120},{"label":"Open Orders","fieldname":"open_sales_orders","fieldtype":"Currency","width":120},{"label":"Unbilled Deliveries","fieldname":"unbilled_delivery_amount","fieldtype":"Currency","width":140},{"label":"Total Exposure","fieldname":"total_credit_exposure","fieldtype":"Currency","width":130},{"label":"Credit Limit","fieldname":"current_credit_limit","fieldtype":"Currency","width":120},{"label":"Available Credit","fieldname":"available_credit","fieldtype":"Currency","width":130},{"label":"Hold Status","fieldname":"hold_status","fieldtype":"Data","width":100}]
+    data=frappe.db.sql("""select cr.customer,cr.receivable_outstanding,cr.overdue_amount,cr.open_sales_orders,cr.unbilled_delivery_amount,cr.total_credit_exposure,cr.current_credit_limit,cr.available_credit,cr.company from `tabCredit Review` cr where cr.name in (select max(name) from `tabCredit Review` group by company, customer) order by cr.total_credit_exposure desc""", as_dict=True)
+    for r in data: r.hold_status='HOLD' if frappe.db.exists('Credit Hold', {'company': r.company, 'customer': r.customer, 'active': 1}) else 'Open'
+    return cols,data

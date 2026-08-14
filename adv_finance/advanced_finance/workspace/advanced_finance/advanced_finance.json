@@ -1,6 +1,6 @@
 {
   "charts": [],
-  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_payable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accruals_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accruals\",\"col\":12}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"financial_close_header\",\"type\":\"header\",\"data\":{\"text\":\"Financial Close\",\"col\":12}},{\"id\":\"financial_close_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Close\",\"col\":12}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"monitoring_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Monitoring\",\"col\":12}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
+  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_payable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_receivable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accounts_receivable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accruals_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accruals\",\"col\":12}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"financial_close_header\",\"type\":\"header\",\"data\":{\"text\":\"Financial Close\",\"col\":12}},{\"id\":\"financial_close_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Close\",\"col\":12}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"monitoring_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Monitoring\",\"col\":12}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
   "creation": "2026-08-13 00:00:00.000000",
   "docstatus": 0,
   "doctype": "Workspace",
@@ -97,6 +97,94 @@
       "onboard": 0,
       "type": "Link",
       "link_count": 0
+    },
+    {
+      "label": "Accounts Receivable",
+      "type": "Card Break",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Collection Workbench",
+      "link_to": "Collection Workbench",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Collection Cases",
+      "link_to": "Collection Case",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Promise to Pay",
+      "link_to": "Promise to Pay",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Customer Disputes",
+      "link_to": "Customer Dispute",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Credit Reviews",
+      "link_to": "Credit Review",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Credit Holds",
+      "link_to": "Credit Hold",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Credit Overrides",
+      "link_to": "Credit Override Request",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "My Collection Queue",
+      "link_to": "My Collection Queue",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
     },
     {
       "label": "Account Reconciliation",
@@ -341,6 +429,36 @@
       "link_count": 0
     },
     {
+      "label": "Broken Promises",
+      "link_to": "Broken Promise Report",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Credit Hold Register",
+      "link_to": "Credit Hold Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Customer Dispute Register",
+      "link_to": "Customer Dispute Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
       "label": "Reports",
       "type": "Card Break",
       "hidden": 0,
@@ -377,6 +495,56 @@
       "onboard": 0,
       "type": "Link",
       "link_count": 0
+    },
+    {
+      "label": "Promise to Pay Register",
+      "link_to": "Promise to Pay Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Credit Exposure Report",
+      "link_to": "Credit Exposure Report",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Collection Performance",
+      "link_to": "Collection Performance",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Credit Review Register",
+      "link_to": "Credit Review Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Credit Override Register",
+      "link_to": "Credit Override Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
     }
   ],
   "module": "Advanced Finance",

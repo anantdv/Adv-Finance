@@ -1,0 +1,99 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "istable": 1,
+  "field_order": [
+    "sales_invoice",
+    "posting_date",
+    "due_date",
+    "grand_total",
+    "snapshot_outstanding_amount",
+    "current_outstanding_amount",
+    "overdue_days",
+    "ageing_bucket",
+    "currency",
+    "disputed",
+    "promised_amount",
+    "collection_status",
+    "selected"
+  ],
+  "fields": [
+    {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Sales Invoice",
+      "options": "Sales Invoice",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date"
+    },
+    {
+      "fieldname": "due_date",
+      "fieldtype": "Date",
+      "label": "Due Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "grand_total",
+      "fieldtype": "Currency",
+      "label": "Grand Total"
+    },
+    {
+      "fieldname": "snapshot_outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Snapshot Outstanding"
+    },
+    {
+      "fieldname": "current_outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Current Outstanding",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "overdue_days",
+      "fieldtype": "Int",
+      "label": "Overdue Days",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "ageing_bucket",
+      "fieldtype": "Data",
+      "label": "Ageing Bucket"
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "disputed",
+      "fieldtype": "Check",
+      "label": "Disputed"
+    },
+    {
+      "fieldname": "promised_amount",
+      "fieldtype": "Currency",
+      "label": "Promised Amount"
+    },
+    {
+      "fieldname": "collection_status",
+      "fieldtype": "Select",
+      "label": "Collection Status",
+      "options": "Open\nPromised\nDisputed\nPaid\nClosed"
+    },
+    {
+      "fieldname": "selected",
+      "fieldtype": "Check",
+      "label": "Selected"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Collection Case Invoice"
+}

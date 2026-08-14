@@ -1,0 +1,191 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "company",
+    "customer",
+    "transaction_doctype",
+    "transaction_name",
+    "requested_amount",
+    "current_exposure",
+    "credit_limit",
+    "exposure_after_transaction",
+    "reason",
+    "requested_by",
+    "requested_on",
+    "status",
+    "approved_by",
+    "approved_on",
+    "valid_until",
+    "approval_notes"
+  ],
+  "fields": [
+    {
+      "default": "CR-OVR-.YYYY.-.#####",
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "CR-OVR-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "transaction_doctype",
+      "fieldtype": "Data",
+      "label": "Transaction DocType"
+    },
+    {
+      "fieldname": "transaction_name",
+      "fieldtype": "Dynamic Link",
+      "label": "Transaction Name",
+      "options": "transaction_doctype"
+    },
+    {
+      "fieldname": "requested_amount",
+      "fieldtype": "Currency",
+      "label": "Requested Amount",
+      "reqd": 1
+    },
+    {
+      "fieldname": "current_exposure",
+      "fieldtype": "Currency",
+      "label": "Current Exposure",
+      "read_only": 1
+    },
+    {
+      "fieldname": "credit_limit",
+      "fieldtype": "Currency",
+      "label": "Credit Limit",
+      "read_only": 1
+    },
+    {
+      "fieldname": "exposure_after_transaction",
+      "fieldtype": "Currency",
+      "label": "Exposure After Transaction",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reason",
+      "fieldtype": "Small Text",
+      "label": "Reason",
+      "reqd": 1
+    },
+    {
+      "fieldname": "requested_by",
+      "fieldtype": "Link",
+      "label": "Requested By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "requested_on",
+      "fieldtype": "Datetime",
+      "label": "Requested On",
+      "read_only": 1
+    },
+    {
+      "default": "Pending",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Pending\nApproved\nRejected\nExpired\nUsed\nCancelled",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_on",
+      "fieldtype": "Datetime",
+      "label": "Approved On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "valid_until",
+      "fieldtype": "Date",
+      "label": "Valid Until"
+    },
+    {
+      "fieldname": "approval_notes",
+      "fieldtype": "Small Text",
+      "label": "Approval Notes"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Credit Override Request",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Controller",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

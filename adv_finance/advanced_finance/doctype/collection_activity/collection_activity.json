@@ -1,0 +1,160 @@
+{
+  "actions": [],
+  "autoname": "hash",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "collection_case",
+    "company",
+    "customer",
+    "activity_date",
+    "activity_type",
+    "contact_person",
+    "outcome",
+    "notes",
+    "next_action_date",
+    "attachment",
+    "created_by"
+  ],
+  "fields": [
+    {
+      "fieldname": "collection_case",
+      "fieldtype": "Link",
+      "label": "Collection Case",
+      "options": "Collection Case",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "activity_date",
+      "fieldtype": "Datetime",
+      "label": "Activity Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "activity_type",
+      "fieldtype": "Select",
+      "label": "Activity Type",
+      "options": "Phone Call\nEmail\nMeeting\nSMS\nLetter\nInternal Review\nEscalation\nCustomer Response\nPayment Follow-up\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "contact_person",
+      "fieldtype": "Link",
+      "label": "Contact Person",
+      "options": "Contact"
+    },
+    {
+      "fieldname": "outcome",
+      "fieldtype": "Select",
+      "label": "Outcome",
+      "options": "No Answer\nContacted\nPromise Received\nDispute Raised\nPayment Made\nCall Back Requested\nEscalated\nNo Commitment\nOther",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text Editor",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "next_action_date",
+      "fieldtype": "Date",
+      "label": "Next Action Date"
+    },
+    {
+      "fieldname": "attachment",
+      "fieldtype": "Attach",
+      "label": "Attachment"
+    },
+    {
+      "fieldname": "created_by",
+      "fieldtype": "Link",
+      "label": "Created By",
+      "options": "User",
+      "read_only": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Collection Activity",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Supplier Reconciliation Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Controller",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "activity_date",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

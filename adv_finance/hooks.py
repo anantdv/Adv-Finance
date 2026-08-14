@@ -19,6 +19,10 @@ fixtures = [
                     "Supplier Reconciliation Manager",
                     "Financial Close User",
                     "Financial Close Manager",
+                    "AR Collection User",
+                    "AR Collection Manager",
+                    "Credit Controller",
+                    "Credit Manager",
                 ],
             ]
         ],
@@ -38,6 +42,12 @@ doctype_js = {
     "Accrual": "advanced_finance/doctype/accrual/accrual.js",
     "Financial Close Period": "advanced_finance/doctype/financial_close_period/financial_close_period.js",
     "Financial Close Task": "advanced_finance/doctype/financial_close_task/financial_close_task.js",
+    "Collection Case": "advanced_finance/doctype/collection_case/collection_case.js",
+    "Promise to Pay": "advanced_finance/doctype/promise_to_pay/promise_to_pay.js",
+    "Customer Dispute": "advanced_finance/doctype/customer_dispute/customer_dispute.js",
+    "Credit Review": "advanced_finance/doctype/credit_review/credit_review.js",
+    "Credit Hold": "advanced_finance/doctype/credit_hold/credit_hold.js",
+    "Credit Override Request": "advanced_finance/doctype/credit_override_request/credit_override_request.js",
 }
 
 doctype_list_js = {
@@ -48,10 +58,17 @@ doctype_list_js = {
     "Accrual": "advanced_finance/doctype/accrual/accrual_list.js",
     "Financial Close Period": "advanced_finance/doctype/financial_close_period/financial_close_period_list.js",
     "Financial Close Task": "advanced_finance/doctype/financial_close_task/financial_close_task_list.js",
+    "Collection Case": "advanced_finance/doctype/collection_case/collection_case_list.js",
+    "Promise to Pay": "advanced_finance/doctype/promise_to_pay/promise_to_pay_list.js",
+    "Customer Dispute": "advanced_finance/doctype/customer_dispute/customer_dispute_list.js",
+    "Credit Review": "advanced_finance/doctype/credit_review/credit_review_list.js",
+    "Credit Hold": "advanced_finance/doctype/credit_hold/credit_hold_list.js",
+    "Credit Override Request": "advanced_finance/doctype/credit_override_request/credit_override_request_list.js",
 }
 
 scheduler_events = {
     "daily": [
         "adv_finance.services.accrual.accrual_reversal_service.create_due_reversal_drafts",
+        "adv_finance.services.accounts_receivable.promise_fulfilment_service.process_broken_promises",
     ]
 }

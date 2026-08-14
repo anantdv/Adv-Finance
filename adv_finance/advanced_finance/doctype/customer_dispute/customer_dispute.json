@@ -1,0 +1,280 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "company",
+    "customer",
+    "collection_case",
+    "dispute_date",
+    "classification_section",
+    "dispute_type",
+    "severity",
+    "financial_section",
+    "disputed_amount",
+    "currency",
+    "reference_section",
+    "sales_invoice",
+    "delivery_note",
+    "sales_order",
+    "customer_reference",
+    "description",
+    "ownership_section",
+    "assigned_to",
+    "responsible_department",
+    "escalation_owner",
+    "status",
+    "credit_note",
+    "resolution_section",
+    "resolution_type",
+    "resolution_notes",
+    "resolved_amount",
+    "resolved_by",
+    "resolved_on",
+    "invoices"
+  ],
+  "fields": [
+    {
+      "default": "AR-DISP-.YYYY.-.#####",
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "AR-DISP-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "collection_case",
+      "fieldtype": "Link",
+      "label": "Collection Case",
+      "options": "Collection Case"
+    },
+    {
+      "fieldname": "dispute_date",
+      "fieldtype": "Date",
+      "label": "Dispute Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "classification_section",
+      "fieldtype": "Section Break",
+      "label": "Classification"
+    },
+    {
+      "fieldname": "dispute_type",
+      "fieldtype": "Select",
+      "label": "Dispute Type",
+      "options": "Pricing\nShort Delivery\nDamaged Goods\nIncorrect Quantity\nIncorrect Tax\nDuplicate Invoice\nMissing Purchase Order\nMissing Delivery Document\nCredit Requested\nService Issue\nContract Issue\nInvoice Not Received\nOther",
+      "reqd": 1
+    },
+    {
+      "default": "Medium",
+      "fieldname": "severity",
+      "fieldtype": "Select",
+      "label": "Severity",
+      "options": "Critical\nHigh\nMedium\nLow",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "financial_section",
+      "fieldtype": "Section Break",
+      "label": "Financial"
+    },
+    {
+      "fieldname": "disputed_amount",
+      "fieldtype": "Currency",
+      "label": "Disputed Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "reference_section",
+      "fieldtype": "Section Break",
+      "label": "Reference"
+    },
+    {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Sales Invoice",
+      "options": "Sales Invoice"
+    },
+    {
+      "fieldname": "delivery_note",
+      "fieldtype": "Link",
+      "label": "Delivery Note",
+      "options": "Delivery Note"
+    },
+    {
+      "fieldname": "sales_order",
+      "fieldtype": "Link",
+      "label": "Sales Order",
+      "options": "Sales Order"
+    },
+    {
+      "fieldname": "customer_reference",
+      "fieldtype": "Data",
+      "label": "Customer Reference"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "ownership_section",
+      "fieldtype": "Section Break",
+      "label": "Ownership"
+    },
+    {
+      "fieldname": "assigned_to",
+      "fieldtype": "Link",
+      "label": "Assigned To",
+      "options": "User"
+    },
+    {
+      "fieldname": "responsible_department",
+      "fieldtype": "Data",
+      "label": "Responsible Department"
+    },
+    {
+      "fieldname": "escalation_owner",
+      "fieldtype": "Link",
+      "label": "Escalation Owner",
+      "options": "User"
+    },
+    {
+      "default": "Open",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nInvestigating\nWaiting for Customer\nWaiting for Internal Team\nCredit Note Proposed\nAdjustment Required\nResolved\nRejected\nClosed",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "credit_note",
+      "fieldtype": "Link",
+      "label": "Draft Credit Note",
+      "options": "Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "resolution_section",
+      "fieldtype": "Section Break",
+      "label": "Resolution"
+    },
+    {
+      "fieldname": "resolution_type",
+      "fieldtype": "Data",
+      "label": "Resolution Type"
+    },
+    {
+      "fieldname": "resolution_notes",
+      "fieldtype": "Small Text",
+      "label": "Resolution Notes"
+    },
+    {
+      "fieldname": "resolved_amount",
+      "fieldtype": "Currency",
+      "label": "Resolved Amount"
+    },
+    {
+      "fieldname": "resolved_by",
+      "fieldtype": "Link",
+      "label": "Resolved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "resolved_on",
+      "fieldtype": "Datetime",
+      "label": "Resolved On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "invoices",
+      "fieldtype": "Table",
+      "label": "Dispute Invoices",
+      "options": "Customer Dispute Invoice"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Customer Dispute",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Controller",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "dispute_date",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

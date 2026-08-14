@@ -1,0 +1,185 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "company",
+    "customer",
+    "hold_date",
+    "hold_reason",
+    "hold_type",
+    "active",
+    "effective_from",
+    "effective_until",
+    "source",
+    "notes",
+    "created_by",
+    "approved_by",
+    "released_by",
+    "released_on",
+    "release_reason"
+  ],
+  "fields": [
+    {
+      "default": "CR-HOLD-.YYYY.-.#####",
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "CR-HOLD-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "hold_date",
+      "fieldtype": "Date",
+      "label": "Hold Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "hold_reason",
+      "fieldtype": "Small Text",
+      "label": "Hold Reason",
+      "reqd": 1
+    },
+    {
+      "fieldname": "hold_type",
+      "fieldtype": "Select",
+      "label": "Hold Type",
+      "options": "Full Credit Hold\nSales Order Hold\nDelivery Hold\nInvoice Hold\nManual Review Required",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "default": "1",
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "effective_from",
+      "fieldtype": "Date",
+      "label": "Effective From"
+    },
+    {
+      "fieldname": "effective_until",
+      "fieldtype": "Date",
+      "label": "Effective Until"
+    },
+    {
+      "fieldname": "source",
+      "fieldtype": "Select",
+      "label": "Source",
+      "options": "Manual\nCredit Review\nOverdue Exposure\nBroken Promise\nManagement Instruction\nOther"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text Editor",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "created_by",
+      "fieldtype": "Link",
+      "label": "Created By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "released_by",
+      "fieldtype": "Link",
+      "label": "Released By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "released_on",
+      "fieldtype": "Datetime",
+      "label": "Released On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "release_reason",
+      "fieldtype": "Small Text",
+      "label": "Release Reason"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Credit Hold",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Collection User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Controller",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Credit Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "hold_date",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
