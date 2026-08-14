@@ -27,6 +27,7 @@ fixtures = [
 
 before_install = "adv_finance.install.before_install"
 after_install = "adv_finance.install.after_install"
+after_migrate = "adv_finance.install.after_migrate"
 
 doctype_js = {
     "Supplier Reconciliation": "advanced_finance/doctype/supplier_reconciliation/supplier_reconciliation.js",

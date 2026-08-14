@@ -7,6 +7,12 @@ def before_install():
 
 def after_install():
     create_roles()
+    create_default_financial_close_template()
+
+
+def after_migrate():
+    create_roles()
+    create_default_financial_close_template()
 
 
 def create_roles():
@@ -18,3 +24,11 @@ def create_roles():
     ):
         if not frappe.db.exists("Role", role_name):
             frappe.get_doc({"doctype": "Role", "role_name": role_name, "desk_access": 1}).insert()
+
+
+def create_default_financial_close_template():
+    if not frappe.db.exists("DocType", "Financial Close Template"):
+        return
+    from adv_finance.patches.v0_1.create_default_financial_close_template import execute
+
+    execute()
