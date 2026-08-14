@@ -186,6 +186,49 @@ def get_data():
             ],
         },
         {
+            "label": _("Financial Close"),
+            "icon": "octicon octicon-check-circle",
+            "items": [
+                {
+                    "type": "doctype",
+                    "name": "Financial Close Period",
+                    "label": _("Close Periods"),
+                    "description": _("Coordinate period-end close tasks, readiness, review, and approval."),
+                    "onboard": 1,
+                },
+                {
+                    "type": "doctype",
+                    "name": "Financial Close Template",
+                    "label": _("Close Templates"),
+                    "description": _("Define reusable month-end close procedures and dependencies."),
+                    "onboard": 1,
+                },
+                {
+                    "type": "doctype",
+                    "name": "Financial Close Task",
+                    "label": _("Close Tasks"),
+                    "description": _("Assigned close tasks with evidence, dependencies, and readiness checks."),
+                    "onboard": 1,
+                },
+                {
+                    "type": "report",
+                    "name": "My Financial Close Tasks",
+                    "doctype": "Financial Close Task",
+                    "label": _("My Close Tasks"),
+                    "is_query_report": True,
+                    "onboard": 0,
+                },
+                {
+                    "type": "report",
+                    "name": "Financial Close Status",
+                    "doctype": "Financial Close Period",
+                    "label": _("Financial Close Status"),
+                    "is_query_report": True,
+                    "onboard": 0,
+                },
+            ],
+        },
+        {
             "label": _("Reports"),
             "icon": "octicon octicon-file",
             "items": [

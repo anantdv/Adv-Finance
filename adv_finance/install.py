@@ -10,6 +10,11 @@ def after_install():
 
 
 def create_roles():
-    for role_name in ("Supplier Reconciliation User", "Supplier Reconciliation Manager"):
+    for role_name in (
+        "Supplier Reconciliation User",
+        "Supplier Reconciliation Manager",
+        "Financial Close User",
+        "Financial Close Manager",
+    ):
         if not frappe.db.exists("Role", role_name):
             frappe.get_doc({"doctype": "Role", "role_name": role_name, "desk_access": 1}).insert()

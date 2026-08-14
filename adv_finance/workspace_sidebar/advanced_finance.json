@@ -226,6 +226,61 @@
       "idx": 24
     },
     {
+      "label": "Financial Close",
+      "type": "Section Break",
+      "icon": "badge-check",
+      "collapsible": 1,
+      "indent": 1,
+      "keep_closed": 0,
+      "show_arrow": 1,
+      "idx": 25
+    },
+    {
+      "label": "Close Periods",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Financial Close Period",
+      "icon": "calendar-check",
+      "child": 1,
+      "idx": 26
+    },
+    {
+      "label": "Close Templates",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Financial Close Template",
+      "icon": "layout-template",
+      "child": 1,
+      "idx": 27
+    },
+    {
+      "label": "Close Tasks",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Financial Close Task",
+      "icon": "list-checks",
+      "child": 1,
+      "idx": 28
+    },
+    {
+      "label": "My Close Tasks",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "My Financial Close Tasks",
+      "icon": "user-check",
+      "child": 1,
+      "idx": 29
+    },
+    {
+      "label": "Financial Close Status",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Financial Close Status",
+      "icon": "chart-no-axes-column",
+      "child": 1,
+      "idx": 30
+    },
+    {
       "label": "Monitoring",
       "type": "Section Break",
       "icon": "monitor",
@@ -233,7 +288,7 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 25
+      "idx": 31
     },
     {
       "label": "Payment Run Exceptions",
@@ -242,7 +297,7 @@
       "link_to": "Payment Run Exceptions",
       "icon": "circle-alert",
       "child": 1,
-      "idx": 26
+      "idx": 32
     },
     {
       "label": "Reports",
@@ -252,7 +307,7 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 27
+      "idx": 33
     },
     {
       "label": "Payment Proposal Register",
@@ -261,7 +316,7 @@
       "link_to": "Payment Proposal Register",
       "icon": "table",
       "child": 1,
-      "idx": 28
+      "idx": 34
     },
     {
       "label": "Payment Run Register",
@@ -270,7 +325,7 @@
       "link_to": "Payment Run Register",
       "icon": "table",
       "child": 1,
-      "idx": 29
+      "idx": 35
     },
     {
       "label": "Payment Hold Register",
@@ -279,7 +334,7 @@
       "link_to": "Payment Hold Register",
       "icon": "table",
       "child": 1,
-      "idx": 30
+      "idx": 36
     }
   ]
 }

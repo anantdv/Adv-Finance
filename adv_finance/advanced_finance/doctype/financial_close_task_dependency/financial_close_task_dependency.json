@@ -1,0 +1,45 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "istable": 1,
+  "field_order": [
+    "depends_on_task",
+    "depends_on_task_code",
+    "dependency_status",
+    "blocking"
+  ],
+  "fields": [
+    {
+      "fieldname": "depends_on_task",
+      "fieldtype": "Link",
+      "label": "Depends On Task",
+      "options": "Financial Close Task",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "depends_on_task_code",
+      "fieldtype": "Data",
+      "label": "Depends On Task Code"
+    },
+    {
+      "default": "Unmet",
+      "fieldname": "dependency_status",
+      "fieldtype": "Select",
+      "label": "Dependency Status",
+      "options": "Met\nUnmet",
+      "read_only": 1
+    },
+    {
+      "default": "1",
+      "fieldname": "blocking",
+      "fieldtype": "Check",
+      "label": "Blocking"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Financial Close Task Dependency",
+  "permissions": []
+}

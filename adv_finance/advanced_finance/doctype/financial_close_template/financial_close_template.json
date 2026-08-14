@@ -1,0 +1,183 @@
+{
+  "actions": [],
+  "autoname": "field:template_name",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "template_name",
+    "company",
+    "active",
+    "close_frequency",
+    "description",
+    "defaults_section",
+    "start_offset_days",
+    "target_close_days",
+    "enforce_dependencies",
+    "require_review",
+    "require_evidence",
+    "require_all_critical_tasks",
+    "allow_manager_override",
+    "ownership_section",
+    "default_close_manager",
+    "default_reviewer",
+    "default_approver",
+    "tasks"
+  ],
+  "fields": [
+    {
+      "fieldname": "template_name",
+      "fieldtype": "Data",
+      "label": "Template Name",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company"
+    },
+    {
+      "default": "1",
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active"
+    },
+    {
+      "default": "Monthly",
+      "fieldname": "close_frequency",
+      "fieldtype": "Select",
+      "label": "Close Frequency",
+      "options": "Monthly\nQuarterly\nHalf-Yearly\nYearly",
+      "reqd": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "defaults_section",
+      "fieldtype": "Section Break",
+      "label": "Defaults"
+    },
+    {
+      "default": "0",
+      "fieldname": "start_offset_days",
+      "fieldtype": "Int",
+      "label": "Start Offset Days"
+    },
+    {
+      "default": "5",
+      "fieldname": "target_close_days",
+      "fieldtype": "Int",
+      "label": "Target Close Days"
+    },
+    {
+      "default": "1",
+      "fieldname": "enforce_dependencies",
+      "fieldtype": "Check",
+      "label": "Enforce Dependencies"
+    },
+    {
+      "default": "1",
+      "fieldname": "require_review",
+      "fieldtype": "Check",
+      "label": "Require Review"
+    },
+    {
+      "default": "0",
+      "fieldname": "require_evidence",
+      "fieldtype": "Check",
+      "label": "Require Evidence"
+    },
+    {
+      "default": "1",
+      "fieldname": "require_all_critical_tasks",
+      "fieldtype": "Check",
+      "label": "Require All Critical Tasks"
+    },
+    {
+      "default": "0",
+      "fieldname": "allow_manager_override",
+      "fieldtype": "Check",
+      "label": "Allow Manager Override"
+    },
+    {
+      "fieldname": "ownership_section",
+      "fieldtype": "Section Break",
+      "label": "Ownership"
+    },
+    {
+      "fieldname": "default_close_manager",
+      "fieldtype": "Link",
+      "label": "Default Close Manager",
+      "options": "User"
+    },
+    {
+      "fieldname": "default_reviewer",
+      "fieldtype": "Link",
+      "label": "Default Reviewer",
+      "options": "User"
+    },
+    {
+      "fieldname": "default_approver",
+      "fieldtype": "Link",
+      "label": "Default Approver",
+      "options": "User"
+    },
+    {
+      "fieldname": "tasks",
+      "fieldtype": "Table",
+      "label": "Template Tasks",
+      "options": "Financial Close Template Task"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Financial Close Template",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Supplier Reconciliation Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

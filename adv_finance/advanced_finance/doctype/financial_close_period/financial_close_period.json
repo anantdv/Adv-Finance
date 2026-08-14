@@ -1,0 +1,399 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "company",
+    "close_template",
+    "period_start",
+    "period_end",
+    "fiscal_year",
+    "close_name",
+    "dates_section",
+    "opened_on",
+    "target_close_date",
+    "actual_close_date",
+    "status_section",
+    "status",
+    "summary_section",
+    "total_tasks",
+    "completed_tasks",
+    "in_progress_tasks",
+    "blocked_tasks",
+    "overdue_tasks",
+    "not_started_tasks",
+    "critical_open_tasks",
+    "overall_completion_percent",
+    "close_readiness",
+    "ownership_section",
+    "close_manager",
+    "reviewer",
+    "approver",
+    "accounting_section",
+    "period_closing_voucher",
+    "period_closing_voucher_status",
+    "accounting_period",
+    "accounting_period_locked",
+    "controls_section",
+    "require_close_certification",
+    "certification_statement",
+    "certified_by",
+    "certified_on",
+    "audit_section",
+    "created_by",
+    "reviewed_by",
+    "reviewed_on",
+    "approved_by",
+    "approved_on",
+    "closed_by",
+    "closed_on",
+    "reopened_by",
+    "reopened_on",
+    "reopen_reason"
+  ],
+  "fields": [
+    {
+      "default": "FIN-CLOSE-.YYYY.-.MM.-.#####",
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "FIN-CLOSE-.YYYY.-.MM.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "close_template",
+      "fieldtype": "Link",
+      "label": "Close Template",
+      "options": "Financial Close Template",
+      "reqd": 1
+    },
+    {
+      "fieldname": "period_start",
+      "fieldtype": "Date",
+      "label": "Period Start",
+      "reqd": 1
+    },
+    {
+      "fieldname": "period_end",
+      "fieldtype": "Date",
+      "label": "Period End",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "fiscal_year",
+      "fieldtype": "Link",
+      "label": "Fiscal Year",
+      "options": "Fiscal Year"
+    },
+    {
+      "fieldname": "close_name",
+      "fieldtype": "Data",
+      "label": "Close Name",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "dates_section",
+      "fieldtype": "Section Break",
+      "label": "Dates"
+    },
+    {
+      "fieldname": "opened_on",
+      "fieldtype": "Datetime",
+      "label": "Opened On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "target_close_date",
+      "fieldtype": "Date",
+      "label": "Target Close Date"
+    },
+    {
+      "fieldname": "actual_close_date",
+      "fieldtype": "Date",
+      "label": "Actual Close Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "status_section",
+      "fieldtype": "Section Break",
+      "label": "Status"
+    },
+    {
+      "default": "Draft",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nOpen\nIn Progress\nReady for Review\nReview\nApproved for Close\nClosing\nClosed\nReopened\nCancelled",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "summary_section",
+      "fieldtype": "Section Break",
+      "label": "Summary"
+    },
+    {
+      "fieldname": "total_tasks",
+      "fieldtype": "Int",
+      "label": "Total Tasks",
+      "read_only": 1
+    },
+    {
+      "fieldname": "completed_tasks",
+      "fieldtype": "Int",
+      "label": "Completed Tasks",
+      "read_only": 1
+    },
+    {
+      "fieldname": "in_progress_tasks",
+      "fieldtype": "Int",
+      "label": "In Progress Tasks",
+      "read_only": 1
+    },
+    {
+      "fieldname": "blocked_tasks",
+      "fieldtype": "Int",
+      "label": "Blocked Tasks",
+      "read_only": 1
+    },
+    {
+      "fieldname": "overdue_tasks",
+      "fieldtype": "Int",
+      "label": "Overdue Tasks",
+      "read_only": 1
+    },
+    {
+      "fieldname": "not_started_tasks",
+      "fieldtype": "Int",
+      "label": "Not Started Tasks",
+      "read_only": 1
+    },
+    {
+      "fieldname": "critical_open_tasks",
+      "fieldtype": "Int",
+      "label": "Critical Open Tasks",
+      "read_only": 1
+    },
+    {
+      "fieldname": "overall_completion_percent",
+      "fieldtype": "Percent",
+      "label": "Overall Completion Percent",
+      "read_only": 1
+    },
+    {
+      "fieldname": "close_readiness",
+      "fieldtype": "Small Text",
+      "label": "Close Readiness",
+      "read_only": 1
+    },
+    {
+      "fieldname": "ownership_section",
+      "fieldtype": "Section Break",
+      "label": "Ownership"
+    },
+    {
+      "fieldname": "close_manager",
+      "fieldtype": "Link",
+      "label": "Close Manager",
+      "options": "User"
+    },
+    {
+      "fieldname": "reviewer",
+      "fieldtype": "Link",
+      "label": "Reviewer",
+      "options": "User"
+    },
+    {
+      "fieldname": "approver",
+      "fieldtype": "Link",
+      "label": "Approver",
+      "options": "User"
+    },
+    {
+      "fieldname": "accounting_section",
+      "fieldtype": "Section Break",
+      "label": "Accounting"
+    },
+    {
+      "fieldname": "period_closing_voucher",
+      "fieldtype": "Link",
+      "label": "Period Closing Voucher",
+      "options": "Period Closing Voucher",
+      "read_only": 1
+    },
+    {
+      "default": "Not Created",
+      "fieldname": "period_closing_voucher_status",
+      "fieldtype": "Select",
+      "label": "Period Closing Voucher Status",
+      "options": "Not Created\nDraft Created\nSubmitted\nCancelled",
+      "read_only": 1
+    },
+    {
+      "fieldname": "accounting_period",
+      "fieldtype": "Link",
+      "label": "Accounting Period",
+      "options": "Accounting Period"
+    },
+    {
+      "fieldname": "accounting_period_locked",
+      "fieldtype": "Check",
+      "label": "Accounting Period Locked"
+    },
+    {
+      "fieldname": "controls_section",
+      "fieldtype": "Section Break",
+      "label": "Controls"
+    },
+    {
+      "default": "1",
+      "fieldname": "require_close_certification",
+      "fieldtype": "Check",
+      "label": "Require Close Certification"
+    },
+    {
+      "fieldname": "certification_statement",
+      "fieldtype": "Text",
+      "label": "Certification Statement"
+    },
+    {
+      "fieldname": "certified_by",
+      "fieldtype": "Link",
+      "label": "Certified By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "certified_on",
+      "fieldtype": "Datetime",
+      "label": "Certified On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "audit_section",
+      "fieldtype": "Section Break",
+      "label": "Audit"
+    },
+    {
+      "fieldname": "created_by",
+      "fieldtype": "Link",
+      "label": "Created By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reviewed_by",
+      "fieldtype": "Link",
+      "label": "Reviewed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reviewed_on",
+      "fieldtype": "Datetime",
+      "label": "Reviewed On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_on",
+      "fieldtype": "Datetime",
+      "label": "Approved On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "closed_by",
+      "fieldtype": "Link",
+      "label": "Closed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "closed_on",
+      "fieldtype": "Datetime",
+      "label": "Closed On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reopened_by",
+      "fieldtype": "Link",
+      "label": "Reopened By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reopened_on",
+      "fieldtype": "Datetime",
+      "label": "Reopened On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reopen_reason",
+      "fieldtype": "Small Text",
+      "label": "Reopen Reason"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Financial Close Period",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Supplier Reconciliation Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "period_end",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

@@ -1,0 +1,146 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "istable": 1,
+  "field_order": [
+    "sequence",
+    "category",
+    "task_name",
+    "task_code",
+    "description",
+    "responsible_role",
+    "default_owner",
+    "reviewer",
+    "due_day_offset",
+    "risk_level",
+    "required",
+    "evidence_required",
+    "auto_complete_when_ready",
+    "automation_type",
+    "readiness_provider",
+    "source_doctype",
+    "source_report",
+    "blocking",
+    "depends_on_task_codes"
+  ],
+  "fields": [
+    {
+      "fieldname": "sequence",
+      "fieldtype": "Int",
+      "label": "Sequence",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Data",
+      "label": "Category",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "task_name",
+      "fieldtype": "Data",
+      "label": "Task Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "task_code",
+      "fieldtype": "Data",
+      "label": "Task Code",
+      "reqd": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "responsible_role",
+      "fieldtype": "Link",
+      "label": "Responsible Role",
+      "options": "Role"
+    },
+    {
+      "fieldname": "default_owner",
+      "fieldtype": "Link",
+      "label": "Default Owner",
+      "options": "User"
+    },
+    {
+      "fieldname": "reviewer",
+      "fieldtype": "Link",
+      "label": "Reviewer",
+      "options": "User"
+    },
+    {
+      "default": "0",
+      "fieldname": "due_day_offset",
+      "fieldtype": "Int",
+      "label": "Due Day Offset"
+    },
+    {
+      "default": "Medium",
+      "fieldname": "risk_level",
+      "fieldtype": "Select",
+      "label": "Risk Level",
+      "options": "Critical\nHigh\nMedium\nLow",
+      "in_list_view": 1
+    },
+    {
+      "default": "1",
+      "fieldname": "required",
+      "fieldtype": "Check",
+      "label": "Required"
+    },
+    {
+      "fieldname": "evidence_required",
+      "fieldtype": "Check",
+      "label": "Evidence Required"
+    },
+    {
+      "fieldname": "auto_complete_when_ready",
+      "fieldtype": "Check",
+      "label": "Auto Complete When Ready"
+    },
+    {
+      "default": "Manual",
+      "fieldname": "automation_type",
+      "fieldtype": "Select",
+      "label": "Automation Type",
+      "options": "Manual\nReadiness Check\nERPNext Document Check\nADV Finance Module Check\nReport Check"
+    },
+    {
+      "fieldname": "readiness_provider",
+      "fieldtype": "Data",
+      "label": "Readiness Provider"
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Data",
+      "label": "Source DocType"
+    },
+    {
+      "fieldname": "source_report",
+      "fieldtype": "Data",
+      "label": "Source Report"
+    },
+    {
+      "default": "1",
+      "fieldname": "blocking",
+      "fieldtype": "Check",
+      "label": "Blocking"
+    },
+    {
+      "fieldname": "depends_on_task_codes",
+      "fieldtype": "Small Text",
+      "label": "Depends On Task Codes"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Financial Close Template Task",
+  "permissions": []
+}

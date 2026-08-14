@@ -453,6 +453,60 @@ def get_purchase_invoice_docstatus(purchase_invoice: str | None) -> int | None:
     return frappe.db.get_value("Purchase Invoice", purchase_invoice, "docstatus")
 
 
+def create_draft_period_closing_voucher(close_period) -> Any:
+    """Create a standard draft ERPNext Period Closing Voucher.
+
+    This deliberately does not submit the voucher. ERPNext remains responsible
+    for validation, P&L closing entries, and GL posting when a finance user
+    submits the standard document.
+    """
+
+    closing_account = frappe.db.get_value("Company", close_period.company, "default_income_account") or frappe.db.get_value(
+        "Company", close_period.company, "default_expense_account"
+    )
+    if not closing_account:
+        frappe.throw("Company requires a default closing account before creating Period Closing Voucher.")
+    voucher = frappe.new_doc("Period Closing Voucher")
+    voucher.update(
+        {
+            "company": close_period.company,
+            "posting_date": close_period.period_end,
+            "fiscal_year": close_period.fiscal_year,
+            "closing_account_head": closing_account,
+            "remarks": f"ADV Finance Financial Close {close_period.name}",
+        }
+    )
+    voucher.insert()
+    return voucher
+
+
+def get_period_closing_voucher_docstatus(period_closing_voucher: str | None) -> int | None:
+    if not period_closing_voucher:
+        return None
+    return frappe.db.get_value("Period Closing Voucher", period_closing_voucher, "docstatus")
+
+
+def find_late_gl_postings(company: str, period_start, period_end, cutoff_timestamp) -> list[dict[str, Any]]:
+    return frappe.db.sql(
+        """
+        select distinct voucher_type, voucher_no, posting_date, creation, owner
+        from `tabGL Entry`
+        where company = %(company)s
+          and posting_date between %(period_start)s and %(period_end)s
+          and creation > %(cutoff_timestamp)s
+          and is_cancelled = 0
+        order by creation desc, posting_date desc
+        """,
+        {
+            "company": company,
+            "period_start": period_start,
+            "period_end": period_end,
+            "cutoff_timestamp": cutoff_timestamp,
+        },
+        as_dict=True,
+    )
+
+
 def _validate_accrual_accounts(accrual) -> None:
     if not accrual.company:
         frappe.throw("Company is required.")

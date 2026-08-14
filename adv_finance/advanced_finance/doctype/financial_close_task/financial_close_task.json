@@ -1,0 +1,395 @@
+{
+  "actions": [],
+  "autoname": "format:{financial_close_period}-{task_code}",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "financial_close_period",
+    "company",
+    "period_end",
+    "sequence",
+    "category",
+    "task_name",
+    "task_code",
+    "description",
+    "ownership_section",
+    "assigned_to",
+    "responsible_role",
+    "reviewer",
+    "dates_section",
+    "planned_start_date",
+    "due_date",
+    "completed_on",
+    "reviewed_on",
+    "status_section",
+    "status",
+    "risk_level",
+    "blocking",
+    "required",
+    "evidence_section",
+    "evidence_required",
+    "evidence_reference",
+    "evidence_notes",
+    "integration_section",
+    "readiness_provider",
+    "source_doctype",
+    "source_document",
+    "source_report",
+    "linked_reconciliation",
+    "linked_accrual",
+    "linked_journal_entry",
+    "readiness_section",
+    "automated_check",
+    "auto_complete_when_ready",
+    "automated_status",
+    "automated_message",
+    "last_checked_on",
+    "completion_section",
+    "completion_notes",
+    "completed_by",
+    "review_section",
+    "review_notes",
+    "reviewed_by",
+    "exception_section",
+    "blocked_reason",
+    "exception_count",
+    "dependencies"
+  ],
+  "fields": [
+    {
+      "fieldname": "financial_close_period",
+      "fieldtype": "Link",
+      "label": "Financial Close Period",
+      "options": "Financial Close Period",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "read_only": 1
+    },
+    {
+      "fieldname": "period_end",
+      "fieldtype": "Date",
+      "label": "Period End",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sequence",
+      "fieldtype": "Int",
+      "label": "Sequence"
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Data",
+      "label": "Category",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "task_name",
+      "fieldtype": "Data",
+      "label": "Task Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "task_code",
+      "fieldtype": "Data",
+      "label": "Task Code",
+      "reqd": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "ownership_section",
+      "fieldtype": "Section Break",
+      "label": "Ownership"
+    },
+    {
+      "fieldname": "assigned_to",
+      "fieldtype": "Link",
+      "label": "Assigned To",
+      "options": "User",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "responsible_role",
+      "fieldtype": "Link",
+      "label": "Responsible Role",
+      "options": "Role"
+    },
+    {
+      "fieldname": "reviewer",
+      "fieldtype": "Link",
+      "label": "Reviewer",
+      "options": "User"
+    },
+    {
+      "fieldname": "dates_section",
+      "fieldtype": "Section Break",
+      "label": "Dates"
+    },
+    {
+      "fieldname": "planned_start_date",
+      "fieldtype": "Date",
+      "label": "Planned Start Date"
+    },
+    {
+      "fieldname": "due_date",
+      "fieldtype": "Date",
+      "label": "Due Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "completed_on",
+      "fieldtype": "Datetime",
+      "label": "Completed On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reviewed_on",
+      "fieldtype": "Datetime",
+      "label": "Reviewed On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "status_section",
+      "fieldtype": "Section Break",
+      "label": "Status"
+    },
+    {
+      "default": "Not Started",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Not Started\nIn Progress\nWaiting\nBlocked\nReady for Review\nCompleted\nRejected\nWaived",
+      "in_list_view": 1
+    },
+    {
+      "default": "Medium",
+      "fieldname": "risk_level",
+      "fieldtype": "Select",
+      "label": "Risk Level",
+      "options": "Critical\nHigh\nMedium\nLow",
+      "in_list_view": 1
+    },
+    {
+      "default": "1",
+      "fieldname": "blocking",
+      "fieldtype": "Check",
+      "label": "Blocking"
+    },
+    {
+      "default": "1",
+      "fieldname": "required",
+      "fieldtype": "Check",
+      "label": "Required"
+    },
+    {
+      "fieldname": "evidence_section",
+      "fieldtype": "Section Break",
+      "label": "Evidence"
+    },
+    {
+      "fieldname": "evidence_required",
+      "fieldtype": "Check",
+      "label": "Evidence Required"
+    },
+    {
+      "fieldname": "evidence_reference",
+      "fieldtype": "Attach",
+      "label": "Evidence Reference"
+    },
+    {
+      "fieldname": "evidence_notes",
+      "fieldtype": "Small Text",
+      "label": "Evidence Notes"
+    },
+    {
+      "fieldname": "integration_section",
+      "fieldtype": "Section Break",
+      "label": "Integration"
+    },
+    {
+      "fieldname": "readiness_provider",
+      "fieldtype": "Data",
+      "label": "Readiness Provider"
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Data",
+      "label": "Source DocType"
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype"
+    },
+    {
+      "fieldname": "source_report",
+      "fieldtype": "Data",
+      "label": "Source Report"
+    },
+    {
+      "fieldname": "linked_reconciliation",
+      "fieldtype": "Link",
+      "label": "Linked Reconciliation",
+      "options": "Account Reconciliation"
+    },
+    {
+      "fieldname": "linked_accrual",
+      "fieldtype": "Link",
+      "label": "Linked Accrual",
+      "options": "Accrual"
+    },
+    {
+      "fieldname": "linked_journal_entry",
+      "fieldtype": "Link",
+      "label": "Linked Journal Entry",
+      "options": "Journal Entry"
+    },
+    {
+      "fieldname": "readiness_section",
+      "fieldtype": "Section Break",
+      "label": "Readiness"
+    },
+    {
+      "fieldname": "automated_check",
+      "fieldtype": "Check",
+      "label": "Automated Check"
+    },
+    {
+      "fieldname": "auto_complete_when_ready",
+      "fieldtype": "Check",
+      "label": "Auto Complete When Ready"
+    },
+    {
+      "default": "Not Checked",
+      "fieldname": "automated_status",
+      "fieldtype": "Select",
+      "label": "Automated Status",
+      "options": "Not Checked\nReady\nNot Ready\nFailed"
+    },
+    {
+      "fieldname": "automated_message",
+      "fieldtype": "Small Text",
+      "label": "Automated Message"
+    },
+    {
+      "fieldname": "last_checked_on",
+      "fieldtype": "Datetime",
+      "label": "Last Checked On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "completion_section",
+      "fieldtype": "Section Break",
+      "label": "Completion"
+    },
+    {
+      "fieldname": "completion_notes",
+      "fieldtype": "Text Editor",
+      "label": "Completion Notes"
+    },
+    {
+      "fieldname": "completed_by",
+      "fieldtype": "Link",
+      "label": "Completed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "review_section",
+      "fieldtype": "Section Break",
+      "label": "Review"
+    },
+    {
+      "fieldname": "review_notes",
+      "fieldtype": "Text Editor",
+      "label": "Review Notes"
+    },
+    {
+      "fieldname": "reviewed_by",
+      "fieldtype": "Link",
+      "label": "Reviewed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "exception_section",
+      "fieldtype": "Section Break",
+      "label": "Exception"
+    },
+    {
+      "fieldname": "blocked_reason",
+      "fieldtype": "Small Text",
+      "label": "Blocked Reason"
+    },
+    {
+      "fieldname": "exception_count",
+      "fieldtype": "Int",
+      "label": "Exception Count",
+      "read_only": 1
+    },
+    {
+      "fieldname": "dependencies",
+      "fieldtype": "Table",
+      "label": "Dependencies",
+      "options": "Financial Close Task Dependency"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Financial Close Task",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Supplier Reconciliation Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "due_date",
+  "sort_order": "ASC",
+  "track_changes": 1
+}

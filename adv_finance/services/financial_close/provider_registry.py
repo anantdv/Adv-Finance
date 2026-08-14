@@ -1,0 +1,31 @@
+from __future__ import annotations
+
+from adv_finance.services.financial_close.providers.account_reconciliation import AccountReconciliationProvider
+from adv_finance.services.financial_close.providers.accrual import AccrualProvider
+from adv_finance.services.financial_close.providers.bank_reconciliation import BankReconciliationProvider
+from adv_finance.services.financial_close.providers.base import CloseReadinessProvider
+from adv_finance.services.financial_close.providers.erpnext_document import ERPNextDocumentProvider
+from adv_finance.services.financial_close.providers.fixed_assets import FixedAssetsProvider
+from adv_finance.services.financial_close.providers.fx_revaluation import FXRevaluationProvider
+from adv_finance.services.financial_close.providers.inventory import InventoryProvider
+from adv_finance.services.financial_close.providers.payroll import PayrollProvider
+from adv_finance.services.financial_close.providers.period_close import PeriodCloseProvider
+from adv_finance.services.financial_close.providers.supplier_reconciliation import SupplierReconciliationProvider
+
+PROVIDERS = {
+    "manual": CloseReadinessProvider,
+    "supplier_reconciliation": SupplierReconciliationProvider,
+    "account_reconciliation": AccountReconciliationProvider,
+    "accrual": AccrualProvider,
+    "bank_reconciliation": BankReconciliationProvider,
+    "fixed_assets": FixedAssetsProvider,
+    "inventory": InventoryProvider,
+    "payroll": PayrollProvider,
+    "fx_revaluation": FXRevaluationProvider,
+    "period_close": PeriodCloseProvider,
+    "erpnext_document": ERPNextDocumentProvider,
+}
+
+
+def get_provider(provider_name: str | None):
+    return PROVIDERS.get((provider_name or "manual").strip().lower(), CloseReadinessProvider)()

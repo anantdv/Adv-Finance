@@ -1,0 +1,128 @@
+{
+  "actions": [],
+  "autoname": "hash",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "financial_close_period",
+    "posting_date",
+    "voucher_type",
+    "voucher_no",
+    "created_on",
+    "created_by",
+    "affected_task",
+    "category",
+    "status",
+    "resolution_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "financial_close_period",
+      "fieldtype": "Link",
+      "label": "Financial Close Period",
+      "options": "Financial Close Period",
+      "reqd": 1
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "voucher_type",
+      "fieldtype": "Data",
+      "label": "Voucher Type",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "voucher_no",
+      "fieldtype": "Dynamic Link",
+      "label": "Voucher No",
+      "options": "voucher_type",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "created_on",
+      "fieldtype": "Datetime",
+      "label": "Created On"
+    },
+    {
+      "fieldname": "created_by",
+      "fieldtype": "Link",
+      "label": "Created By",
+      "options": "User"
+    },
+    {
+      "fieldname": "affected_task",
+      "fieldtype": "Link",
+      "label": "Affected Task",
+      "options": "Financial Close Task"
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Data",
+      "label": "Category"
+    },
+    {
+      "default": "Open",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nReviewed\nResolved\nIgnored",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "resolution_notes",
+      "fieldtype": "Small Text",
+      "label": "Resolution Notes"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Late Posting Exception",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Supplier Reconciliation Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

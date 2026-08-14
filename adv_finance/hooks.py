@@ -8,7 +8,21 @@ required_apps = ["frappe", "erpnext"]
 
 app_include_js = []
 fixtures = [
-    {"dt": "Role", "filters": [["name", "in", ["Supplier Reconciliation User", "Supplier Reconciliation Manager"]]]},
+    {
+        "dt": "Role",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Supplier Reconciliation User",
+                    "Supplier Reconciliation Manager",
+                    "Financial Close User",
+                    "Financial Close Manager",
+                ],
+            ]
+        ],
+    },
 ]
 
 before_install = "adv_finance.install.before_install"
@@ -21,6 +35,8 @@ doctype_js = {
     "Account Reconciliation": "advanced_finance/doctype/account_reconciliation/account_reconciliation.js",
     "Account Reconciliation Period": "advanced_finance/doctype/account_reconciliation_period/account_reconciliation_period.js",
     "Accrual": "advanced_finance/doctype/accrual/accrual.js",
+    "Financial Close Period": "advanced_finance/doctype/financial_close_period/financial_close_period.js",
+    "Financial Close Task": "advanced_finance/doctype/financial_close_task/financial_close_task.js",
 }
 
 doctype_list_js = {
@@ -29,6 +45,8 @@ doctype_list_js = {
     "Payment Run": "advanced_finance/doctype/payment_run/payment_run_list.js",
     "Account Reconciliation": "advanced_finance/doctype/account_reconciliation/account_reconciliation_list.js",
     "Accrual": "advanced_finance/doctype/accrual/accrual_list.js",
+    "Financial Close Period": "advanced_finance/doctype/financial_close_period/financial_close_period_list.js",
+    "Financial Close Task": "advanced_finance/doctype/financial_close_task/financial_close_task_list.js",
 }
 
 scheduler_events = {

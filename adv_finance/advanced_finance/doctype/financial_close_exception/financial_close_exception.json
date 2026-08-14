@@ -1,0 +1,164 @@
+{
+  "actions": [],
+  "autoname": "hash",
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "financial_close_period",
+    "financial_close_task",
+    "category",
+    "exception_type",
+    "description",
+    "amount",
+    "risk_level",
+    "assigned_to",
+    "source_doctype",
+    "source_document",
+    "status",
+    "created_on",
+    "resolved_by",
+    "resolved_on",
+    "resolution_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "financial_close_period",
+      "fieldtype": "Link",
+      "label": "Financial Close Period",
+      "options": "Financial Close Period",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "financial_close_task",
+      "fieldtype": "Link",
+      "label": "Financial Close Task",
+      "options": "Financial Close Task"
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Data",
+      "label": "Category"
+    },
+    {
+      "fieldname": "exception_type",
+      "fieldtype": "Data",
+      "label": "Exception Type",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount"
+    },
+    {
+      "default": "Medium",
+      "fieldname": "risk_level",
+      "fieldtype": "Select",
+      "label": "Risk Level",
+      "options": "Critical\nHigh\nMedium\nLow",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "assigned_to",
+      "fieldtype": "Link",
+      "label": "Assigned To",
+      "options": "User"
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Data",
+      "label": "Source DocType"
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype"
+    },
+    {
+      "default": "Open",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nInvestigating\nResolved\nAccepted\nIgnored",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "created_on",
+      "fieldtype": "Datetime",
+      "label": "Created On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "resolved_by",
+      "fieldtype": "Link",
+      "label": "Resolved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "resolved_on",
+      "fieldtype": "Datetime",
+      "label": "Resolved On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "resolution_notes",
+      "fieldtype": "Small Text",
+      "label": "Resolution Notes"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Financial Close Exception",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Supplier Reconciliation Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Financial Close User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

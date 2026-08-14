@@ -1,6 +1,6 @@
 {
   "charts": [],
-  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_payable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accruals_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accruals\",\"col\":12}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"monitoring_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Monitoring\",\"col\":12}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
+  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_payable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accruals_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accruals\",\"col\":12}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"financial_close_header\",\"type\":\"header\",\"data\":{\"text\":\"Financial Close\",\"col\":12}},{\"id\":\"financial_close_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Close\",\"col\":12}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"monitoring_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Monitoring\",\"col\":12}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
   "creation": "2026-08-13 00:00:00.000000",
   "docstatus": 0,
   "doctype": "Workspace",
@@ -233,6 +233,94 @@
       "onboard": 0,
       "type": "Link",
       "link_count": 0
+    },
+    {
+      "label": "Financial Close",
+      "type": "Card Break",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Close Periods",
+      "link_to": "Financial Close Period",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Close Templates",
+      "link_to": "Financial Close Template",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Close Tasks",
+      "link_to": "Financial Close Task",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "My Close Tasks",
+      "link_to": "My Financial Close Tasks",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Financial Close Status",
+      "link_to": "Financial Close Status",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Financial Close Exceptions",
+      "link_to": "Financial Close Exceptions",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Close Performance",
+      "link_to": "Close Performance",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Late Postings",
+      "link_to": "Late Posting Exception",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
     },
     {
       "label": "Monitoring",
