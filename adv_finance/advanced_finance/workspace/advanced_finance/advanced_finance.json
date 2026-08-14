@@ -19,6 +19,7 @@
   "name": "Advanced Finance",
   "public": 1,
   "roles": [
+    {"role": "System Manager"},
     {"role": "Supplier Reconciliation User"},
     {"role": "Supplier Reconciliation Manager"}
   ],

@@ -41,6 +41,7 @@
   "module": "Advanced Finance",
   "name": "Supplier Statement Template",
   "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
     {"role": "Supplier Reconciliation User", "read": 1, "write": 1, "create": 1},
     {"role": "Supplier Reconciliation Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
   ],
