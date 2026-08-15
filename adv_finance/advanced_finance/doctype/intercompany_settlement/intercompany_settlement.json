@@ -1,0 +1,154 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "origin_company",
+    "destination_company",
+    "settlement_date",
+    "expected_settlement_amount",
+    "actual_settlement_amount",
+    "outstanding_amount",
+    "currency",
+    "fx_gain_loss",
+    "payment_entry",
+    "status",
+    "items",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "IC-SETTLE-.YYYY.-.#####",
+      "default": "IC-SETTLE-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "origin_company",
+      "fieldtype": "Link",
+      "label": "Origin Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "destination_company",
+      "fieldtype": "Link",
+      "label": "Destination Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "settlement_date",
+      "fieldtype": "Date",
+      "label": "Settlement Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "expected_settlement_amount",
+      "fieldtype": "Currency",
+      "label": "Expected Settlement Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "actual_settlement_amount",
+      "fieldtype": "Currency",
+      "label": "Actual Settlement Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Outstanding Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "fx_gain_loss",
+      "fieldtype": "Currency",
+      "label": "Fx Gain Loss",
+      "default": 0
+    },
+    {
+      "fieldname": "payment_entry",
+      "fieldtype": "Link",
+      "label": "Payment Entry",
+      "options": "Payment Entry"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nExpected\nPartially Settled\nSettled\nOverpayment\nUnderpayment\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "Intercompany Settlement Item"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Intercompany Settlement",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "naming_series:"
+}

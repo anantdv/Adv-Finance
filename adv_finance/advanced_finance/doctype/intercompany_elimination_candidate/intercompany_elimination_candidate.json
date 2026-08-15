@@ -1,0 +1,152 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "origin_company",
+    "destination_company",
+    "intercompany_match",
+    "intercompany_transaction",
+    "elimination_account",
+    "amount",
+    "currency",
+    "status",
+    "blocking_reason",
+    "prepared_on",
+    "prepared_by",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "IC-ELIM-.YYYY.-.#####",
+      "default": "IC-ELIM-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "origin_company",
+      "fieldtype": "Link",
+      "label": "Origin Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "destination_company",
+      "fieldtype": "Link",
+      "label": "Destination Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "intercompany_match",
+      "fieldtype": "Link",
+      "label": "Intercompany Match",
+      "options": "Intercompany Match"
+    },
+    {
+      "fieldname": "intercompany_transaction",
+      "fieldtype": "Link",
+      "label": "Intercompany Transaction",
+      "options": "Intercompany Transaction"
+    },
+    {
+      "fieldname": "elimination_account",
+      "fieldtype": "Link",
+      "label": "Elimination Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount"
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Ready\nBlocked\nDifference Exists\nAwaiting Settlement\nExcluded",
+      "default": "Blocked",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "blocking_reason",
+      "fieldtype": "Small Text",
+      "label": "Blocking Reason"
+    },
+    {
+      "fieldname": "prepared_on",
+      "fieldtype": "Datetime",
+      "label": "Prepared On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "prepared_by",
+      "fieldtype": "Link",
+      "label": "Prepared By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Intercompany Elimination Candidate",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "naming_series:"
+}

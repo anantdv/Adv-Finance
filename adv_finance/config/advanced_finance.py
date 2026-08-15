@@ -256,6 +256,19 @@ def get_data():
             ],
         },
         {
+            "label": _("Intercompany"),
+            "icon": "octicon octicon-organization",
+            "items": [
+                {"type": "report", "name": "Intercompany Dashboard", "doctype": "Intercompany Transaction", "label": _("Intercompany Dashboard"), "is_query_report": True, "onboard": 0},
+                {"type": "doctype", "name": "Intercompany Partner", "label": _("Partners"), "description": _("Configure intercompany partners, due-to/due-from accounts, tolerances, and settlement accounts."), "onboard": 1},
+                {"type": "doctype", "name": "Intercompany Transaction", "label": _("Transactions"), "description": _("Registry of intercompany invoices, journals, payments, and manual adjustments."), "onboard": 1},
+                {"type": "doctype", "name": "Intercompany Match", "label": _("Matching"), "description": _("Match one-to-one, one-to-many, many-to-one, and many-to-many intercompany activity."), "onboard": 1},
+                {"type": "doctype", "name": "Intercompany Settlement", "label": _("Settlements"), "description": _("Track expected, partial, over, under, and completed intercompany settlements."), "onboard": 1},
+                {"type": "doctype", "name": "Intercompany Difference", "label": _("Differences"), "description": _("Classify and resolve missing invoices, amount differences, FX differences, and duplicates."), "onboard": 1},
+                {"type": "doctype", "name": "Intercompany Elimination Candidate", "label": _("Elimination Candidates"), "description": _("Prepare matched intercompany balances for future consolidation eliminations."), "onboard": 1},
+            ],
+        },
+        {
             "label": _("Monitoring"),
             "icon": "octicon octicon-device-desktop",
             "items": [

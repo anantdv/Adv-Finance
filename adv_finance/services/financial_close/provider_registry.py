@@ -10,6 +10,7 @@ from adv_finance.services.financial_close.providers.erpnext_document import ERPN
 from adv_finance.services.financial_close.providers.fixed_assets import FixedAssetsProvider
 from adv_finance.services.financial_close.providers.fx_revaluation import FXRevaluationProvider
 from adv_finance.services.financial_close.providers.inventory import InventoryProvider
+from adv_finance.services.financial_close.providers.intercompany import IntercompanyProvider
 from adv_finance.services.financial_close.providers.payroll import PayrollProvider
 from adv_finance.services.financial_close.providers.period_close import PeriodCloseProvider
 from adv_finance.services.financial_close.providers.supplier_reconciliation import SupplierReconciliationProvider
@@ -25,6 +26,7 @@ PROVIDERS = {
     "budgeting": BudgetingProvider,
     "fixed_assets": FixedAssetsProvider,
     "inventory": InventoryProvider,
+    "intercompany": IntercompanyProvider,
     "payroll": PayrollProvider,
     "fx_revaluation": FXRevaluationProvider,
     "period_close": PeriodCloseProvider,

@@ -390,6 +390,79 @@
       "idx": 42
     },
     {
+      "label": "Intercompany",
+      "type": "Section Break",
+      "icon": "network",
+      "collapsible": 1,
+      "indent": 1,
+      "keep_closed": 0,
+      "show_arrow": 1,
+      "idx": 43
+    },
+    {
+      "label": "Intercompany Dashboard",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Intercompany Dashboard",
+      "icon": "layout-dashboard",
+      "child": 1,
+      "idx": 44
+    },
+    {
+      "label": "Partners",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Intercompany Partner",
+      "icon": "building-2",
+      "child": 1,
+      "idx": 45
+    },
+    {
+      "label": "Transactions",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Intercompany Transaction",
+      "icon": "list",
+      "child": 1,
+      "idx": 46
+    },
+    {
+      "label": "Matching",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Intercompany Match",
+      "icon": "merge",
+      "child": 1,
+      "idx": 47
+    },
+    {
+      "label": "Settlements",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Intercompany Settlement",
+      "icon": "send",
+      "child": 1,
+      "idx": 48
+    },
+    {
+      "label": "Differences",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Intercompany Difference",
+      "icon": "circle-alert",
+      "child": 1,
+      "idx": 49
+    },
+    {
+      "label": "Ready for Elimination",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Ready for Elimination",
+      "icon": "check-circle",
+      "child": 1,
+      "idx": 50
+    },
+    {
       "label": "Account Reconciliation",
       "type": "Section Break",
       "icon": "scale",
@@ -397,7 +470,7 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 43
+      "idx": 51
     },
     {
       "label": "Reconciliation Period",
@@ -406,7 +479,7 @@
       "link_to": "Account Reconciliation Period",
       "icon": "calendar-range",
       "child": 1,
-      "idx": 44
+      "idx": 52
     },
     {
       "label": "Account Reconciliation",
@@ -415,7 +488,7 @@
       "link_to": "Account Reconciliation",
       "icon": "scale",
       "child": 1,
-      "idx": 45
+      "idx": 53
     },
     {
       "label": "Reconciliation Templates",
@@ -424,7 +497,7 @@
       "link_to": "Account Reconciliation Template",
       "icon": "layout-template",
       "child": 1,
-      "idx": 46
+      "idx": 54
     },
     {
       "label": "Open Reconciling Items",
@@ -433,7 +506,7 @@
       "link_to": "Open Reconciling Items",
       "icon": "list-checks",
       "child": 1,
-      "idx": 47
+      "idx": 55
     },
     {
       "label": "Account Reconciliation Status",
@@ -442,7 +515,7 @@
       "link_to": "Account Reconciliation Status",
       "icon": "chart-no-axes-column",
       "child": 1,
-      "idx": 48
+      "idx": 56
     },
     {
       "label": "Aged Reconciling Items",
@@ -451,7 +524,7 @@
       "link_to": "Aged Reconciling Items",
       "icon": "clock",
       "child": 1,
-      "idx": 49
+      "idx": 57
     },
     {
       "label": "Reconciliation Exceptions",
@@ -460,7 +533,7 @@
       "link_to": "Reconciliation Exceptions",
       "icon": "circle-alert",
       "child": 1,
-      "idx": 50
+      "idx": 58
     },
     {
       "label": "Financial Close",
@@ -470,7 +543,7 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 51
+      "idx": 59
     },
     {
       "label": "Close Periods",
@@ -479,7 +552,7 @@
       "link_to": "Financial Close Period",
       "icon": "calendar-check",
       "child": 1,
-      "idx": 52
+      "idx": 60
     },
     {
       "label": "Close Templates",
@@ -488,7 +561,7 @@
       "link_to": "Financial Close Template",
       "icon": "layout-template",
       "child": 1,
-      "idx": 53
+      "idx": 61
     },
     {
       "label": "Close Tasks",
@@ -497,7 +570,7 @@
       "link_to": "Financial Close Task",
       "icon": "list-checks",
       "child": 1,
-      "idx": 54
+      "idx": 62
     },
     {
       "label": "My Close Tasks",
@@ -506,7 +579,7 @@
       "link_to": "My Financial Close Tasks",
       "icon": "user-check",
       "child": 1,
-      "idx": 55
+      "idx": 63
     },
     {
       "label": "Financial Close Status",
@@ -515,7 +588,7 @@
       "link_to": "Financial Close Status",
       "icon": "chart-no-axes-column",
       "child": 1,
-      "idx": 56
+      "idx": 64
     },
     {
       "label": "Monitoring",
@@ -525,7 +598,34 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 57
+      "idx": 65
+    },
+    {
+      "label": "Intercompany Outstanding",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Intercompany Outstanding",
+      "icon": "clock",
+      "child": 1,
+      "idx": 66
+    },
+    {
+      "label": "Intercompany Differences",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Intercompany Differences",
+      "icon": "circle-alert",
+      "child": 1,
+      "idx": 67
+    },
+    {
+      "label": "Group Close Status",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Group Close Status",
+      "icon": "check-check",
+      "child": 1,
+      "idx": 68
     },
     {
       "label": "Over Budget",
@@ -534,7 +634,7 @@
       "link_to": "Over Budget",
       "icon": "circle-alert",
       "child": 1,
-      "idx": 58
+      "idx": 69
     },
     {
       "label": "Low Available Budget",
@@ -543,7 +643,7 @@
       "link_to": "Low Available Budget",
       "icon": "triangle-alert",
       "child": 1,
-      "idx": 59
+      "idx": 70
     },
     {
       "label": "Stale Commitments",
@@ -552,7 +652,7 @@
       "link_to": "Stale Commitments",
       "icon": "clock",
       "child": 1,
-      "idx": 60
+      "idx": 71
     },
     {
       "label": "Pending Budget Overrides",
@@ -561,7 +661,7 @@
       "link_to": "Pending Budget Overrides",
       "icon": "shield-alert",
       "child": 1,
-      "idx": 61
+      "idx": 72
     },
     {
       "label": "Liquidity Exceptions",
@@ -570,7 +670,7 @@
       "link_to": "Liquidity Exceptions",
       "icon": "triangle-alert",
       "child": 1,
-      "idx": 62
+      "idx": 73
     },
     {
       "label": "Forecast Exceptions",
@@ -579,7 +679,7 @@
       "link_to": "Forecast Exceptions",
       "icon": "circle-alert",
       "child": 1,
-      "idx": 63
+      "idx": 74
     },
     {
       "label": "Unforecast Cash Movements",
@@ -588,7 +688,7 @@
       "link_to": "Unforecast Cash Movements",
       "icon": "activity",
       "child": 1,
-      "idx": 64
+      "idx": 75
     },
     {
       "label": "Payment Run Exceptions",
@@ -597,7 +697,7 @@
       "link_to": "Payment Run Exceptions",
       "icon": "circle-alert",
       "child": 1,
-      "idx": 65
+      "idx": 76
     },
     {
       "label": "Broken Promises",
@@ -606,7 +706,7 @@
       "link_to": "Broken Promise Report",
       "icon": "circle-alert",
       "child": 1,
-      "idx": 66
+      "idx": 77
     },
     {
       "label": "Credit Hold Register",
@@ -615,7 +715,7 @@
       "link_to": "Credit Hold Register",
       "icon": "pause-circle",
       "child": 1,
-      "idx": 67
+      "idx": 78
     },
     {
       "label": "Customer Dispute Register",
@@ -624,7 +724,7 @@
       "link_to": "Customer Dispute Register",
       "icon": "message-square-warning",
       "child": 1,
-      "idx": 68
+      "idx": 79
     },
     {
       "label": "Reports",
@@ -634,7 +734,52 @@
       "indent": 1,
       "keep_closed": 0,
       "show_arrow": 1,
-      "idx": 69
+      "idx": 80
+    },
+    {
+      "label": "Intercompany Matching",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Intercompany Matching",
+      "icon": "merge",
+      "child": 1,
+      "idx": 81
+    },
+    {
+      "label": "Intercompany Settlements",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Intercompany Settlements",
+      "icon": "send",
+      "child": 1,
+      "idx": 82
+    },
+    {
+      "label": "Due To Due From Reconciliation",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Due To Due From Reconciliation",
+      "icon": "scale",
+      "child": 1,
+      "idx": 83
+    },
+    {
+      "label": "FX Translation Report",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "FX Translation Report",
+      "icon": "repeat",
+      "child": 1,
+      "idx": 84
+    },
+    {
+      "label": "Intercompany Aging",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Intercompany Aging",
+      "icon": "clock",
+      "child": 1,
+      "idx": 85
     },
     {
       "label": "Advanced Budget Variance",
@@ -643,7 +788,7 @@
       "link_to": "Advanced Budget Variance",
       "icon": "chart-column",
       "child": 1,
-      "idx": 70
+      "idx": 86
     },
     {
       "label": "Budget Consumption",
@@ -652,7 +797,7 @@
       "link_to": "Budget Consumption",
       "icon": "gauge",
       "child": 1,
-      "idx": 71
+      "idx": 87
     },
     {
       "label": "Commitment Register",
@@ -661,7 +806,7 @@
       "link_to": "Commitment Register",
       "icon": "list-checks",
       "child": 1,
-      "idx": 72
+      "idx": 88
     },
     {
       "label": "Open Commitment Ageing",
@@ -670,7 +815,7 @@
       "link_to": "Open Commitment Ageing",
       "icon": "clock",
       "child": 1,
-      "idx": 73
+      "idx": 89
     },
     {
       "label": "Budget Transfer Register",
@@ -679,7 +824,7 @@
       "link_to": "Budget Transfer Register",
       "icon": "arrow-left-right",
       "child": 1,
-      "idx": 74
+      "idx": 90
     },
     {
       "label": "Budget Supplement Register",
@@ -688,7 +833,7 @@
       "link_to": "Budget Supplement Register",
       "icon": "plus-circle",
       "child": 1,
-      "idx": 75
+      "idx": 91
     },
     {
       "label": "Budget Override Register",
@@ -697,7 +842,7 @@
       "link_to": "Budget Override Register",
       "icon": "shield-check",
       "child": 1,
-      "idx": 76
+      "idx": 92
     },
     {
       "label": "Bank Position",
@@ -706,7 +851,7 @@
       "link_to": "Bank Position",
       "icon": "landmark",
       "child": 1,
-      "idx": 77
+      "idx": 93
     },
     {
       "label": "Cash Forecast Detail",
@@ -715,7 +860,7 @@
       "link_to": "Cash Forecast Detail",
       "icon": "table",
       "child": 1,
-      "idx": 78
+      "idx": 94
     },
     {
       "label": "Forecast Accuracy",
@@ -724,7 +869,7 @@
       "link_to": "Cash Forecast Accuracy",
       "icon": "target",
       "child": 1,
-      "idx": 79
+      "idx": 95
     },
     {
       "label": "Scenario Comparison",
@@ -733,7 +878,7 @@
       "link_to": "Cash Forecast Scenario Comparison",
       "icon": "columns-3",
       "child": 1,
-      "idx": 80
+      "idx": 96
     },
     {
       "label": "Payment Proposal Register",
@@ -742,7 +887,7 @@
       "link_to": "Payment Proposal Register",
       "icon": "table",
       "child": 1,
-      "idx": 81
+      "idx": 97
     },
     {
       "label": "Payment Run Register",
@@ -751,7 +896,7 @@
       "link_to": "Payment Run Register",
       "icon": "table",
       "child": 1,
-      "idx": 82
+      "idx": 98
     },
     {
       "label": "Payment Hold Register",
@@ -760,7 +905,7 @@
       "link_to": "Payment Hold Register",
       "icon": "table",
       "child": 1,
-      "idx": 83
+      "idx": 99
     },
     {
       "label": "Promise to Pay Register",
@@ -769,7 +914,7 @@
       "link_to": "Promise to Pay Register",
       "icon": "table",
       "child": 1,
-      "idx": 84
+      "idx": 100
     },
     {
       "label": "Credit Exposure Report",
@@ -778,7 +923,7 @@
       "link_to": "Credit Exposure Report",
       "icon": "table",
       "child": 1,
-      "idx": 85
+      "idx": 101
     },
     {
       "label": "Collection Performance",
@@ -787,7 +932,7 @@
       "link_to": "Collection Performance",
       "icon": "chart-no-axes-column",
       "child": 1,
-      "idx": 86
+      "idx": 102
     },
     {
       "label": "Credit Review Register",
@@ -796,7 +941,7 @@
       "link_to": "Credit Review Register",
       "icon": "table",
       "child": 1,
-      "idx": 87
+      "idx": 103
     },
     {
       "label": "Credit Override Register",
@@ -805,7 +950,7 @@
       "link_to": "Credit Override Register",
       "icon": "table",
       "child": 1,
-      "idx": 88
+      "idx": 104
     }
   ]
 }

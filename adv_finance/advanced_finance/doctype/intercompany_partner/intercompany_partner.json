@@ -1,0 +1,153 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "partner_company",
+    "active",
+    "receivable_account",
+    "payable_account",
+    "settlement_account",
+    "currency",
+    "approval_rule",
+    "matching_tolerance_amount",
+    "matching_tolerance_percent",
+    "fx_tolerance_amount",
+    "settlement_tolerance_amount",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "partner_company",
+      "fieldtype": "Link",
+      "label": "Partner Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "receivable_account",
+      "fieldtype": "Link",
+      "label": "Receivable Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "payable_account",
+      "fieldtype": "Link",
+      "label": "Payable Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "settlement_account",
+      "fieldtype": "Link",
+      "label": "Settlement Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "approval_rule",
+      "fieldtype": "Data",
+      "label": "Approval Rule"
+    },
+    {
+      "fieldname": "matching_tolerance_amount",
+      "fieldtype": "Currency",
+      "label": "Matching Tolerance Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "matching_tolerance_percent",
+      "fieldtype": "Percent",
+      "label": "Matching Tolerance Percent",
+      "default": 0
+    },
+    {
+      "fieldname": "fx_tolerance_amount",
+      "fieldtype": "Currency",
+      "label": "Fx Tolerance Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "settlement_tolerance_amount",
+      "fieldtype": "Currency",
+      "label": "Settlement Tolerance Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Intercompany Partner",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "format:IC-PARTNER-{company}-{partner_company}"
+}

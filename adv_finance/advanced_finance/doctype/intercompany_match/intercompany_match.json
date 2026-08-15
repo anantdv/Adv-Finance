@@ -1,0 +1,179 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "match_type",
+    "origin_company",
+    "destination_company",
+    "match_basis",
+    "status",
+    "origin_total",
+    "destination_total",
+    "difference_amount",
+    "currency",
+    "matched_by",
+    "matched_on",
+    "approved_by",
+    "approved_on",
+    "items",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "IC-MATCH-.YYYY.-.#####",
+      "default": "IC-MATCH-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "match_type",
+      "fieldtype": "Select",
+      "label": "Match Type",
+      "options": "One to One\nOne to Many\nMany to One\nMany to Many",
+      "default": "One to One",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "origin_company",
+      "fieldtype": "Link",
+      "label": "Origin Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "destination_company",
+      "fieldtype": "Link",
+      "label": "Destination Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "match_basis",
+      "fieldtype": "Select",
+      "label": "Match Basis",
+      "options": "Reference Number\nDocument Link\nAmount\nCurrency\nDate\nPartner\nDescription\nManual",
+      "default": "Reference Number"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nSuggested\nApproved\nRejected\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "origin_total",
+      "fieldtype": "Currency",
+      "label": "Origin Total",
+      "read_only": 1
+    },
+    {
+      "fieldname": "destination_total",
+      "fieldtype": "Currency",
+      "label": "Destination Total",
+      "read_only": 1
+    },
+    {
+      "fieldname": "difference_amount",
+      "fieldtype": "Currency",
+      "label": "Difference Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "matched_by",
+      "fieldtype": "Link",
+      "label": "Matched By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "matched_on",
+      "fieldtype": "Datetime",
+      "label": "Matched On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_on",
+      "fieldtype": "Datetime",
+      "label": "Approved On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "Intercompany Match Item"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Intercompany Match",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "naming_series:"
+}

@@ -1,0 +1,260 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "origin_company",
+    "destination_company",
+    "partner",
+    "source_doctype",
+    "source_document",
+    "target_doctype",
+    "target_document",
+    "posting_date",
+    "due_date",
+    "party",
+    "reference_no",
+    "description",
+    "amount",
+    "currency",
+    "company_currency_amount",
+    "transaction_currency",
+    "reporting_currency",
+    "translation_rate",
+    "fx_difference",
+    "matching_status",
+    "settlement_status",
+    "difference_amount",
+    "created_date",
+    "matched_date",
+    "match",
+    "settlement",
+    "elimination_status"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "IC-TXN-.YYYY.-.#####",
+      "default": "IC-TXN-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "origin_company",
+      "fieldtype": "Link",
+      "label": "Origin Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "destination_company",
+      "fieldtype": "Link",
+      "label": "Destination Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "partner",
+      "fieldtype": "Link",
+      "label": "Partner",
+      "options": "Intercompany Partner"
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Link",
+      "label": "Source Doctype",
+      "options": "DocType",
+      "reqd": 1
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "target_doctype",
+      "fieldtype": "Link",
+      "label": "Target Doctype",
+      "options": "DocType"
+    },
+    {
+      "fieldname": "target_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Target Document",
+      "options": "target_doctype"
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date"
+    },
+    {
+      "fieldname": "due_date",
+      "fieldtype": "Date",
+      "label": "Due Date"
+    },
+    {
+      "fieldname": "party",
+      "fieldtype": "Data",
+      "label": "Party"
+    },
+    {
+      "fieldname": "reference_no",
+      "fieldtype": "Data",
+      "label": "Reference No"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "company_currency_amount",
+      "fieldtype": "Currency",
+      "label": "Company Currency Amount"
+    },
+    {
+      "fieldname": "transaction_currency",
+      "fieldtype": "Link",
+      "label": "Transaction Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "reporting_currency",
+      "fieldtype": "Link",
+      "label": "Reporting Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "translation_rate",
+      "fieldtype": "Float",
+      "label": "Translation Rate"
+    },
+    {
+      "fieldname": "fx_difference",
+      "fieldtype": "Currency",
+      "label": "Fx Difference",
+      "default": 0
+    },
+    {
+      "fieldname": "matching_status",
+      "fieldtype": "Select",
+      "label": "Matching Status",
+      "options": "Unmatched\nSuggested\nMatched\nPartially Matched\nDifference\nIgnored",
+      "default": "Unmatched",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "settlement_status",
+      "fieldtype": "Select",
+      "label": "Settlement Status",
+      "options": "Not Settled\nPartially Settled\nSettled\nOverpaid\nUnderpaid",
+      "default": "Not Settled"
+    },
+    {
+      "fieldname": "difference_amount",
+      "fieldtype": "Currency",
+      "label": "Difference Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "created_date",
+      "fieldtype": "Datetime",
+      "label": "Created Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "matched_date",
+      "fieldtype": "Datetime",
+      "label": "Matched Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "match",
+      "fieldtype": "Link",
+      "label": "Match",
+      "options": "Intercompany Match"
+    },
+    {
+      "fieldname": "settlement",
+      "fieldtype": "Link",
+      "label": "Settlement",
+      "options": "Intercompany Settlement"
+    },
+    {
+      "fieldname": "elimination_status",
+      "fieldtype": "Select",
+      "label": "Elimination Status",
+      "options": "Not Evaluated\nReady\nBlocked\nDifference Exists\nAwaiting Settlement",
+      "default": "Not Evaluated"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Intercompany Transaction",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Intercompany Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "naming_series:"
+}

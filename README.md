@@ -87,6 +87,7 @@ Implemented:
 - Accounts Receivable Collections and Credit Control
 - Treasury Management Phase 1
 - Advanced Budgeting and Commitment Accounting
+- Intercompany Accounting and Group Finance Phase 1
 
 In development:
 
@@ -98,10 +99,11 @@ In development:
 - ERPNext v16 integration validation for AR ageing, receipts, and credit-note creation
 - ERPNext v16 integration validation for treasury cash balances, FX rates, and forecast source queries
 - ERPNext v16 integration validation for standard Budget publication and procurement commitment fields
+- ERPNext v16 integration validation for intercompany source document discovery and due-to/due-from balances
 
 Planned:
 
-- Intercompany Reconciliation
+- Financial Consolidation and Consolidated Statements
 - Consolidation
 
 Accounting guarantee: ADV Finance never directly posts GL Entries. All

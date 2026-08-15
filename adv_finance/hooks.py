@@ -30,6 +30,9 @@ fixtures = [
                     "Budget Reviewer",
                     "Budget Manager",
                     "Budget Override Approver",
+                    "Intercompany Accountant",
+                    "Intercompany Manager",
+                    "Group Finance Manager",
                 ],
             ]
         ],
@@ -70,6 +73,12 @@ doctype_js = {
     "Budget Control Rule": "advanced_finance/doctype/budget_control_rule/budget_control_rule.js",
     "Budget Override Request": "advanced_finance/doctype/budget_override_request/budget_override_request.js",
     "Budget Settings": "advanced_finance/doctype/budget_settings/budget_settings.js",
+    "Intercompany Partner": "advanced_finance/doctype/intercompany_partner/intercompany_partner.js",
+    "Intercompany Transaction": "advanced_finance/doctype/intercompany_transaction/intercompany_transaction.js",
+    "Intercompany Match": "advanced_finance/doctype/intercompany_match/intercompany_match.js",
+    "Intercompany Settlement": "advanced_finance/doctype/intercompany_settlement/intercompany_settlement.js",
+    "Intercompany Difference": "advanced_finance/doctype/intercompany_difference/intercompany_difference.js",
+    "Intercompany Elimination Candidate": "advanced_finance/doctype/intercompany_elimination_candidate/intercompany_elimination_candidate.js",
 }
 
 doctype_list_js = {
@@ -101,6 +110,12 @@ doctype_list_js = {
     "Budget Control Rule": "advanced_finance/doctype/budget_control_rule/budget_control_rule_list.js",
     "Budget Override Request": "advanced_finance/doctype/budget_override_request/budget_override_request_list.js",
     "Budget Settings": "advanced_finance/doctype/budget_settings/budget_settings_list.js",
+    "Intercompany Partner": "advanced_finance/doctype/intercompany_partner/intercompany_partner_list.js",
+    "Intercompany Transaction": "advanced_finance/doctype/intercompany_transaction/intercompany_transaction_list.js",
+    "Intercompany Match": "advanced_finance/doctype/intercompany_match/intercompany_match_list.js",
+    "Intercompany Settlement": "advanced_finance/doctype/intercompany_settlement/intercompany_settlement_list.js",
+    "Intercompany Difference": "advanced_finance/doctype/intercompany_difference/intercompany_difference_list.js",
+    "Intercompany Elimination Candidate": "advanced_finance/doctype/intercompany_elimination_candidate/intercompany_elimination_candidate_list.js",
 }
 
 scheduler_events = {

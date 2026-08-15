@@ -1,0 +1,65 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "transaction",
+    "source_doctype",
+    "source_document",
+    "company",
+    "amount",
+    "currency",
+    "side"
+  ],
+  "fields": [
+    {
+      "fieldname": "transaction",
+      "fieldtype": "Link",
+      "label": "Transaction",
+      "options": "Intercompany Transaction"
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Link",
+      "label": "Source Doctype",
+      "options": "DocType"
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount"
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "side",
+      "fieldtype": "Select",
+      "label": "Side",
+      "options": "Origin\nDestination\nAdjustment"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Intercompany Match Item",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "istable": 1
+}

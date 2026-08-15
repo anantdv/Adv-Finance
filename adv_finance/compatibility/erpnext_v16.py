@@ -649,6 +649,142 @@ def create_draft_erpnext_budget_from_plan(plan) -> Any:
     return budget
 
 
+def get_intercompany_source_documents(
+    company: str | None = None,
+    partner_company: str | None = None,
+    from_date=None,
+    to_date=None,
+) -> list[dict[str, Any]]:
+    """Return submitted ERPNext documents that can participate in IC matching.
+
+    The query is deliberately read-only and broad. Deployment validation should
+    confirm any custom party/company linkage conventions used by the customer.
+    """
+
+    if not partner_company:
+        partner_filters: dict[str, Any] = {"active": 1}
+        if company:
+            partner_filters["company"] = company
+        rows: list[dict[str, Any]] = []
+        for partner in frappe.get_all("Intercompany Partner", filters=partner_filters, fields=["company", "partner_company"]):
+            rows.extend(get_intercompany_source_documents(partner.company, partner.partner_company, from_date, to_date))
+        return rows
+
+    values: dict[str, Any] = {"company": company, "partner_company": partner_company, "from_date": from_date, "to_date": to_date}
+    clauses = []
+    if company:
+        clauses.append("company = %(company)s")
+    date_clause = ""
+    if from_date:
+        date_clause += " and posting_date >= %(from_date)s"
+    if to_date:
+        date_clause += " and posting_date <= %(to_date)s"
+    company_clause = (" and " + " and ".join(clauses)) if clauses else ""
+    rows = []
+    rows.extend(
+        frappe.db.sql(
+            f"""
+            select name as source_document, 'Sales Invoice' as source_doctype,
+                   company, customer as party, customer_name as party_name,
+                   posting_date, due_date, po_no as reference_no,
+                   remarks as description, rounded_total as amount,
+                   base_rounded_total as company_currency_amount, currency
+            from `tabSales Invoice`
+            where docstatus = 1 {company_clause} {date_clause}
+            """,
+            values,
+            as_dict=True,
+        )
+    )
+    rows.extend(
+        frappe.db.sql(
+            f"""
+            select name as source_document, 'Purchase Invoice' as source_doctype,
+                   company, supplier as party, supplier_name as party_name,
+                   posting_date, due_date, bill_no as reference_no,
+                   remarks as description, rounded_total as amount,
+                   base_rounded_total as company_currency_amount, currency
+            from `tabPurchase Invoice`
+            where docstatus = 1 {company_clause} {date_clause}
+            """,
+            values,
+            as_dict=True,
+        )
+    )
+    rows.extend(
+        frappe.db.sql(
+            f"""
+            select name as source_document, 'Journal Entry' as source_doctype,
+                   company, null as party, null as party_name, posting_date,
+                   posting_date as due_date, cheque_no as reference_no,
+                   user_remark as description, total_debit as amount,
+                   total_debit as company_currency_amount, null as currency
+            from `tabJournal Entry`
+            where docstatus = 1 {company_clause} {date_clause}
+            """,
+            values,
+            as_dict=True,
+        )
+    )
+    rows.extend(
+        frappe.db.sql(
+            f"""
+            select name as source_document, 'Payment Entry' as source_doctype,
+                   company, party, party_name, posting_date, posting_date as due_date,
+                   reference_no, remarks as description,
+                   greatest(paid_amount, received_amount) as amount,
+                   greatest(base_paid_amount, base_received_amount) as company_currency_amount,
+                   paid_from_account_currency as currency
+            from `tabPayment Entry`
+            where docstatus = 1 {company_clause} {date_clause}
+            """,
+            values,
+            as_dict=True,
+        )
+    )
+    for row in rows:
+        row.partner_company = partner_company
+        if partner_company and row.company == partner_company:
+            row.partner_company = company
+    return rows
+
+
+def get_due_to_due_from_balances(origin_company: str, destination_company: str, as_of_date=None) -> dict[str, Decimal]:
+    partner = frappe.db.get_value(
+        "Intercompany Partner",
+        {"company": origin_company, "partner_company": destination_company, "active": 1},
+        ["receivable_account", "payable_account"],
+        as_dict=True,
+    )
+    if not partner:
+        return {"due_from": Decimal("0"), "due_to": Decimal("0")}
+    due_from = Decimal("0")
+    due_to = Decimal("0")
+    if partner.receivable_account:
+        due_from = get_cash_or_balance_account_amount(origin_company, partner.receivable_account, as_of_date)
+    if partner.payable_account:
+        due_to = get_cash_or_balance_account_amount(destination_company, partner.payable_account, as_of_date)
+    return {"due_from": due_from, "due_to": due_to}
+
+
+def get_cash_or_balance_account_amount(company: str, account: str, as_of_date=None) -> Decimal:
+    conditions = ["company = %(company)s", "account = %(account)s", "is_cancelled = 0"]
+    values: dict[str, Any] = {"company": company, "account": account}
+    if as_of_date:
+        conditions.append("posting_date <= %(as_of_date)s")
+        values["as_of_date"] = as_of_date
+    rows = frappe.db.sql(
+        f"""
+        select coalesce(sum(debit - credit), 0) as balance
+        from `tabGL Entry`
+        where {" and ".join(conditions)}
+        """,
+        values,
+        as_dict=True,
+    )
+    return Decimal(str(rows[0].balance if rows else 0))
+
+
 def get_party_subledger_balance(company: str, account: str, party_type: str, to_date) -> Decimal:
     result = frappe.db.sql(
         """

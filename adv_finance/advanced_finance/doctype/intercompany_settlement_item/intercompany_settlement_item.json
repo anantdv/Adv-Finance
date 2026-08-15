@@ -1,0 +1,56 @@
+{
+  "actions": [],
+  "creation": "2026-08-15 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "transaction",
+    "source_doctype",
+    "source_document",
+    "amount",
+    "settled_amount",
+    "outstanding_amount"
+  ],
+  "fields": [
+    {
+      "fieldname": "transaction",
+      "fieldtype": "Link",
+      "label": "Transaction",
+      "options": "Intercompany Transaction"
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Link",
+      "label": "Source Doctype",
+      "options": "DocType"
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount"
+    },
+    {
+      "fieldname": "settled_amount",
+      "fieldtype": "Currency",
+      "label": "Settled Amount"
+    },
+    {
+      "fieldname": "outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Outstanding Amount"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Intercompany Settlement Item",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "istable": 1
+}
