@@ -1,6 +1,6 @@
 {
   "charts": [],
-  "content": "[{\"id\":\"group_finance_header\",\"type\":\"header\",\"data\":{\"text\":\"Group Finance\",\"col\":12}},{\"id\":\"consolidation_dashboard_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Dashboard\",\"col\":3}},{\"id\":\"consolidation_groups_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Groups\",\"col\":3}},{\"id\":\"consolidation_periods_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Periods\",\"col\":3}},{\"id\":\"trial_balance_snapshots_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial Balance Snapshots\",\"col\":3}},{\"id\":\"currency_translation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Currency Translation\",\"col\":3}},{\"id\":\"adjustments_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Adjustments\",\"col\":3}},{\"id\":\"eliminations_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Eliminations\",\"col\":3}},{\"id\":\"consolidated_trial_balance_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidated Trial Balance\",\"col\":3}},{\"id\":\"balance_sheet_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Balance Sheet\",\"col\":3}},{\"id\":\"profit_and_loss_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Profit and Loss\",\"col\":3}},{\"id\":\"cash_flow_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cash Flow\",\"col\":3}},{\"id\":\"ratios_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ratios\",\"col\":3}},{\"id\":\"ownership_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ownership\",\"col\":3}},{\"id\":\"elimination_summary_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Elimination Summary\",\"col\":3}},{\"id\":\"minority_interest_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Minority Interest\",\"col\":3}},{\"id\":\"adjustment_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Adjustment Register\",\"col\":3}}]",
+  "content": "[{\"id\":\"group_finance_header\",\"type\":\"header\",\"data\":{\"text\":\"Group Finance\",\"col\":12}},{\"id\":\"consolidation_dashboard_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Dashboard\",\"col\":3}},{\"id\":\"consolidation_manual_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Manual\",\"col\":3}},{\"id\":\"consolidation_groups_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Groups\",\"col\":3}},{\"id\":\"consolidation_periods_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Periods\",\"col\":3}},{\"id\":\"trial_balance_snapshots_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial Balance Snapshots\",\"col\":3}},{\"id\":\"currency_translation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Currency Translation\",\"col\":3}},{\"id\":\"adjustments_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Adjustments\",\"col\":3}},{\"id\":\"eliminations_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Eliminations\",\"col\":3}},{\"id\":\"consolidated_trial_balance_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidated Trial Balance\",\"col\":3}},{\"id\":\"balance_sheet_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Balance Sheet\",\"col\":3}},{\"id\":\"profit_and_loss_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Profit and Loss\",\"col\":3}},{\"id\":\"cash_flow_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cash Flow\",\"col\":3}},{\"id\":\"ratios_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ratios\",\"col\":3}},{\"id\":\"ownership_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ownership\",\"col\":3}},{\"id\":\"elimination_summary_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Elimination Summary\",\"col\":3}},{\"id\":\"minority_interest_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Minority Interest\",\"col\":3}},{\"id\":\"adjustment_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Adjustment Register\",\"col\":3}}]",
   "creation": "2026-08-16 00:00:00.000000",
   "docstatus": 0,
   "doctype": "Workspace",
@@ -17,6 +17,16 @@
       "type": "Link",
       "hidden": 0,
       "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Consolidation Manual",
+      "link_to": "consolidation-manual",
+      "link_type": "Page",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
       "link_count": 0,
       "onboard": 0
     },
@@ -202,6 +212,12 @@
       "link_to": "Consolidation Dashboard",
       "type": "Report",
       "color": "Green"
+    },
+    {
+      "label": "Consolidation Manual",
+      "link_to": "consolidation-manual",
+      "type": "Page",
+      "color": "Grey"
     },
     {
       "label": "Consolidation Groups",

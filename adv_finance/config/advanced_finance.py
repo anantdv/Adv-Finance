@@ -273,6 +273,7 @@ def get_data():
             "icon": "octicon octicon-organization",
             "items": [
                 {"type": "report", "name": "Consolidation Dashboard", "doctype": "Consolidation Period", "label": _("Consolidation Dashboard"), "is_query_report": True, "onboard": 0},
+                {"type": "page", "name": "consolidation-manual", "label": _("Consolidation Manual"), "description": _("Book-style operating manual for enterprise financial consolidation."), "onboard": 1},
                 {"type": "doctype", "name": "Consolidation Group", "label": _("Consolidation Groups"), "description": _("Define legal entity ownership, reporting currency, and consolidation methods."), "onboard": 1},
                 {"type": "doctype", "name": "Consolidation Period", "label": _("Consolidation Periods"), "description": _("Collect trial balances, translate, eliminate, consolidate, review, and publish group results."), "onboard": 1},
                 {"type": "doctype", "name": "Trial Balance Snapshot", "label": _("Trial Balance Snapshots"), "description": _("Immutable company trial balance extracts used for group consolidation."), "onboard": 1},
