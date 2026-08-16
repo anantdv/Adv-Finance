@@ -1,0 +1,200 @@
+{
+  "actions": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "consolidation_group",
+    "fiscal_year",
+    "period",
+    "start_date",
+    "end_date",
+    "status",
+    "companies_collected",
+    "companies_pending",
+    "translation_status",
+    "elimination_status",
+    "consolidation_progress",
+    "group_profit",
+    "group_cash",
+    "minority_interest",
+    "closed_by",
+    "closed_on"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "CONS-PER-.YYYY.-.#####",
+      "default": "CONS-PER-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "consolidation_group",
+      "fieldtype": "Link",
+      "label": "Consolidation Group",
+      "options": "Consolidation Group",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "fiscal_year",
+      "fieldtype": "Link",
+      "label": "Fiscal Year",
+      "options": "Fiscal Year",
+      "reqd": 1
+    },
+    {
+      "fieldname": "period",
+      "fieldtype": "Data",
+      "label": "Period",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "start_date",
+      "fieldtype": "Date",
+      "label": "Start Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "end_date",
+      "fieldtype": "Date",
+      "label": "End Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nOpen\nCollecting\nTranslating\nEliminating\nConsolidating\nReview\nApproved\nPublished\nClosed",
+      "default": "Draft",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "companies_collected",
+      "fieldtype": "Int",
+      "label": "Companies Collected",
+      "read_only": 1
+    },
+    {
+      "fieldname": "companies_pending",
+      "fieldtype": "Int",
+      "label": "Companies Pending",
+      "read_only": 1
+    },
+    {
+      "fieldname": "translation_status",
+      "fieldtype": "Data",
+      "label": "Translation Status",
+      "read_only": 1
+    },
+    {
+      "fieldname": "elimination_status",
+      "fieldtype": "Data",
+      "label": "Elimination Status",
+      "read_only": 1
+    },
+    {
+      "fieldname": "consolidation_progress",
+      "fieldtype": "Percent",
+      "label": "Consolidation Progress",
+      "read_only": 1
+    },
+    {
+      "fieldname": "group_profit",
+      "fieldtype": "Currency",
+      "label": "Group Profit",
+      "read_only": 1
+    },
+    {
+      "fieldname": "group_cash",
+      "fieldtype": "Currency",
+      "label": "Group Cash",
+      "read_only": 1
+    },
+    {
+      "fieldname": "minority_interest",
+      "fieldtype": "Currency",
+      "label": "Minority Interest",
+      "read_only": 1
+    },
+    {
+      "fieldname": "closed_by",
+      "fieldtype": "Link",
+      "label": "Closed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "closed_on",
+      "fieldtype": "Datetime",
+      "label": "Closed On",
+      "read_only": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Consolidation Period",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Consolidation Reviewer",
+      "read": 1,
+      "write": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "CFO",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Auditor",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "naming_series:"
+}

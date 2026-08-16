@@ -33,6 +33,10 @@ fixtures = [
                     "Intercompany Accountant",
                     "Intercompany Manager",
                     "Group Finance Manager",
+                    "Group Accountant",
+                    "Consolidation Reviewer",
+                    "CFO",
+                    "Auditor",
                 ],
             ]
         ],
@@ -79,6 +83,12 @@ doctype_js = {
     "Intercompany Settlement": "advanced_finance/doctype/intercompany_settlement/intercompany_settlement.js",
     "Intercompany Difference": "advanced_finance/doctype/intercompany_difference/intercompany_difference.js",
     "Intercompany Elimination Candidate": "advanced_finance/doctype/intercompany_elimination_candidate/intercompany_elimination_candidate.js",
+    "Consolidation Group": "advanced_finance/doctype/consolidation_group/consolidation_group.js",
+    "Consolidation Period": "advanced_finance/doctype/consolidation_period/consolidation_period.js",
+    "Trial Balance Snapshot": "advanced_finance/doctype/trial_balance_snapshot/trial_balance_snapshot.js",
+    "Consolidation Adjustment": "advanced_finance/doctype/consolidation_adjustment/consolidation_adjustment.js",
+    "Elimination Journal": "advanced_finance/doctype/elimination_journal/elimination_journal.js",
+    "Consolidated Trial Balance Line": "advanced_finance/doctype/consolidated_trial_balance_line/consolidated_trial_balance_line.js",
 }
 
 doctype_list_js = {
@@ -116,6 +126,12 @@ doctype_list_js = {
     "Intercompany Settlement": "advanced_finance/doctype/intercompany_settlement/intercompany_settlement_list.js",
     "Intercompany Difference": "advanced_finance/doctype/intercompany_difference/intercompany_difference_list.js",
     "Intercompany Elimination Candidate": "advanced_finance/doctype/intercompany_elimination_candidate/intercompany_elimination_candidate_list.js",
+    "Consolidation Group": "advanced_finance/doctype/consolidation_group/consolidation_group_list.js",
+    "Consolidation Period": "advanced_finance/doctype/consolidation_period/consolidation_period_list.js",
+    "Trial Balance Snapshot": "advanced_finance/doctype/trial_balance_snapshot/trial_balance_snapshot_list.js",
+    "Consolidation Adjustment": "advanced_finance/doctype/consolidation_adjustment/consolidation_adjustment_list.js",
+    "Elimination Journal": "advanced_finance/doctype/elimination_journal/elimination_journal_list.js",
+    "Consolidated Trial Balance Line": "advanced_finance/doctype/consolidated_trial_balance_line/consolidated_trial_balance_line_list.js",
 }
 
 scheduler_events = {

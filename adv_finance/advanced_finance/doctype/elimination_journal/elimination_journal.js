@@ -1,0 +1,1 @@
+frappe.ui.form.on("Elimination Journal", {refresh(frm) { if (!frm.is_new() && frm.doc.status === "Generated") frm.add_custom_button("Approve", () => frappe.call({method: "adv_finance.api.consolidation.approve_elimination_journal", args: {name: frm.doc.name}, callback: () => frm.reload_doc()})); }});

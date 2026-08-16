@@ -1,0 +1,77 @@
+{
+  "actions": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "parent_group",
+    "ownership_percent",
+    "effective_date",
+    "reporting_currency",
+    "functional_currency",
+    "consolidation_method",
+    "active"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "parent_group",
+      "fieldtype": "Link",
+      "label": "Parent Group",
+      "options": "Consolidation Group"
+    },
+    {
+      "fieldname": "ownership_percent",
+      "fieldtype": "Percent",
+      "label": "Ownership Percent",
+      "default": 100,
+      "reqd": 1
+    },
+    {
+      "fieldname": "effective_date",
+      "fieldtype": "Date",
+      "label": "Effective Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "reporting_currency",
+      "fieldtype": "Link",
+      "label": "Reporting Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "functional_currency",
+      "fieldtype": "Link",
+      "label": "Functional Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "consolidation_method",
+      "fieldtype": "Select",
+      "label": "Consolidation Method",
+      "options": "Full Consolidation\nProportionate\nEquity Method\nNot Consolidated",
+      "default": "Full Consolidation"
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Group Company",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "istable": 1
+}

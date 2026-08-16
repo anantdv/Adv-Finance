@@ -785,6 +785,42 @@ def get_cash_or_balance_account_amount(company: str, account: str, as_of_date=No
     return Decimal(str(rows[0].balance if rows else 0))
 
 
+def get_company_trial_balance_rows(company: str, from_date=None, to_date=None) -> list[dict[str, Any]]:
+    """Return trial-balance-like account balances from ERPNext GL.
+
+    ERPNext financial reports remain the validation benchmark. Consolidation
+    snapshots use this read-only aggregate so historical group periods are not
+    recalculated from live GL every time.
+    """
+
+    conditions = ["gle.company = %(company)s", "gle.is_cancelled = 0"]
+    values: dict[str, Any] = {"company": company}
+    if from_date:
+        conditions.append("gle.posting_date >= %(from_date)s")
+        values["from_date"] = from_date
+    if to_date:
+        conditions.append("gle.posting_date <= %(to_date)s")
+        values["to_date"] = to_date
+    return frappe.db.sql(
+        f"""
+        select
+            gle.account,
+            acc.account_name,
+            acc.root_type,
+            acc.account_currency as currency,
+            coalesce(sum(gle.debit - gle.credit), 0) as balance
+        from `tabGL Entry` gle
+        inner join `tabAccount` acc on acc.name = gle.account
+        where {" and ".join(conditions)}
+        group by gle.account, acc.account_name, acc.root_type, acc.account_currency
+        having abs(balance) > 0.000001
+        order by acc.root_type, gle.account
+        """,
+        values,
+        as_dict=True,
+    )
+
+
 def get_party_subledger_balance(company: str, account: str, party_type: str, to_date) -> Decimal:
     result = frappe.db.sql(
         """

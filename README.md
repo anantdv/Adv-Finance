@@ -88,6 +88,7 @@ Implemented:
 - Treasury Management Phase 1
 - Advanced Budgeting and Commitment Accounting
 - Intercompany Accounting and Group Finance Phase 1
+- Enterprise Financial Consolidation and Group Reporting
 
 In development:
 
@@ -100,11 +101,12 @@ In development:
 - ERPNext v16 integration validation for treasury cash balances, FX rates, and forecast source queries
 - ERPNext v16 integration validation for standard Budget publication and procurement commitment fields
 - ERPNext v16 integration validation for intercompany source document discovery and due-to/due-from balances
+- ERPNext v16 integration validation for consolidation trial balance extraction, report filters, and workspace import
 
 Planned:
 
-- Financial Consolidation and Consolidated Statements
-- Consolidation
+- Multi-GAAP consolidation reporting
+- Consolidation journal export packs
 
 Accounting guarantee: ADV Finance never directly posts GL Entries. All
 accounting postings are generated through standard ERPNext accounting documents.
@@ -116,6 +118,12 @@ Entry` records. Supplier Reconciliation reads ERPNext accounting data and record
 the reconciliation result in ADV Finance DocTypes only. Accrual Management
 creates draft ERPNext Journal Entries for accruals and reversals, and ERPNext
 remains responsible for validation, submission, and GL posting.
+
+Enterprise Financial Consolidation reads ERPNext trial balance data into
+immutable ADV Finance snapshots, applies currency translation, ownership,
+adjustments, eliminations, and minority-interest calculations inside ADV Finance,
+and produces consolidated reports. It does not post consolidation journals to
+ERPNext GL or modify ERPNext accounting balances.
 
 ## Testing
 

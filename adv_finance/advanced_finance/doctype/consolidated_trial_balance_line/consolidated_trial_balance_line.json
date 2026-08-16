@@ -1,0 +1,183 @@
+{
+  "actions": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "consolidation_period",
+    "consolidation_group",
+    "company",
+    "parent",
+    "account",
+    "account_name",
+    "root_type",
+    "company_total",
+    "ownership_percent",
+    "owned_amount",
+    "translation_amount",
+    "elimination_amount",
+    "adjustment_amount",
+    "minority_interest_amount",
+    "final_amount",
+    "currency"
+  ],
+  "fields": [
+    {
+      "fieldname": "consolidation_period",
+      "fieldtype": "Link",
+      "label": "Consolidation Period",
+      "options": "Consolidation Period",
+      "reqd": 1
+    },
+    {
+      "fieldname": "consolidation_group",
+      "fieldtype": "Link",
+      "label": "Consolidation Group",
+      "options": "Consolidation Group"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company"
+    },
+    {
+      "fieldname": "parent",
+      "fieldtype": "Data",
+      "label": "Parent"
+    },
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "account_name",
+      "fieldtype": "Data",
+      "label": "Account Name"
+    },
+    {
+      "fieldname": "root_type",
+      "fieldtype": "Data",
+      "label": "Root Type"
+    },
+    {
+      "fieldname": "company_total",
+      "fieldtype": "Currency",
+      "label": "Company Total",
+      "default": 0
+    },
+    {
+      "fieldname": "ownership_percent",
+      "fieldtype": "Percent",
+      "label": "Ownership Percent",
+      "default": 100
+    },
+    {
+      "fieldname": "owned_amount",
+      "fieldtype": "Currency",
+      "label": "Owned Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "translation_amount",
+      "fieldtype": "Currency",
+      "label": "Translation Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "elimination_amount",
+      "fieldtype": "Currency",
+      "label": "Elimination Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "adjustment_amount",
+      "fieldtype": "Currency",
+      "label": "Adjustment Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "minority_interest_amount",
+      "fieldtype": "Currency",
+      "label": "Minority Interest Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "final_amount",
+      "fieldtype": "Currency",
+      "label": "Final Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Consolidated Trial Balance Line",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Consolidation Reviewer",
+      "read": 1,
+      "write": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "CFO",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Auditor",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "format:CONS-TB-.YYYY.-.#####"
+}

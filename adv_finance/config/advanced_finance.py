@@ -269,6 +269,28 @@ def get_data():
             ],
         },
         {
+            "label": _("Group Finance"),
+            "icon": "octicon octicon-organization",
+            "items": [
+                {"type": "report", "name": "Consolidation Dashboard", "doctype": "Consolidation Period", "label": _("Consolidation Dashboard"), "is_query_report": True, "onboard": 0},
+                {"type": "doctype", "name": "Consolidation Group", "label": _("Consolidation Groups"), "description": _("Define legal entity ownership, reporting currency, and consolidation methods."), "onboard": 1},
+                {"type": "doctype", "name": "Consolidation Period", "label": _("Consolidation Periods"), "description": _("Collect trial balances, translate, eliminate, consolidate, review, and publish group results."), "onboard": 1},
+                {"type": "doctype", "name": "Trial Balance Snapshot", "label": _("Trial Balance Snapshots"), "description": _("Immutable company trial balance extracts used for group consolidation."), "onboard": 1},
+                {"type": "report", "name": "Currency Translation Report", "doctype": "Trial Balance Snapshot", "label": _("Currency Translation"), "is_query_report": True, "onboard": 0},
+                {"type": "doctype", "name": "Consolidation Adjustment", "label": _("Adjustments"), "description": _("Audit-only consolidation adjustments held outside ERPNext GL."), "onboard": 1},
+                {"type": "doctype", "name": "Elimination Journal", "label": _("Eliminations"), "description": _("Prepare consolidation-only elimination journals without posting ERPNext accounting entries."), "onboard": 1},
+                {"type": "report", "name": "Consolidated Trial Balance", "doctype": "Consolidated Trial Balance Line", "label": _("Consolidated Trial Balance"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Consolidated Balance Sheet", "doctype": "Consolidated Trial Balance Line", "label": _("Balance Sheet"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Consolidated Profit and Loss", "doctype": "Consolidated Trial Balance Line", "label": _("Profit and Loss"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Consolidated Cash Flow", "doctype": "Consolidated Trial Balance Line", "label": _("Cash Flow"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Group Ratio Analysis", "doctype": "Consolidated Trial Balance Line", "label": _("Ratios"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Ownership Report", "doctype": "Consolidation Group", "label": _("Ownership"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Elimination Summary", "doctype": "Elimination Journal", "label": _("Elimination Summary"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Minority Interest Report", "doctype": "Consolidated Trial Balance Line", "label": _("Minority Interest"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Adjustment Register", "doctype": "Consolidation Adjustment", "label": _("Adjustment Register"), "is_query_report": True, "onboard": 0},
+            ],
+        },
+        {
             "label": _("Monitoring"),
             "icon": "octicon octicon-device-desktop",
             "items": [

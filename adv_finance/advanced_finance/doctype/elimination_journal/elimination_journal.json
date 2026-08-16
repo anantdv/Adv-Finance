@@ -1,0 +1,168 @@
+{
+  "actions": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "consolidation_period",
+    "source_companies",
+    "source_elimination_candidate",
+    "debit_account",
+    "credit_account",
+    "amount",
+    "currency",
+    "status",
+    "reason",
+    "prepared_by",
+    "approved_by",
+    "approved_on"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "CONS-ELIM-.YYYY.-.#####",
+      "default": "CONS-ELIM-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "consolidation_period",
+      "fieldtype": "Link",
+      "label": "Consolidation Period",
+      "options": "Consolidation Period",
+      "reqd": 1
+    },
+    {
+      "fieldname": "source_companies",
+      "fieldtype": "Data",
+      "label": "Source Companies"
+    },
+    {
+      "fieldname": "source_elimination_candidate",
+      "fieldtype": "Link",
+      "label": "Source Elimination Candidate",
+      "options": "Intercompany Elimination Candidate"
+    },
+    {
+      "fieldname": "debit_account",
+      "fieldtype": "Link",
+      "label": "Debit Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "credit_account",
+      "fieldtype": "Link",
+      "label": "Credit Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Generated\nApproved\nPosted\nCancelled",
+      "default": "Generated",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reason",
+      "fieldtype": "Small Text",
+      "label": "Reason"
+    },
+    {
+      "fieldname": "prepared_by",
+      "fieldtype": "Link",
+      "label": "Prepared By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_on",
+      "fieldtype": "Datetime",
+      "label": "Approved On",
+      "read_only": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Elimination Journal",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Consolidation Reviewer",
+      "read": 1,
+      "write": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "CFO",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Auditor",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "naming_series:"
+}

@@ -1,0 +1,303 @@
+{
+  "charts": [],
+  "content": "[{\"id\":\"group_finance_header\",\"type\":\"header\",\"data\":{\"text\":\"Group Finance\",\"col\":12}},{\"id\":\"consolidation_dashboard_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Dashboard\",\"col\":3}},{\"id\":\"consolidation_groups_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Groups\",\"col\":3}},{\"id\":\"consolidation_periods_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Periods\",\"col\":3}},{\"id\":\"trial_balance_snapshots_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial Balance Snapshots\",\"col\":3}},{\"id\":\"currency_translation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Currency Translation\",\"col\":3}},{\"id\":\"adjustments_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Adjustments\",\"col\":3}},{\"id\":\"eliminations_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Eliminations\",\"col\":3}},{\"id\":\"consolidated_trial_balance_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidated Trial Balance\",\"col\":3}},{\"id\":\"balance_sheet_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Balance Sheet\",\"col\":3}},{\"id\":\"profit_and_loss_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Profit and Loss\",\"col\":3}},{\"id\":\"cash_flow_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cash Flow\",\"col\":3}},{\"id\":\"ratios_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ratios\",\"col\":3}},{\"id\":\"ownership_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ownership\",\"col\":3}},{\"id\":\"elimination_summary_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Elimination Summary\",\"col\":3}},{\"id\":\"minority_interest_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Minority Interest\",\"col\":3}},{\"id\":\"adjustment_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Adjustment Register\",\"col\":3}}]",
+  "creation": "2026-08-16 00:00:00.000000",
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "hide_custom": 0,
+  "idx": 0,
+  "indicator_color": "blue",
+  "is_hidden": 0,
+  "label": "Group Finance",
+  "links": [
+    {
+      "label": "Consolidation Dashboard",
+      "link_to": "Consolidation Dashboard",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Consolidation Groups",
+      "link_to": "Consolidation Group",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Consolidation Periods",
+      "link_to": "Consolidation Period",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Trial Balance Snapshots",
+      "link_to": "Trial Balance Snapshot",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Currency Translation",
+      "link_to": "Currency Translation Report",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Adjustments",
+      "link_to": "Consolidation Adjustment",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Eliminations",
+      "link_to": "Elimination Journal",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Consolidated Trial Balance",
+      "link_to": "Consolidated Trial Balance",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Balance Sheet",
+      "link_to": "Consolidated Balance Sheet",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Profit and Loss",
+      "link_to": "Consolidated Profit and Loss",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Cash Flow",
+      "link_to": "Consolidated Cash Flow",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Ratios",
+      "link_to": "Group Ratio Analysis",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Ownership",
+      "link_to": "Ownership Report",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Elimination Summary",
+      "link_to": "Elimination Summary",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Minority Interest",
+      "link_to": "Minority Interest Report",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Adjustment Register",
+      "link_to": "Adjustment Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "ADV Finance Group Finance",
+  "parent_page": "Advanced Finance",
+  "public": 1,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Group Accountant"
+    },
+    {
+      "role": "Consolidation Reviewer"
+    },
+    {
+      "role": "Group Finance Manager"
+    },
+    {
+      "role": "CFO"
+    },
+    {
+      "role": "Auditor"
+    }
+  ],
+  "sequence_id": 7,
+  "shortcuts": [
+    {
+      "label": "Consolidation Dashboard",
+      "link_to": "Consolidation Dashboard",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Consolidation Groups",
+      "link_to": "Consolidation Group",
+      "type": "DocType",
+      "color": "Blue",
+      "doc_view": "List"
+    },
+    {
+      "label": "Consolidation Periods",
+      "link_to": "Consolidation Period",
+      "type": "DocType",
+      "color": "Blue",
+      "doc_view": "List"
+    },
+    {
+      "label": "Trial Balance Snapshots",
+      "link_to": "Trial Balance Snapshot",
+      "type": "DocType",
+      "color": "Blue",
+      "doc_view": "List"
+    },
+    {
+      "label": "Currency Translation",
+      "link_to": "Currency Translation Report",
+      "type": "Report",
+      "color": "Orange"
+    },
+    {
+      "label": "Adjustments",
+      "link_to": "Consolidation Adjustment",
+      "type": "DocType",
+      "color": "Orange",
+      "doc_view": "List"
+    },
+    {
+      "label": "Eliminations",
+      "link_to": "Elimination Journal",
+      "type": "DocType",
+      "color": "Orange",
+      "doc_view": "List"
+    },
+    {
+      "label": "Consolidated Trial Balance",
+      "link_to": "Consolidated Trial Balance",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Balance Sheet",
+      "link_to": "Consolidated Balance Sheet",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Profit and Loss",
+      "link_to": "Consolidated Profit and Loss",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Cash Flow",
+      "link_to": "Consolidated Cash Flow",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Ratios",
+      "link_to": "Group Ratio Analysis",
+      "type": "Report",
+      "color": "Purple"
+    },
+    {
+      "label": "Ownership",
+      "link_to": "Ownership Report",
+      "type": "Report",
+      "color": "Blue"
+    },
+    {
+      "label": "Elimination Summary",
+      "link_to": "Elimination Summary",
+      "type": "Report",
+      "color": "Orange"
+    },
+    {
+      "label": "Minority Interest",
+      "link_to": "Minority Interest Report",
+      "type": "Report",
+      "color": "Purple"
+    },
+    {
+      "label": "Adjustment Register",
+      "link_to": "Adjustment Register",
+      "type": "Report",
+      "color": "Orange"
+    }
+  ],
+  "title": "Group Finance"
+}

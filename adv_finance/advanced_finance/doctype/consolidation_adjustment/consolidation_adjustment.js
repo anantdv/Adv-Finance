@@ -1,0 +1,1 @@
+frappe.ui.form.on("Consolidation Adjustment", {refresh(frm) { if (!frm.is_new() && frm.doc.status === "Submitted") frm.add_custom_button("Approve", () => frappe.call({method: "adv_finance.api.consolidation.approve_adjustment", args: {name: frm.doc.name}, callback: () => frm.reload_doc()})); }});

@@ -6,6 +6,7 @@ from adv_finance.services.financial_close.providers.accrual import AccrualProvid
 from adv_finance.services.financial_close.providers.bank_reconciliation import BankReconciliationProvider
 from adv_finance.services.financial_close.providers.base import CloseReadinessProvider
 from adv_finance.services.financial_close.providers.budgeting import BudgetingProvider
+from adv_finance.services.financial_close.providers.consolidation import ConsolidationProvider
 from adv_finance.services.financial_close.providers.erpnext_document import ERPNextDocumentProvider
 from adv_finance.services.financial_close.providers.fixed_assets import FixedAssetsProvider
 from adv_finance.services.financial_close.providers.fx_revaluation import FXRevaluationProvider
@@ -32,6 +33,7 @@ PROVIDERS = {
     "period_close": PeriodCloseProvider,
     "erpnext_document": ERPNextDocumentProvider,
     "treasury": TreasuryProvider,
+    "consolidation": ConsolidationProvider,
 }
 
 

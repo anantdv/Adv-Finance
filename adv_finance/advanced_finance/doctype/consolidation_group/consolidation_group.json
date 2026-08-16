@@ -1,0 +1,125 @@
+{
+  "actions": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "group_name",
+    "parent_consolidation_group",
+    "reporting_currency",
+    "fiscal_year",
+    "status",
+    "description",
+    "companies"
+  ],
+  "fields": [
+    {
+      "fieldname": "group_name",
+      "fieldtype": "Data",
+      "label": "Group Name",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "parent_consolidation_group",
+      "fieldtype": "Link",
+      "label": "Parent Consolidation Group",
+      "options": "Consolidation Group"
+    },
+    {
+      "fieldname": "reporting_currency",
+      "fieldtype": "Link",
+      "label": "Reporting Currency",
+      "options": "Currency",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_year",
+      "fieldtype": "Link",
+      "label": "Fiscal Year",
+      "options": "Fiscal Year"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nActive\nInactive\nArchived",
+      "default": "Draft",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "companies",
+      "fieldtype": "Table",
+      "label": "Companies",
+      "options": "Group Company"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Consolidation Group",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Consolidation Reviewer",
+      "read": 1,
+      "write": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "CFO",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Auditor",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "field:group_name"
+}

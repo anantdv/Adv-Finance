@@ -1,0 +1,167 @@
+{
+  "actions": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "consolidation_period",
+    "company",
+    "account",
+    "account_name",
+    "root_type",
+    "balance",
+    "currency",
+    "exchange_rate",
+    "translated_amount",
+    "translation_difference",
+    "snapshot_date",
+    "dimensions",
+    "immutable"
+  ],
+  "fields": [
+    {
+      "fieldname": "consolidation_period",
+      "fieldtype": "Link",
+      "label": "Consolidation Period",
+      "options": "Consolidation Period",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Account",
+      "options": "Account",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "account_name",
+      "fieldtype": "Data",
+      "label": "Account Name"
+    },
+    {
+      "fieldname": "root_type",
+      "fieldtype": "Select",
+      "label": "Root Type",
+      "options": "Asset\nLiability\nEquity\nIncome\nExpense"
+    },
+    {
+      "fieldname": "balance",
+      "fieldtype": "Currency",
+      "label": "Balance",
+      "default": 0
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "exchange_rate",
+      "fieldtype": "Float",
+      "label": "Exchange Rate",
+      "default": 1
+    },
+    {
+      "fieldname": "translated_amount",
+      "fieldtype": "Currency",
+      "label": "Translated Amount",
+      "default": 0
+    },
+    {
+      "fieldname": "translation_difference",
+      "fieldtype": "Currency",
+      "label": "Translation Difference",
+      "default": 0
+    },
+    {
+      "fieldname": "snapshot_date",
+      "fieldtype": "Datetime",
+      "label": "Snapshot Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "dimensions",
+      "fieldtype": "Small Text",
+      "label": "Dimensions"
+    },
+    {
+      "fieldname": "immutable",
+      "fieldtype": "Check",
+      "label": "Immutable",
+      "default": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Trial Balance Snapshot",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Accountant",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Consolidation Reviewer",
+      "read": 1,
+      "write": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Group Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "CFO",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Auditor",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "format:TB-SNAP-.YYYY.-.#####"
+}
