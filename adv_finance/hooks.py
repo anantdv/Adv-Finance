@@ -37,6 +37,12 @@ fixtures = [
                     "Consolidation Reviewer",
                     "CFO",
                     "Auditor",
+                    "AP User",
+                    "AP Manager",
+                    "AR User",
+                    "AR Manager",
+                    "Finance Controller",
+                    "Finance Manager",
                 ],
             ]
         ],
@@ -89,6 +95,12 @@ doctype_js = {
     "Consolidation Adjustment": "advanced_finance/doctype/consolidation_adjustment/consolidation_adjustment.js",
     "Elimination Journal": "advanced_finance/doctype/elimination_journal/elimination_journal.js",
     "Consolidated Trial Balance Line": "advanced_finance/doctype/consolidated_trial_balance_line/consolidated_trial_balance_line.js",
+    "Finance Ageing Remark": "advanced_finance/doctype/finance_ageing_remark/finance_ageing_remark.js",
+    "Demand Letter Template": "advanced_finance/doctype/demand_letter_template/demand_letter_template.js",
+    "Demand Letter": "advanced_finance/doctype/demand_letter/demand_letter.js",
+    "Prior Period Posting Request": "advanced_finance/doctype/prior_period_posting_request/prior_period_posting_request.js",
+    "Supplier Onboarding Request": "advanced_finance/doctype/supplier_onboarding_request/supplier_onboarding_request.js",
+    "Supplier Change Request": "advanced_finance/doctype/supplier_change_request/supplier_change_request.js",
 }
 
 doctype_list_js = {
@@ -132,6 +144,21 @@ doctype_list_js = {
     "Consolidation Adjustment": "advanced_finance/doctype/consolidation_adjustment/consolidation_adjustment_list.js",
     "Elimination Journal": "advanced_finance/doctype/elimination_journal/elimination_journal_list.js",
     "Consolidated Trial Balance Line": "advanced_finance/doctype/consolidated_trial_balance_line/consolidated_trial_balance_line_list.js",
+    "Finance Ageing Remark": "advanced_finance/doctype/finance_ageing_remark/finance_ageing_remark_list.js",
+    "Demand Letter Template": "advanced_finance/doctype/demand_letter_template/demand_letter_template_list.js",
+    "Demand Letter": "advanced_finance/doctype/demand_letter/demand_letter_list.js",
+    "Prior Period Posting Request": "advanced_finance/doctype/prior_period_posting_request/prior_period_posting_request_list.js",
+    "Supplier Onboarding Request": "advanced_finance/doctype/supplier_onboarding_request/supplier_onboarding_request_list.js",
+    "Supplier Change Request": "advanced_finance/doctype/supplier_change_request/supplier_change_request_list.js",
+}
+
+doc_events = {
+    "Journal Entry": {"before_submit": "adv_finance.services.finance_controls.prior_period_service.validate_prior_period_posting"},
+    "Purchase Invoice": {"before_submit": "adv_finance.services.finance_controls.prior_period_service.validate_prior_period_posting"},
+    "Sales Invoice": {"before_submit": "adv_finance.services.finance_controls.prior_period_service.validate_prior_period_posting"},
+    "Payment Entry": {"before_submit": "adv_finance.services.finance_controls.prior_period_service.validate_prior_period_posting"},
+    "Stock Entry": {"before_submit": "adv_finance.services.finance_controls.prior_period_service.validate_prior_period_posting"},
+    "Asset Transaction": {"before_submit": "adv_finance.services.finance_controls.prior_period_service.validate_prior_period_posting"},
 }
 
 scheduler_events = {

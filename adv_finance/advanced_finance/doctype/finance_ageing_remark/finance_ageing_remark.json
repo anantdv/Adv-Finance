@@ -1,0 +1,198 @@
+{
+  "actions": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "party_type",
+    "party",
+    "voucher_type",
+    "voucher_no",
+    "remark_date",
+    "remark_type",
+    "remark",
+    "entered_by",
+    "active",
+    "valid_until",
+    "collection_case",
+    "payment_hold",
+    "dispute"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "party_type",
+      "fieldtype": "Select",
+      "label": "Party Type",
+      "options": "Customer\nSupplier",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "party",
+      "fieldtype": "Dynamic Link",
+      "label": "Party",
+      "options": "party_type",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "voucher_type",
+      "fieldtype": "Select",
+      "label": "Voucher Type",
+      "options": "Sales Invoice\nPurchase Invoice\nPayment Entry\nJournal Entry\nOther"
+    },
+    {
+      "fieldname": "voucher_no",
+      "fieldtype": "Dynamic Link",
+      "label": "Voucher No",
+      "options": "voucher_type"
+    },
+    {
+      "fieldname": "remark_date",
+      "fieldtype": "Date",
+      "label": "Remark Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "remark_type",
+      "fieldtype": "Select",
+      "label": "Remark Type",
+      "options": "Collection\nPromise\nDispute\nPayment Hold\nPayment Plan\nSupplier Query\nInternal Review\nLegal\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "remark",
+      "fieldtype": "Text Editor",
+      "label": "Remark",
+      "reqd": 1
+    },
+    {
+      "fieldname": "entered_by",
+      "fieldtype": "Link",
+      "label": "Entered By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": "1",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "valid_until",
+      "fieldtype": "Date",
+      "label": "Valid Until"
+    },
+    {
+      "fieldname": "collection_case",
+      "fieldtype": "Link",
+      "label": "Collection Case",
+      "options": "Collection Case"
+    },
+    {
+      "fieldname": "payment_hold",
+      "fieldtype": "Link",
+      "label": "Payment Hold",
+      "options": "Payment Hold"
+    },
+    {
+      "fieldname": "dispute",
+      "fieldtype": "Link",
+      "label": "Dispute",
+      "options": "Customer Dispute"
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Finance Ageing Remark",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Finance Controller",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AP Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AP User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Auditor",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "AGE-REM-.YYYY.-.#####"
+}

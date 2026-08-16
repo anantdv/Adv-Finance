@@ -89,6 +89,10 @@ Implemented:
 - Advanced Budgeting and Commitment Accounting
 - Intercompany Accounting and Group Finance Phase 1
 - Enterprise Financial Consolidation and Group Reporting
+- Remaining Finance Controls and Reports: ageing remarks, EFT print formats,
+  dormant customers, demand letters, FX adjusted invoice register,
+  prior-period posting approval, supplier master controls, branch reporting,
+  and advanced trial balance
 
 In development:
 

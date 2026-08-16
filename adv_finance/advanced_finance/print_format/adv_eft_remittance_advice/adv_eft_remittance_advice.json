@@ -1,0 +1,14 @@
+{
+  "creation": "2026-08-16 00:00:00.000000",
+  "doc_type": "Payment Entry",
+  "docstatus": 0,
+  "doctype": "Print Format",
+  "html": "<div class=\"adv-print\"><h1>ADV EFT Remittance Advice</h1><p><b>Company:</b> {{ doc.company }} &nbsp; <b>Supplier:</b> {{ doc.party }} &nbsp; <b>Payment Date:</b> {{ doc.posting_date }}</p><p><b>Payment Reference:</b> {{ doc.reference_no }} &nbsp; <b>Mode:</b> {{ doc.mode_of_payment }} &nbsp; <b>ERPNext Payment Entry:</b> {{ doc.name }}</p><hr><table class=\"table table-bordered\"><thead><tr><th>Invoice</th><th>Invoice Type</th><th>Original Amount</th><th>Credit Note</th><th>Amount Applied</th><th>Balance After Payment</th></tr></thead><tbody>{% for row in doc.references %}<tr><td>{{ row.reference_name }}</td><td>{{ row.reference_doctype }}</td><td class=\"text-right\">{{ row.total_amount or '' }}</td><td class=\"text-right\">{{ row.outstanding_amount < 0 and row.outstanding_amount or '' }}</td><td class=\"text-right\">{{ row.allocated_amount }}</td><td class=\"text-right\">{{ row.outstanding_amount }}</td></tr>{% endfor %}</tbody></table><h3 class=\"text-right\">Total Paid: {{ doc.paid_amount }}</h3><p>This remittance advice is generated from ERPNext Payment Entry allocations. Please contact Finance for any discrepancy.</p></div>",
+  "idx": 0,
+  "line_breaks": 0,
+  "module": "Advanced Finance",
+  "name": "ADV EFT Remittance Advice",
+  "print_format_builder": 0,
+  "print_format_type": "Jinja",
+  "standard": "Yes"
+}

@@ -10,20 +10,117 @@
   "is_hidden": 0,
   "label": "Reports",
   "links": [
-    {"label": "Payment Proposal Register", "link_to": "Payment Proposal Register", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
-    {"label": "Payment Run Register", "link_to": "Payment Run Register", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0},
-    {"label": "Payment Hold Register", "link_to": "Payment Hold Register", "link_type": "Report", "type": "Link", "hidden": 0, "is_query_report": 1, "onboard": 0}
+    {
+      "label": "Payment Proposal Register",
+      "link_to": "Payment Proposal Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "onboard": 0
+    },
+    {
+      "label": "Payment Run Register",
+      "link_to": "Payment Run Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "onboard": 0
+    },
+    {
+      "label": "Payment Hold Register",
+      "link_to": "Payment Hold Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "onboard": 0
+    },
+    {
+      "label": "Branch Management Financial Report",
+      "link_to": "Branch Management Financial Report",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Advanced Trial Balance",
+      "link_to": "Advanced Trial Balance",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Supplier Master Change Register",
+      "link_to": "Supplier Master Change Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    }
   ],
   "module": "Advanced Finance",
   "name": "ADV Finance Reports",
   "parent_page": "Advanced Finance",
   "public": 1,
-  "roles": [{"role": "System Manager"}, {"role": "Supplier Reconciliation User"}, {"role": "Supplier Reconciliation Manager"}],
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Supplier Reconciliation User"
+    },
+    {
+      "role": "Supplier Reconciliation Manager"
+    }
+  ],
   "sequence_id": 5,
   "shortcuts": [
-    {"label": "Payment Proposal Register", "link_to": "Payment Proposal Register", "type": "Report", "color": "Green"},
-    {"label": "Payment Run Register", "link_to": "Payment Run Register", "type": "Report", "color": "Green"},
-    {"label": "Payment Hold Register", "link_to": "Payment Hold Register", "type": "Report", "color": "Green"}
+    {
+      "label": "Payment Proposal Register",
+      "link_to": "Payment Proposal Register",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Payment Run Register",
+      "link_to": "Payment Run Register",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Payment Hold Register",
+      "link_to": "Payment Hold Register",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Branch Management Financial Report",
+      "link_to": "Branch Management Financial Report",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Advanced Trial Balance",
+      "link_to": "Advanced Trial Balance",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Supplier Master Change Register",
+      "link_to": "Supplier Master Change Register",
+      "type": "Report",
+      "color": "Orange"
+    }
   ],
   "title": "Reports"
 }

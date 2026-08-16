@@ -1,0 +1,225 @@
+{
+  "actions": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "proposed_supplier_name",
+    "supplier_group",
+    "supplier_type",
+    "country",
+    "tax_id",
+    "currency",
+    "payment_terms",
+    "payable_account",
+    "address",
+    "contact",
+    "bank_information",
+    "supporting_documents",
+    "business_reason",
+    "requested_by",
+    "status",
+    "approved_by",
+    "approved_on",
+    "created_supplier"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "SUP-ONB-.YYYY.-.#####",
+      "default": "SUP-ONB-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "proposed_supplier_name",
+      "fieldtype": "Data",
+      "label": "Proposed Supplier Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "supplier_group",
+      "fieldtype": "Link",
+      "label": "Supplier Group",
+      "options": "Supplier Group"
+    },
+    {
+      "fieldname": "supplier_type",
+      "fieldtype": "Select",
+      "label": "Supplier Type",
+      "options": "Company\nIndividual\nPartnership"
+    },
+    {
+      "fieldname": "country",
+      "fieldtype": "Link",
+      "label": "Country",
+      "options": "Country"
+    },
+    {
+      "fieldname": "tax_id",
+      "fieldtype": "Data",
+      "label": "Tax ID"
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency"
+    },
+    {
+      "fieldname": "payment_terms",
+      "fieldtype": "Link",
+      "label": "Payment Terms",
+      "options": "Payment Terms Template"
+    },
+    {
+      "fieldname": "payable_account",
+      "fieldtype": "Link",
+      "label": "Payable Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "address",
+      "fieldtype": "Small Text",
+      "label": "Address"
+    },
+    {
+      "fieldname": "contact",
+      "fieldtype": "Small Text",
+      "label": "Contact"
+    },
+    {
+      "fieldname": "bank_information",
+      "fieldtype": "Small Text",
+      "label": "Bank Information"
+    },
+    {
+      "fieldname": "supporting_documents",
+      "fieldtype": "Attach",
+      "label": "Supporting Documents"
+    },
+    {
+      "fieldname": "business_reason",
+      "fieldtype": "Text Editor",
+      "label": "Business Reason"
+    },
+    {
+      "fieldname": "requested_by",
+      "fieldtype": "Link",
+      "label": "Requested By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nSubmitted\nCompliance Review\nFinance Review\nApproved\nRejected\nSupplier Created",
+      "default": "Draft",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_on",
+      "fieldtype": "Datetime",
+      "label": "Approved On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "created_supplier",
+      "fieldtype": "Link",
+      "label": "Created Supplier",
+      "options": "Supplier",
+      "read_only": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Supplier Onboarding Request",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Finance Controller",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AP Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AP User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Auditor",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "naming_series:"
+}

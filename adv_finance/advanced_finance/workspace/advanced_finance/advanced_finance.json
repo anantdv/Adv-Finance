@@ -1,6 +1,6 @@
 {
   "charts": [],
-  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_payable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_receivable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accounts_receivable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accruals_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accruals\",\"col\":12}},{\"id\":\"treasury_header\",\"type\":\"header\",\"data\":{\"text\":\"Treasury\",\"col\":12}},{\"id\":\"treasury_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Treasury\",\"col\":12}},{\"id\":\"planning_budget_header\",\"type\":\"header\",\"data\":{\"text\":\"Planning & Budget\",\"col\":12}},{\"id\":\"planning_budget_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Planning & Budget\",\"col\":12}},{\"id\":\"intercompany_header\",\"type\":\"header\",\"data\":{\"text\":\"Intercompany\",\"col\":12}},{\"id\":\"intercompany_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Intercompany\",\"col\":12}},{\"id\":\"group_finance_header\",\"type\":\"header\",\"data\":{\"text\":\"Group Finance\",\"col\":12}},{\"id\":\"group_finance_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Group Finance\",\"col\":12}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"financial_close_header\",\"type\":\"header\",\"data\":{\"text\":\"Financial Close\",\"col\":12}},{\"id\":\"financial_close_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Close\",\"col\":12}},{\"id\":\"help_header\",\"type\":\"header\",\"data\":{\"text\":\"Help\",\"col\":12}},{\"id\":\"help_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Help\",\"col\":12}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"monitoring_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Monitoring\",\"col\":12}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
+  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_payable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Payable\",\"col\":12}},{\"id\":\"accounts_receivable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accounts_receivable_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Receivable\",\"col\":12}},{\"id\":\"accruals_header\",\"type\":\"header\",\"data\":{\"text\":\"Accruals\",\"col\":12}},{\"id\":\"accruals_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accruals\",\"col\":12}},{\"id\":\"treasury_header\",\"type\":\"header\",\"data\":{\"text\":\"Treasury\",\"col\":12}},{\"id\":\"treasury_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Treasury\",\"col\":12}},{\"id\":\"planning_budget_header\",\"type\":\"header\",\"data\":{\"text\":\"Planning & Budget\",\"col\":12}},{\"id\":\"planning_budget_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Planning & Budget\",\"col\":12}},{\"id\":\"intercompany_header\",\"type\":\"header\",\"data\":{\"text\":\"Intercompany\",\"col\":12}},{\"id\":\"intercompany_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Intercompany\",\"col\":12}},{\"id\":\"group_finance_header\",\"type\":\"header\",\"data\":{\"text\":\"Group Finance\",\"col\":12}},{\"id\":\"group_finance_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Group Finance\",\"col\":12}},{\"id\":\"account_reconciliation_header\",\"type\":\"header\",\"data\":{\"text\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"account_reconciliation_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Account Reconciliation\",\"col\":12}},{\"id\":\"financial_close_header\",\"type\":\"header\",\"data\":{\"text\":\"Financial Close\",\"col\":12}},{\"id\":\"financial_close_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Close\",\"col\":12}},{\"id\":\"help_header\",\"type\":\"header\",\"data\":{\"text\":\"Help\",\"col\":12}},{\"id\":\"help_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Help\",\"col\":12}},{\"id\":\"period_end_header\",\"type\":\"header\",\"data\":{\"text\":\"Period End\",\"col\":12}},{\"id\":\"period_end_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Period End\",\"col\":12}},{\"id\":\"monitoring_header\",\"type\":\"header\",\"data\":{\"text\":\"Monitoring\",\"col\":12}},{\"id\":\"monitoring_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Monitoring\",\"col\":12}},{\"id\":\"reports_header\",\"type\":\"header\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
   "creation": "2026-08-13 00:00:00.000000",
   "docstatus": 0,
   "doctype": "Workspace",
@@ -13,6 +13,46 @@
     {
       "label": "Accounts Payable",
       "type": "Card Break",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Ageing Remarks",
+      "link_to": "Finance Ageing Remark",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "AP Ageing with Remarks",
+      "link_to": "Accounts Payable Ageing with Remarks",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Supplier Onboarding Requests",
+      "link_to": "Supplier Onboarding Request",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Supplier Change Requests",
+      "link_to": "Supplier Change Request",
+      "link_type": "DocType",
+      "type": "Link",
       "hidden": 0,
       "is_query_report": 0,
       "link_count": 0,
@@ -93,6 +133,56 @@
       "type": "Card Break",
       "hidden": 0,
       "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "AR Ageing with Remarks",
+      "link_to": "Accounts Receivable Ageing with Remarks",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Dormant Customers",
+      "link_to": "Dormant Customers",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Demand Letter Templates",
+      "link_to": "Demand Letter Template",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Demand Letters",
+      "link_to": "Demand Letter",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Demand Letter Register",
+      "link_to": "Demand Letter Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
       "link_count": 0,
       "onboard": 0
     },
@@ -841,6 +931,44 @@
       "onboard": 0
     },
     {
+      "label": "Period End",
+      "type": "Card Break",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "FX Adjusted Invoice Register",
+      "link_to": "FX Adjusted Invoice Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Prior Period Posting Requests",
+      "link_to": "Prior Period Posting Request",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Prior Period Posting Register",
+      "link_to": "Prior Period Posting Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
       "label": "Monitoring",
       "type": "Card Break",
       "hidden": 0,
@@ -993,6 +1121,36 @@
       "type": "Card Break",
       "hidden": 0,
       "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Branch Management Financial Report",
+      "link_to": "Branch Management Financial Report",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Advanced Trial Balance",
+      "link_to": "Advanced Trial Balance",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Supplier Master Change Register",
+      "link_to": "Supplier Master Change Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
       "link_count": 0,
       "onboard": 0
     },

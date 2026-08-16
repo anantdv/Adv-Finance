@@ -1,0 +1,261 @@
+{
+  "actions": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "company",
+    "requested_by",
+    "requested_on",
+    "posting_date",
+    "fiscal_year",
+    "accounting_period",
+    "transaction_doctype",
+    "transaction_name",
+    "transaction_type",
+    "proposed_amount",
+    "account_dimension_summary",
+    "reason",
+    "justification",
+    "supporting_attachment",
+    "impact_assessment",
+    "status",
+    "approved_by",
+    "approved_on",
+    "valid_from",
+    "valid_until",
+    "single_use",
+    "usage_document",
+    "used_on"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "PPP-.YYYY.-.#####",
+      "default": "PPP-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "requested_by",
+      "fieldtype": "Link",
+      "label": "Requested By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "requested_on",
+      "fieldtype": "Datetime",
+      "label": "Requested On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "fiscal_year",
+      "fieldtype": "Link",
+      "label": "Fiscal Year",
+      "options": "Fiscal Year"
+    },
+    {
+      "fieldname": "accounting_period",
+      "fieldtype": "Link",
+      "label": "Accounting Period",
+      "options": "Accounting Period"
+    },
+    {
+      "fieldname": "transaction_doctype",
+      "fieldtype": "Select",
+      "label": "Transaction Doctype",
+      "options": "Journal Entry\nPurchase Invoice\nSales Invoice\nPayment Entry\nStock Entry\nAsset Transaction",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "transaction_name",
+      "fieldtype": "Dynamic Link",
+      "label": "Transaction Name",
+      "options": "transaction_doctype"
+    },
+    {
+      "fieldname": "transaction_type",
+      "fieldtype": "Data",
+      "label": "Transaction Type"
+    },
+    {
+      "fieldname": "proposed_amount",
+      "fieldtype": "Currency",
+      "label": "Proposed Amount"
+    },
+    {
+      "fieldname": "account_dimension_summary",
+      "fieldtype": "Small Text",
+      "label": "Account/Dimension Summary"
+    },
+    {
+      "fieldname": "reason",
+      "fieldtype": "Data",
+      "label": "Reason",
+      "reqd": 1
+    },
+    {
+      "fieldname": "justification",
+      "fieldtype": "Text Editor",
+      "label": "Justification"
+    },
+    {
+      "fieldname": "supporting_attachment",
+      "fieldtype": "Attach",
+      "label": "Supporting Attachment"
+    },
+    {
+      "fieldname": "impact_assessment",
+      "fieldtype": "Text Editor",
+      "label": "Impact Assessment"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nSubmitted\nUnder Review\nApproved\nRejected\nUsed\nExpired\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_on",
+      "fieldtype": "Datetime",
+      "label": "Approved On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "valid_from",
+      "fieldtype": "Date",
+      "label": "Valid From"
+    },
+    {
+      "fieldname": "valid_until",
+      "fieldtype": "Date",
+      "label": "Valid Until"
+    },
+    {
+      "fieldname": "single_use",
+      "fieldtype": "Check",
+      "label": "Single Use",
+      "default": "1"
+    },
+    {
+      "fieldname": "usage_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Usage Document",
+      "options": "transaction_doctype"
+    },
+    {
+      "fieldname": "used_on",
+      "fieldtype": "Datetime",
+      "label": "Used On",
+      "read_only": 1
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "Prior Period Posting Request",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Finance Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Finance Controller",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AP Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AP User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "AR User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "Auditor",
+      "read": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1,
+  "autoname": "naming_series:"
+}

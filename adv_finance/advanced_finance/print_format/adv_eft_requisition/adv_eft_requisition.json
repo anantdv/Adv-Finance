@@ -1,0 +1,14 @@
+{
+  "creation": "2026-08-16 00:00:00.000000",
+  "doc_type": "Payment Run",
+  "docstatus": 0,
+  "doctype": "Print Format",
+  "html": "<div class=\"adv-print\"><h1>ADV EFT Requisition</h1><p><b>Company:</b> {{ doc.company }} &nbsp; <b>Payment Run:</b> {{ doc.name }} &nbsp; <b>Payment Date:</b> {{ doc.payment_date }}</p><p><b>Bank Account:</b> {{ doc.bank_account }} &nbsp; <b>Currency:</b> {{ doc.currency }} &nbsp; <b>Mode:</b> {{ doc.mode_of_payment }}</p><hr><h3>Invoices for Payment</h3><table class=\"table table-bordered\"><thead><tr><th>Supplier</th><th>Invoice</th><th>Due Date</th><th>Currency</th><th>Outstanding</th><th>Amount Being Paid</th></tr></thead><tbody>{% for row in doc.items %}<tr><td>{{ row.supplier }}</td><td>{{ row.purchase_invoice }}</td><td>{{ row.due_date }}</td><td>{{ row.currency }}</td><td class=\"text-right\">{{ row.outstanding_amount }}</td><td class=\"text-right\">{{ row.selected_amount }}</td></tr>{% endfor %}</tbody></table><h3 class=\"text-right\">Net EFT Amount: {{ doc.total_payment_amount or doc.paid_amount or '' }}</h3><br><table class=\"table table-bordered\"><tr><td>Prepared By</td><td>Checked By</td><td>Approved By</td></tr><tr><td style=\"height:70px\"></td><td></td><td></td></tr><tr><td>Date / Signature</td><td>Date / Signature</td><td>Date / Signature</td></tr></table></div>",
+  "idx": 0,
+  "line_breaks": 0,
+  "module": "Advanced Finance",
+  "name": "ADV EFT Requisition",
+  "print_format_builder": 0,
+  "print_format_type": "Jinja",
+  "standard": "Yes"
+}

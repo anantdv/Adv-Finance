@@ -1,0 +1,40 @@
+{
+  "add_total_row": 0,
+  "columns": [],
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "Report",
+  "idx": 0,
+  "is_standard": "Yes",
+  "module": "Advanced Finance",
+  "name": "Accounts Payable Ageing with Remarks",
+  "prepared_report": 0,
+  "ref_doctype": "Purchase Invoice",
+  "report_name": "Accounts Payable Ageing with Remarks",
+  "report_type": "Script Report",
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Finance Manager"
+    },
+    {
+      "role": "Finance Controller"
+    },
+    {
+      "role": "AP Manager"
+    },
+    {
+      "role": "AP User"
+    },
+    {
+      "role": "AR Manager"
+    },
+    {
+      "role": "AR User"
+    },
+    {
+      "role": "Auditor"
+    }
+  ]
+}

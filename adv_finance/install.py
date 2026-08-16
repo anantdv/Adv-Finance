@@ -39,6 +39,12 @@ def create_roles():
         "Consolidation Reviewer",
         "CFO",
         "Auditor",
+        "AP User",
+        "AP Manager",
+        "AR User",
+        "AR Manager",
+        "Finance Controller",
+        "Finance Manager",
     ):
         if not frappe.db.exists("Role", role_name):
             frappe.get_doc({"doctype": "Role", "role_name": role_name, "desk_access": 1}).insert()

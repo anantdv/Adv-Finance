@@ -1,6 +1,6 @@
 {
   "charts": [],
-  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"supplier_reconciliation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation\",\"col\":3}},{\"id\":\"supplier_statement_template_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Statement Template\",\"col\":3}},{\"id\":\"supplier_reconciliation_history_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation History\",\"col\":3}},{\"id\":\"open_supplier_reconciliation_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Supplier Reconciliation Exceptions\",\"col\":3}},{\"id\":\"payment_proposal_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Proposal\",\"col\":3}},{\"id\":\"payment_run_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run\",\"col\":3}},{\"id\":\"payment_holds_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Holds\",\"col\":3}}]",
+  "content": "[{\"id\":\"accounts_payable_header\",\"type\":\"header\",\"data\":{\"text\":\"Accounts Payable\",\"col\":12}},{\"id\":\"supplier_reconciliation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation\",\"col\":3}},{\"id\":\"supplier_statement_template_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Statement Template\",\"col\":3}},{\"id\":\"supplier_reconciliation_history_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation History\",\"col\":3}},{\"id\":\"open_supplier_reconciliation_exceptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Supplier Reconciliation Exceptions\",\"col\":3}},{\"id\":\"payment_proposal_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Proposal\",\"col\":3}},{\"id\":\"payment_run_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Run\",\"col\":3}},{\"id\":\"payment_holds_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Holds\",\"col\":3}},{\"id\":\"ap_ageing_with_remarks_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AP Ageing with Remarks\",\"col\":3}},{\"id\":\"supplier_onboarding_requests_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Onboarding Requests\",\"col\":3}},{\"id\":\"supplier_change_requests_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Change Requests\",\"col\":3}}]",
   "creation": "2026-08-14 00:00:00.000000",
   "docstatus": 0,
   "doctype": "Workspace",
@@ -72,6 +72,46 @@
       "hidden": 0,
       "is_query_report": 0,
       "onboard": 0
+    },
+    {
+      "label": "AP Ageing with Remarks",
+      "link_to": "Accounts Payable Ageing with Remarks",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Supplier Onboarding Requests",
+      "link_to": "Supplier Onboarding Request",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Supplier Change Requests",
+      "link_to": "Supplier Change Request",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Ageing Remarks",
+      "link_to": "Finance Ageing Remark",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
     }
   ],
   "module": "Advanced Finance",
@@ -137,6 +177,33 @@
       "type": "DocType",
       "doc_view": "List",
       "color": "Orange"
+    },
+    {
+      "label": "AP Ageing with Remarks",
+      "link_to": "Accounts Payable Ageing with Remarks",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Supplier Onboarding Requests",
+      "link_to": "Supplier Onboarding Request",
+      "type": "DocType",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "Supplier Change Requests",
+      "link_to": "Supplier Change Request",
+      "type": "DocType",
+      "doc_view": "List",
+      "color": "Orange"
+    },
+    {
+      "label": "Ageing Remarks",
+      "link_to": "Finance Ageing Remark",
+      "type": "DocType",
+      "doc_view": "List",
+      "color": "Grey"
     }
   ],
   "title": "Accounts Payable"

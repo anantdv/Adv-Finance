@@ -1,0 +1,85 @@
+{
+  "charts": [],
+  "content": "[{\"id\":\"period_end_header\",\"type\":\"header\",\"data\":{\"text\":\"Period End\",\"col\":12}},{\"id\":\"fx_adjusted_invoice_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FX Adjusted Invoice Register\",\"col\":3}},{\"id\":\"prior_period_posting_requests_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prior Period Posting Requests\",\"col\":3}},{\"id\":\"prior_period_posting_register_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prior Period Posting Register\",\"col\":3}}]",
+  "creation": "2026-08-16 00:00:00.000000",
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "hide_custom": 0,
+  "idx": 0,
+  "indicator_color": "blue",
+  "is_hidden": 0,
+  "label": "Period End",
+  "links": [
+    {
+      "label": "FX Adjusted Invoice Register",
+      "link_to": "FX Adjusted Invoice Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Prior Period Posting Requests",
+      "link_to": "Prior Period Posting Request",
+      "link_type": "DocType",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Prior Period Posting Register",
+      "link_to": "Prior Period Posting Register",
+      "link_type": "Report",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 1,
+      "link_count": 0,
+      "onboard": 0
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "ADV Finance Period End",
+  "parent_page": "Advanced Finance",
+  "public": 1,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Finance Controller"
+    },
+    {
+      "role": "Finance Manager"
+    },
+    {
+      "role": "Auditor"
+    }
+  ],
+  "sequence_id": 9,
+  "shortcuts": [
+    {
+      "label": "FX Adjusted Invoice Register",
+      "link_to": "FX Adjusted Invoice Register",
+      "type": "Report",
+      "color": "Green"
+    },
+    {
+      "label": "Prior Period Posting Requests",
+      "link_to": "Prior Period Posting Request",
+      "type": "DocType",
+      "doc_view": "List",
+      "color": "Orange"
+    },
+    {
+      "label": "Prior Period Posting Register",
+      "link_to": "Prior Period Posting Register",
+      "type": "Report",
+      "color": "Orange"
+    }
+  ],
+  "title": "Period End"
+}

@@ -1149,3 +1149,165 @@ def _validate_accrual_accounts(accrual) -> None:
         account_company = frappe.db.get_value("Account", account, "company")
         if account_company and account_company != accrual.company:
             frappe.throw(f"Account {account} does not belong to company {accrual.company}.")
+
+
+def get_ar_ageing_rows(**filters) -> list[dict[str, Any]]:
+    """Return open Sales Invoice rows for ADV ageing-with-remarks reports.
+
+    ERPNext ageing remains authoritative for production comparison; this helper
+    keeps ADV's report source isolated and read-only for v16 validation.
+    """
+    conditions = ["docstatus = 1", "outstanding_amount > 0"]
+    values: dict[str, Any] = {}
+    for field in ("company", "customer", "currency"):
+        if filters.get(field):
+            conditions.append(f"{field} = %({field})s")
+            values[field] = filters[field]
+    return frappe.db.sql(
+        f"""
+        select name, company, customer, customer_name, posting_date, due_date,
+               currency, grand_total, outstanding_amount,
+               base_grand_total as original_company_currency,
+               base_outstanding_amount as outstanding_company_currency
+        from `tabSales Invoice`
+        where {" and ".join(conditions)}
+        order by coalesce(due_date, posting_date), customer, name
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_ap_ageing_rows(**filters) -> list[dict[str, Any]]:
+    conditions = ["docstatus = 1", "outstanding_amount > 0"]
+    values: dict[str, Any] = {}
+    for field in ("company", "supplier", "currency"):
+        if filters.get(field):
+            conditions.append(f"{field} = %({field})s")
+            values[field] = filters[field]
+    return frappe.db.sql(
+        f"""
+        select name, company, supplier, supplier_name, posting_date, due_date,
+               currency, grand_total, outstanding_amount,
+               base_grand_total as original_company_currency,
+               base_outstanding_amount as outstanding_company_currency
+        from `tabPurchase Invoice`
+        where {" and ".join(conditions)}
+        order by coalesce(due_date, posting_date), supplier, name
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_customer_business_activity_dates(company: str | None, customer: str) -> dict[str, Any]:
+    values = {"company": company, "customer": customer}
+    company_clause = "and company = %(company)s" if company else ""
+    invoice = frappe.db.sql(
+        f"select max(posting_date) as d from `tabSales Invoice` where customer = %(customer)s {company_clause} and docstatus = 1",
+        values,
+        as_dict=True,
+    )
+    payment = frappe.db.sql(
+        f"select max(posting_date) as d from `tabPayment Entry` where party_type = 'Customer' and party = %(customer)s {company_clause} and docstatus = 1",
+        values,
+        as_dict=True,
+    )
+    delivery = frappe.db.sql(
+        f"select max(posting_date) as d from `tabDelivery Note` where customer = %(customer)s {company_clause} and docstatus = 1",
+        values,
+        as_dict=True,
+    )
+    dates = {
+        "last_invoice_date": invoice[0].d if invoice else None,
+        "last_payment_date": payment[0].d if payment else None,
+        "last_delivery_date": delivery[0].d if delivery else None,
+    }
+    dates["last_business_activity_date"] = max([d for d in dates.values() if d], default=None)
+    return dates
+
+
+def get_fx_invoice_rows(**filters) -> list[dict[str, Any]]:
+    party_type = filters.get("party_type") or "Customer"
+    table = "tabSales Invoice" if party_type == "Customer" else "tabPurchase Invoice"
+    party_field = "customer" if party_type == "Customer" else "supplier"
+    conditions = ["docstatus = 1", "outstanding_amount != 0"]
+    values: dict[str, Any] = {}
+    for field in ("company", "currency"):
+        if filters.get(field):
+            conditions.append(f"{field} = %({field})s")
+            values[field] = filters[field]
+    if filters.get("party"):
+        conditions.append(f"{party_field} = %(party)s")
+        values["party"] = filters["party"]
+    rows = frappe.db.sql(
+        f"""
+        select {party_field} as party, name as invoice, posting_date as invoice_date,
+               due_date, currency, outstanding_amount as outstanding_fcy,
+               conversion_rate as carrying_exchange_rate,
+               null as revaluation_reference, null as revaluation_posting_date
+        from `{table}`
+        where {" and ".join(conditions)}
+        order by posting_date, name
+        """,
+        values,
+        as_dict=True,
+    )
+    return rows
+
+
+def get_gl_movement_by_account(company: str, from_date, to_date, filters=None) -> list[dict[str, Any]]:
+    filters = filters or {}
+    values = {"company": company, "from_date": from_date, "to_date": to_date}
+    conditions = ["gle.company = %(company)s", "gle.is_cancelled = 0"]
+    if filters.get("cost_center") or filters.get("branch"):
+        values["cost_center"] = filters.get("cost_center") or filters.get("branch")
+        conditions.append("gle.cost_center = %(cost_center)s")
+    if filters.get("project"):
+        values["project"] = filters["project"]
+        conditions.append("gle.project = %(project)s")
+    return frappe.db.sql(
+        f"""
+        select gle.account, acc.account_name,
+               sum(case when gle.posting_date between %(from_date)s and %(to_date)s then gle.debit - gle.credit else 0 end) as mtd_actual,
+               sum(case when gle.posting_date <= %(to_date)s then gle.debit - gle.credit else 0 end) as ytd_actual,
+               0 as ly_mtd,
+               0 as ly_ytd
+        from `tabGL Entry` gle
+        left join `tabAccount` acc on acc.name = gle.account
+        where {" and ".join(conditions)}
+        group by gle.account, acc.account_name
+        order by gle.account
+        """,
+        values,
+        as_dict=True,
+    )
+
+
+def get_trial_balance_movement_rows(**filters) -> list[dict[str, Any]]:
+    company = filters.get("company")
+    from_date = filters.get("from_date")
+    to_date = filters.get("to_date")
+    fiscal_year_start = filters.get("fiscal_year_start") or from_date
+    values = {"company": company, "from_date": from_date, "to_date": to_date, "fiscal_year_start": fiscal_year_start}
+    return frappe.db.sql(
+        """
+        select gle.account, acc.account_name,
+               sum(case when gle.posting_date < %(from_date)s then gle.debit - gle.credit else 0 end) as opening_balance,
+               sum(case when gle.posting_date between %(from_date)s and %(to_date)s then gle.debit else 0 end) as monthly_debit,
+               sum(case when gle.posting_date between %(from_date)s and %(to_date)s then gle.credit else 0 end) as monthly_credit,
+               sum(case when gle.posting_date between %(fiscal_year_start)s and %(to_date)s then gle.debit else 0 end) as ytd_debit,
+               sum(case when gle.posting_date between %(fiscal_year_start)s and %(to_date)s then gle.credit else 0 end) as ytd_credit,
+               sum(case when gle.posting_date <= %(to_date)s then gle.debit else 0 end) as cumulative_debit,
+               sum(case when gle.posting_date <= %(to_date)s then gle.credit else 0 end) as cumulative_credit,
+               sum(case when gle.posting_date <= %(to_date)s then gle.debit - gle.credit else 0 end) as closing_balance
+        from `tabGL Entry` gle
+        left join `tabAccount` acc on acc.name = gle.account
+        where gle.company = %(company)s
+          and gle.is_cancelled = 0
+        group by gle.account, acc.account_name
+        order by gle.account
+        """,
+        values,
+        as_dict=True,
+    )

@@ -42,6 +42,10 @@ def get_data():
                     "description": _("Block supplier or invoice payments with an auditable reason."),
                     "onboard": 1,
                 },
+                {"type": "report", "name": "Accounts Payable Ageing with Remarks", "doctype": "Purchase Invoice", "label": _("AP Ageing with Remarks"), "is_query_report": True, "onboard": 0},
+                {"type": "doctype", "name": "Finance Ageing Remark", "label": _("Ageing Remarks"), "description": _("Structured AP/AR operational remarks for ageing reports."), "onboard": 1},
+                {"type": "doctype", "name": "Supplier Onboarding Request", "label": _("Supplier Onboarding Requests"), "description": _("Maker-checker supplier master onboarding before ERPNext Supplier creation."), "onboard": 1},
+                {"type": "doctype", "name": "Supplier Change Request", "label": _("Supplier Change Requests"), "description": _("Approve sensitive supplier master and bank detail changes."), "onboard": 1},
                 {
                     "type": "report",
                     "name": "Supplier Reconciliation History",
@@ -166,6 +170,12 @@ def get_data():
                     "description": _("Control operational credit holds and releases."),
                     "onboard": 1,
                 },
+                {"type": "report", "name": "Accounts Receivable Ageing with Remarks", "doctype": "Sales Invoice", "label": _("AR Ageing with Remarks"), "is_query_report": True, "onboard": 0},
+                {"type": "doctype", "name": "Finance Ageing Remark", "label": _("Ageing Remarks"), "description": _("Structured AP/AR operational remarks for ageing reports."), "onboard": 1},
+                {"type": "report", "name": "Dormant Customers", "doctype": "Customer", "label": _("Dormant Customers"), "is_query_report": True, "onboard": 0},
+                {"type": "doctype", "name": "Demand Letter Template", "label": _("Demand Letter Templates"), "description": _("Standard demand-letter wording with eligibility rules."), "onboard": 1},
+                {"type": "doctype", "name": "Demand Letter", "label": _("Demand Letters"), "description": _("Generated customer demand letters for overdue accounts."), "onboard": 1},
+                {"type": "report", "name": "Demand Letter Register", "doctype": "Demand Letter", "label": _("Demand Letter Register"), "is_query_report": True, "onboard": 0},
             ],
         },
         {
@@ -304,6 +314,15 @@ def get_data():
             ],
         },
         {
+            "label": _("Period End"),
+            "icon": "octicon octicon-calendar",
+            "items": [
+                {"type": "report", "name": "FX Adjusted Invoice Register", "doctype": "Sales Invoice", "label": _("FX Adjusted Invoice Register"), "is_query_report": True, "onboard": 0},
+                {"type": "doctype", "name": "Prior Period Posting Request", "label": _("Prior Period Posting Requests"), "description": _("Controlled, auditable exception requests for restricted-period posting."), "onboard": 1},
+                {"type": "report", "name": "Prior Period Posting Register", "doctype": "Prior Period Posting Request", "label": _("Prior Period Posting Register"), "is_query_report": True, "onboard": 0},
+            ],
+        },
+        {
             "label": _("Monitoring"),
             "icon": "octicon octicon-device-desktop",
             "items": [
@@ -433,6 +452,9 @@ def get_data():
                     "is_query_report": True,
                     "onboard": 0,
                 },
+                {"type": "report", "name": "Branch Management Financial Report", "doctype": "GL Entry", "label": _("Branch Management Financial Report"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Advanced Trial Balance", "doctype": "GL Entry", "label": _("Advanced Trial Balance"), "is_query_report": True, "onboard": 0},
+                {"type": "report", "name": "Supplier Master Change Register", "doctype": "Supplier Change Request", "label": _("Supplier Master Change Register"), "is_query_report": True, "onboard": 0},
             ],
         },
     ]
