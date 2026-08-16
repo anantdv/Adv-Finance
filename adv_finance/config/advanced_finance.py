@@ -43,13 +43,6 @@ def get_data():
                     "onboard": 1,
                 },
                 {
-                    "type": "page",
-                    "name": "supplier-reconciliation-manual",
-                    "label": _("Supplier Reconciliation Manual"),
-                    "description": _("User guide and monthly reconciliation workflow."),
-                    "onboard": 1,
-                },
-                {
                     "type": "report",
                     "name": "Supplier Reconciliation History",
                     "doctype": "Supplier Reconciliation",
@@ -273,7 +266,6 @@ def get_data():
             "icon": "octicon octicon-organization",
             "items": [
                 {"type": "report", "name": "Consolidation Dashboard", "doctype": "Consolidation Period", "label": _("Consolidation Dashboard"), "is_query_report": True, "onboard": 0},
-                {"type": "page", "name": "consolidation-manual", "label": _("Consolidation Manual"), "description": _("Book-style operating manual for enterprise financial consolidation."), "onboard": 1},
                 {"type": "doctype", "name": "Consolidation Group", "label": _("Consolidation Groups"), "description": _("Define legal entity ownership, reporting currency, and consolidation methods."), "onboard": 1},
                 {"type": "doctype", "name": "Consolidation Period", "label": _("Consolidation Periods"), "description": _("Collect trial balances, translate, eliminate, consolidate, review, and publish group results."), "onboard": 1},
                 {"type": "doctype", "name": "Trial Balance Snapshot", "label": _("Trial Balance Snapshots"), "description": _("Immutable company trial balance extracts used for group consolidation."), "onboard": 1},
@@ -289,6 +281,26 @@ def get_data():
                 {"type": "report", "name": "Elimination Summary", "doctype": "Elimination Journal", "label": _("Elimination Summary"), "is_query_report": True, "onboard": 0},
                 {"type": "report", "name": "Minority Interest Report", "doctype": "Consolidated Trial Balance Line", "label": _("Minority Interest"), "is_query_report": True, "onboard": 0},
                 {"type": "report", "name": "Adjustment Register", "doctype": "Consolidation Adjustment", "label": _("Adjustment Register"), "is_query_report": True, "onboard": 0},
+            ],
+        },
+        {
+            "label": _("Help"),
+            "icon": "octicon octicon-book",
+            "items": [
+                {
+                    "type": "page",
+                    "name": "supplier-reconciliation-manual",
+                    "label": _("Supplier Reconciliation Manual"),
+                    "description": _("User guide and monthly supplier reconciliation workflow."),
+                    "onboard": 1,
+                },
+                {
+                    "type": "page",
+                    "name": "consolidation-manual",
+                    "label": _("Consolidation Manual"),
+                    "description": _("Book-style operating manual for enterprise financial consolidation."),
+                    "onboard": 1,
+                },
             ],
         },
         {

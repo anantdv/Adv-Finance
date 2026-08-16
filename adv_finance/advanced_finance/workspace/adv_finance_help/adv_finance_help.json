@@ -1,0 +1,80 @@
+{
+  "charts": [],
+  "content": "[{\"id\":\"help_header\",\"type\":\"header\",\"data\":{\"text\":\"Help\",\"col\":12}},{\"id\":\"supplier_reconciliation_manual_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Reconciliation Manual\",\"col\":3}},{\"id\":\"consolidation_manual_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidation Manual\",\"col\":3}}]",
+  "creation": "2026-08-16 00:00:00.000000",
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "hide_custom": 0,
+  "idx": 0,
+  "indicator_color": "blue",
+  "is_hidden": 0,
+  "label": "Help",
+  "links": [
+    {
+      "label": "Supplier Reconciliation Manual",
+      "link_to": "supplier-reconciliation-manual",
+      "link_type": "Page",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    },
+    {
+      "label": "Consolidation Manual",
+      "link_to": "consolidation-manual",
+      "link_type": "Page",
+      "type": "Link",
+      "hidden": 0,
+      "is_query_report": 0,
+      "link_count": 0,
+      "onboard": 0
+    }
+  ],
+  "module": "Advanced Finance",
+  "name": "ADV Finance Help",
+  "parent_page": "Advanced Finance",
+  "public": 1,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Supplier Reconciliation User"
+    },
+    {
+      "role": "Supplier Reconciliation Manager"
+    },
+    {
+      "role": "Group Accountant"
+    },
+    {
+      "role": "Consolidation Reviewer"
+    },
+    {
+      "role": "Group Finance Manager"
+    },
+    {
+      "role": "CFO"
+    },
+    {
+      "role": "Auditor"
+    }
+  ],
+  "sequence_id": 10,
+  "shortcuts": [
+    {
+      "label": "Supplier Reconciliation Manual",
+      "link_to": "supplier-reconciliation-manual",
+      "type": "Page",
+      "color": "Grey"
+    },
+    {
+      "label": "Consolidation Manual",
+      "link_to": "consolidation-manual",
+      "type": "Page",
+      "color": "Grey"
+    }
+  ],
+  "title": "Help"
+}
