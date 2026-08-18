@@ -1168,7 +1168,7 @@ def get_ar_ageing_rows(**filters) -> list[dict[str, Any]]:
         select name, company, customer, customer_name, posting_date, due_date,
                currency, grand_total, outstanding_amount,
                base_grand_total as original_company_currency,
-               base_outstanding_amount as outstanding_company_currency
+               outstanding_amount * conversion_rate as outstanding_company_currency
         from `tabSales Invoice`
         where {" and ".join(conditions)}
         order by coalesce(due_date, posting_date), customer, name
@@ -1190,7 +1190,7 @@ def get_ap_ageing_rows(**filters) -> list[dict[str, Any]]:
         select name, company, supplier, supplier_name, posting_date, due_date,
                currency, grand_total, outstanding_amount,
                base_grand_total as original_company_currency,
-               base_outstanding_amount as outstanding_company_currency
+               outstanding_amount * conversion_rate as outstanding_company_currency
         from `tabPurchase Invoice`
         where {" and ".join(conditions)}
         order by coalesce(due_date, posting_date), supplier, name

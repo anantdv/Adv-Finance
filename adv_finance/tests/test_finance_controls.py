@@ -137,6 +137,12 @@ class TestFinanceControls(unittest.TestCase):
             self.restore(svc, originals)
         self.assertEqual(rows[0]["outstanding_amount"], 50)
 
+    def test_ageing_queries_do_not_use_missing_base_outstanding_column(self):
+        from pathlib import Path
+
+        source = Path("adv_finance/compatibility/erpnext_v16.py").read_text()
+        self.assertNotIn("base_outstanding_amount", source)
+
     def test_eft_requisition(self):
         ctx = get_eft_requisition_context(Doc(name="RUN-1", company="C", payment_date="2026-08-16", bank_account="B", currency="PGK", mode_of_payment="EFT", owner="u", items=[]))
         self.assertEqual(ctx["requisition_number"], "RUN-1")
