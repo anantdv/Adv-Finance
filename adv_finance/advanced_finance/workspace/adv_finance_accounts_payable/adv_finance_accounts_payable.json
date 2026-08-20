@@ -117,7 +117,7 @@
   "module": "Advanced Finance",
   "name": "ADV Finance Accounts Payable",
   "parent_page": "Advanced Finance",
-  "public": 1,
+  "public": 0,
   "roles": [
     {
       "role": "System Manager"

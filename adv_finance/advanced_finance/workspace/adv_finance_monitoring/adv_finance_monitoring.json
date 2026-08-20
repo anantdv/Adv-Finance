@@ -15,7 +15,7 @@
   "module": "Advanced Finance",
   "name": "ADV Finance Monitoring",
   "parent_page": "Advanced Finance",
-  "public": 1,
+  "public": 0,
   "roles": [{"role": "System Manager"}, {"role": "Supplier Reconciliation User"}, {"role": "Supplier Reconciliation Manager"}],
   "sequence_id": 4,
   "shortcuts": [

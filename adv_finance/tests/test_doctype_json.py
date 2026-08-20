@@ -25,6 +25,7 @@ class TestDocTypeJson(unittest.TestCase):
                 doc = json.loads(path.read_text())
                 self.assertEqual(doc.get("parent_page"), "Advanced Finance")
                 self.assertEqual(doc.get("is_hidden"), 1)
+                self.assertEqual(doc.get("public"), 0)
 
 
 if __name__ == "__main__":

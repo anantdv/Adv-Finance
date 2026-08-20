@@ -174,7 +174,7 @@
   "module": "Advanced Finance",
   "name": "ADV Finance Group Finance",
   "parent_page": "Advanced Finance",
-  "public": 1,
+  "public": 0,
   "roles": [
     {
       "role": "System Manager"
